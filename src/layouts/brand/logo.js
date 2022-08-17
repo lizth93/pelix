@@ -1,5 +1,3 @@
-// import logo from "./logo-icon.png";
-
 import logo from "./logo-icon.png";
 const Logo = (props) => {
   return (
