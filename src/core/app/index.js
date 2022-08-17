@@ -1,5 +1,5 @@
 import "./app.css";
-import Collections from "../main/collections";
+import Collections from "../main/collections.styled";
 import Layout from "../../layouts/layout";
 
 function App() {
