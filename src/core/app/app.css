@@ -8,3 +8,10 @@
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
 }
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}

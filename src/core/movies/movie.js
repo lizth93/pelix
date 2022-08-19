@@ -4,7 +4,6 @@ import ShowMoreIcon from "../../icons/more";
 import PlayIcon from "../../icons/play";
 
 const Movie = (props) => {
-  console.log(props.movie);
   return (
     <div className={props.className}>
       <figure className="movie__fig">

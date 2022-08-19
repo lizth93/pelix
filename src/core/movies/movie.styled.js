@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Movie from "./movie";
 
 export default styled(Movie)`
+  transition: all 0.2s;
   &:hover {
     transform: scale(1.1);
     z-index: 2;
@@ -11,6 +12,8 @@ export default styled(Movie)`
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: all 0.2s;
     background-color: #212529;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
   }
 
   .movie__title {
@@ -25,11 +28,22 @@ export default styled(Movie)`
     display: block;
     background-color: #212529;
     width: 100%;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+
+  &:hover .movie__img {
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
   }
 
   .movie__img {
     max-width: 20rem;
     height: auto;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
 
     cursor: pointer;
   }
