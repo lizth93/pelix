@@ -53,7 +53,19 @@ export default styled(Header)`
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
   }
+  .navbar-nav {
+    --bs-nav-link-padding-x: 1;
+  }
+  .navbar {
+    --bs-navbar-padding-x: 1;
+  }
 
+  .container-fluid {
+    padding: 0;
+  }
+  #nav-dropdown-dark-example {
+    padding: 0;
+  }
   .btn-outline-success {
     --bs-btn-color: #99e9f2;
     --bs-btn-border-color: #99e9f2;
