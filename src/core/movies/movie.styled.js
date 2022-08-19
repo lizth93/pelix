@@ -13,14 +13,14 @@ export default styled(Movie)`
     background-color: #212529;
   }
 
-  .product__title {
+  .movie__title {
     display: none;
 
     padding: 1rem;
     padding-top: 0;
   }
 
-  &:hover .product__title {
+  &:hover .movie__title {
     position: absolute;
     display: block;
     background-color: #212529;

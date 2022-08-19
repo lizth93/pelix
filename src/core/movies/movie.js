@@ -1,20 +1,22 @@
+import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import AddIcon from "../../icons/add";
 import ShowMoreIcon from "../../icons/more";
 import PlayIcon from "../../icons/play";
-import losMinions from "./los-minions.jpg";
+
 const Movie = (props) => {
+  console.log(props.movie);
   return (
     <div className={props.className}>
       <figure className="movie__fig">
         <img
-          src={losMinions}
-          alt="here name of movie..."
+          src={`${BASE_URL_IMG}${SIZE_IMAGE}${props.movie.poster_path}`}
+          alt={props.title}
           className="movie__img"
         />
       </figure>
-      <div className="product__title">
+      <div className="movie__title">
         <h1>
-          <span>hola</span>
+          <span className="text-description">{props.movie.title}</span>
         </h1>
         <div className="icons">
           <div>
