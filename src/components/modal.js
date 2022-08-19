@@ -24,12 +24,13 @@ function RenderModal(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        {/* <Button onClick={props.onHide}>Close</Button> */}
+        <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
+export default RenderModal;
 // function App() {
 //   const [modalShow, setModalShow] = React.useState(false);
 
@@ -43,5 +44,3 @@ function RenderModal(props) {
 //     </>
 //   );
 // }
-
-export default RenderModal();

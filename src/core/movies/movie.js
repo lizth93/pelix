@@ -2,8 +2,13 @@ import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import AddIcon from "../../icons/add";
 import ShowMoreIcon from "../../icons/more";
 import PlayIcon from "../../icons/play";
+import RenderModal from "../../components/modal";
+
+import React from "react";
 
 const Movie = (props) => {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <div className={props.className}>
       <figure className="movie__fig">
@@ -20,11 +25,12 @@ const Movie = (props) => {
         <div className="icons">
           <div>
             <PlayIcon />
-            <AddIcon />
+            <AddIcon variant="primary" onClick={() => setModalShow(true)} />
           </div>
           <ShowMoreIcon />
         </div>
       </div>
+      <RenderModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };
