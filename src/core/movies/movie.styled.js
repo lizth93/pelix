@@ -18,7 +18,6 @@ export default styled(Movie)`
 
   .movie__title {
     display: none;
-
     padding: 1rem;
     padding-top: 0;
   }

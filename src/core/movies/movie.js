@@ -2,8 +2,7 @@ import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import AddIcon from "../../icons/add";
 import ShowMoreIcon from "../../icons/more";
 import PlayIcon from "../../icons/play";
-import RenderModal from "../../components/modal";
-
+import RenderModal from "../../components/moda.styled";
 import React from "react";
 
 const Movie = (props) => {
@@ -30,7 +29,14 @@ const Movie = (props) => {
           <ShowMoreIcon />
         </div>
       </div>
-      <RenderModal show={modalShow} onHide={() => setModalShow(false)} />
+      {modalShow && (
+        <RenderModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          movie={props.movie}
+          id={props.movie.id}
+        />
+      )}
     </div>
   );
 };

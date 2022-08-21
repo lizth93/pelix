@@ -4,5 +4,6 @@ export const BASE_URL_IMG = "https://image.tmdb.org/t/p/";
 export const SIZE_IMAGE = "original";
 export const URL_GENRES = "https://api.themoviedb.org/3/genre/movie/list?";
 export const URL_LENGUAGE = "language=en-US";
-
-// return `${URL_GENRES}${API_KEY}&${URL_LENGUAGE}`;
+export const URL_BASE = "https://api.themoviedb.org/3/movie/";
+export const URL_VIDEO = "/videos?";
+export const API_YOUTUBE_URL = "https://www.youtube.com/embed/";

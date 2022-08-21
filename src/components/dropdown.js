@@ -15,8 +15,6 @@ function DropDown(props) {
     isLoading: state.genresCollection.isLoading,
   }));
 
-  console.log(genres, "what genres have");
-
   return (
     <div className={props.className}>
       <Navbar variant="dark" bg="dark" expand="lg">
