@@ -97,4 +97,8 @@ export default styled(Header)`
 
     border-color: #15aabf;
   }
+
+  .navbar-expand .navbar-nav .dropdown-menu {
+    font-size: 1.4rem;
+  }
 `;

@@ -12,9 +12,8 @@ export const getMovies = () => {
         throw new Error("Doesn't have movies");
       }
 
-      if (fetchResult.results.length !== 0) {
-        dispatch(moviesActions.setMovies(fetchResult.results));
-      }
+      dispatch(moviesActions.setMovies(fetchResult.results));
+
       dispatch(moviesActions.setIsLoading(false));
     } catch (error) {
       dispatch(moviesActions.setIsLoading(false));
@@ -25,10 +24,14 @@ export const getMovies = () => {
 };
 
 async function fetchMovies() {
-  const response = await fetch(`${URL_MOVIES}${API_KEY}`);
-  console.log(response, "what response have");
+  const response = await fetch(getUrl());
+
   if (!response.ok) {
     throw new Error("Error loading movies");
   }
   return response.json();
+}
+
+function getUrl() {
+  return `${URL_MOVIES}${API_KEY}`;
 }

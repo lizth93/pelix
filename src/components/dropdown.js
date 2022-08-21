@@ -2,8 +2,21 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { useSelector } from "react-redux";
+//own
+
+import useInitialiceGenres from "../layouts/header/use-initialice-genres";
 
 function DropDown(props) {
+  useInitialiceGenres();
+
+  const { genres, isLoading } = useSelector((state) => ({
+    genres: state.genresCollection.genres,
+    isLoading: state.genresCollection.isLoading,
+  }));
+
+  console.log(genres, "what genres have");
+
   return (
     <div className={props.className}>
       <Navbar variant="dark" bg="dark" expand="lg">
@@ -16,17 +29,12 @@ function DropDown(props) {
                 title="Genres"
                 menuVariant="dark"
               >
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
+                {!isLoading &&
+                  genres.map((genre) => (
+                    <NavDropdown.Item key={genre.id}>
+                      {genre.name}
+                    </NavDropdown.Item>
+                  ))}
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

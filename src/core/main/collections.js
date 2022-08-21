@@ -1,5 +1,5 @@
 import RenderSpinner from "../../components/spinner";
-import { useSelector } from "react-redux/es/exports";
+import { useSelector } from "react-redux";
 //own
 import Movie from "../movies/movie.styled";
 import useInitialiceMovies from "./use-initialice-movies";
