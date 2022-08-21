@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import useInitialiceVideos from "../core/movies/use-initialice-videos";
 import Spinner from "./spinner";
@@ -8,12 +8,17 @@ import { API_YOUTUBE_URL } from "../config";
 
 function RenderModal(props) {
   useInitialiceVideos(props.movie.id);
+  const [principalVideo, setPrincipalVideo] = useState("Official Trailer");
 
   const { videos, isLoading } = useSelector((state) => ({
     videos: state.videosCollection.videos,
     isLoading: state.videosCollection.isLoading,
   }));
 
+  const handlerShowVideo = (video) => {
+    setPrincipalVideo(video);
+    console.log("click");
+  };
   return (
     <div className={props.className}>
       <Modal
@@ -31,7 +36,7 @@ function RenderModal(props) {
         {!isLoading && (
           <Modal.Body>
             {videos.map((video) =>
-              video.name === "Official Trailer" ? (
+              video.name === principalVideo ? (
                 <iframe
                   width="720"
                   height="405"
@@ -45,6 +50,20 @@ function RenderModal(props) {
                 ""
               )
             )}
+            <h4>More Videos Related:</h4>
+
+            {videos.map((video) => (
+              <ul>
+                <li
+                  className="type-video"
+                  onClick={() => {
+                    handlerShowVideo(video.name);
+                  }}
+                >
+                  {video.name}
+                </li>
+              </ul>
+            ))}
           </Modal.Body>
         )}
         <Modal.Footer>

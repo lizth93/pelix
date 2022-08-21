@@ -2,7 +2,7 @@ import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import AddIcon from "../../icons/add";
 import ShowMoreIcon from "../../icons/more";
 import PlayIcon from "../../icons/play";
-import RenderModal from "../../components/moda.styled";
+import RenderModal from "../../components/modal.styled";
 import React from "react";
 
 const Movie = (props) => {
@@ -24,9 +24,9 @@ const Movie = (props) => {
         <div className="icons">
           <div>
             <PlayIcon />
-            <AddIcon variant="primary" onClick={() => setModalShow(true)} />
+            <AddIcon />
           </div>
-          <ShowMoreIcon />
+          <ShowMoreIcon variant="primary" onClick={() => setModalShow(true)} />
         </div>
       </div>
       {modalShow && (
