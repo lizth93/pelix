@@ -1,4 +1,4 @@
-import { API_KEY, URL_MOVIES } from "../../config";
+import { API_KEY, URL_MOVIES } from "../../../config";
 import { moviesActions } from "./movies-slice";
 
 export const getMovies = () => {
@@ -13,6 +13,8 @@ export const getMovies = () => {
       }
 
       dispatch(moviesActions.setMovies(fetchResult.results));
+      dispatch(moviesActions.setTotalPages(fetchResult.total_pages));
+      dispatch(moviesActions.setTotalResults(fetchResult.total_results));
 
       dispatch(moviesActions.setIsLoading(false));
     } catch (error) {

@@ -9,7 +9,7 @@ import VideoPlayer from "./video-player";
 import RenderCard from "./card";
 
 function RenderModal(props) {
-  useInitialiceVideos(props.movie.id);
+  useInitialiceVideos(props.collection.id);
   const [principalVideo, setPrincipalVideo] = useState("Official Trailer");
 
   const { videos, isLoading, error } = useSelector((state) => ({
@@ -17,8 +17,6 @@ function RenderModal(props) {
     isLoading: state.videosCollection.isLoading,
     error: state.videosCollection.error,
   }));
-
-  console.log(props.movie, "what movie hve");
 
   const handlerShowVideo = (video) => {
     setPrincipalVideo(video);
@@ -33,7 +31,7 @@ function RenderModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            {props.movie.title}
+            {props.collection.title}
           </Modal.Title>
         </Modal.Header>
         {isLoading && <Spinner />}
@@ -50,7 +48,7 @@ function RenderModal(props) {
               )}
 
             <div>
-              <p className="overview">{props.movie.overview}</p>
+              <p className="overview">{props.collection.overview}</p>
             </div>
 
             {!error && (
@@ -59,29 +57,13 @@ function RenderModal(props) {
 
                 <ul className="more-videos">
                   {videos.map((video) => (
-                    <>
-                      <RenderCard
-                        name={video.name}
-                        image={`${URL_IMG_YOUTUBE}${video.key}/${IMG_SIZE_YOUTUBE}`}
-                        onClick={() => {
-                          handlerShowVideo(video.name);
-                        }}
-                      />
-                      {/* <li
-                      className="type-video"
+                    <RenderCard
+                      name={video.name}
+                      image={`${URL_IMG_YOUTUBE}${video.key}/${IMG_SIZE_YOUTUBE}`}
                       onClick={() => {
                         handlerShowVideo(video.name);
                       }}
-                    >
-                      <figure>
-                        <img
-                          src={`${URL_IMG_YOUTUBE}${video.key}/${IMG_SIZE_YOUTUBE}`}
-                          alt={video.name}
-                        />
-                        <figcaption>{video.name}</figcaption>
-                      </figure>
-                    </li> */}
-                    </>
+                    />
                   ))}
                 </ul>
               </>

@@ -6,6 +6,8 @@ const moviesSlice = createSlice({
     movies: [],
     isLoading: true,
     error: null,
+    totalPages: null,
+    totalResults: null,
   },
   reducers: {
     setMovies(state, action) {
@@ -17,6 +19,12 @@ const moviesSlice = createSlice({
     },
     setError(state, action) {
       state.error = action.payload;
+    },
+    setTotalPages(state, action) {
+      state.totalPages = action.payload;
+    },
+    setTotalResults(state, action) {
+      state.totalResults = action.payload;
     },
   },
 });

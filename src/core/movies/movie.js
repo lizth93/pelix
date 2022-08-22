@@ -10,16 +10,16 @@ const Movie = (props) => {
 
   return (
     <div className={props.className}>
-      <figure className="movie__fig">
+      <figure className="collection__fig">
         <img
-          src={`${BASE_URL_IMG}${SIZE_IMAGE}${props.movie.poster_path}`}
+          src={`${BASE_URL_IMG}${SIZE_IMAGE}${props.collection.poster_path}`}
           alt={props.title}
-          className="movie__img"
+          className="collection__img"
         />
       </figure>
-      <div className="movie__title">
+      <div className="collection__title">
         <h1>
-          <span className="text-description">{props.movie.title}</span>
+          <span className="text-description">{props.collection.title}</span>
         </h1>
         <div className="icons">
           <div>
@@ -33,8 +33,8 @@ const Movie = (props) => {
         <RenderModal
           show={modalShow}
           onHide={() => setModalShow(false)}
-          movie={props.movie}
-          id={props.movie.id}
+          collection={props.collection}
+          id={props.collection.id}
         />
       )}
     </div>

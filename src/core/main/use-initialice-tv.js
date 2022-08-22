@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-//own
-import { getMovies } from "../../store/collections/movies/get-movies";
 
-export default function useInitialiceMovies() {
+//own
+import { getTvPopular } from "../../store/collections/tv/get-tv-popular";
+export default function useInitialiceTv() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMovies());
+    dispatch(getTvPopular());
   }, [dispatch]);
 }

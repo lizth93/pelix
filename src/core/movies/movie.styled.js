@@ -16,13 +16,13 @@ export default styled(Movie)`
     border-top-right-radius: 1.5rem;
   }
 
-  .movie__title {
+  .collection__title {
     display: none;
     padding: 1rem;
     padding-top: 0;
   }
 
-  &:hover .movie__title {
+  &:hover .collection__title {
     position: absolute;
     display: block;
     background-color: #212529;
@@ -31,12 +31,12 @@ export default styled(Movie)`
     border-bottom-right-radius: 1.5rem;
   }
 
-  &:hover .movie__img {
+  &:hover .collection__img {
     border-bottom-left-radius: 0rem;
     border-bottom-right-radius: 0rem;
   }
 
-  .movie__img {
+  .collection__img {
     max-width: 20rem;
     height: auto;
     border-top-left-radius: 1.5rem;
