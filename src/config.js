@@ -7,3 +7,11 @@ export const URL_LENGUAGE = "language=en-US";
 export const URL_BASE = "https://api.themoviedb.org/3/movie/";
 export const URL_VIDEO = "/videos?";
 export const API_YOUTUBE_URL = "https://www.youtube.com/embed/";
+export const URL_IMG_YOUTUBE = "http://img.youtube.com/vi/";
+export const IMG_SIZE_YOUTUBE = "hqdefault.jpg";
+
+// Tamaño pequeño: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/default.jpg
+// Tamaño mediano: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/hqdefault.jpg
+// Tamaño estándar de las miniaturas: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/mqdefault.jpg
+// Tamaño grande: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/sddefault.jpg
+// Máxima calidad de la miniatura: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/maxresdefault.jpg

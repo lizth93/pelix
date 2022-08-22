@@ -20,6 +20,20 @@ export default styled(RenderModal)`
     font-size: 1.5rem;
     cursor: pointer;
     text-decoration: none;
+    list-style: none;
+  }
+  .overview {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+  }
+  .more-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 22rem);
+    justify-content: center;
+    text-align-last: center;
+    gap: 0.5rem;
+    overflow: auto;
+    max-height: 30vh;
   }
 
   .type-video:hover,

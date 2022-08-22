@@ -5,12 +5,13 @@ export const getVideos = (id) => {
   return async (dispatch) => {
     try {
       dispatch(videosActions.setIsLoading(true));
+      dispatch(videosActions.setError(null));
 
       const fetchResult = await fetchVideos(id);
 
       if (fetchResult.results.length === 0) {
         dispatch(videosActions.setIsLoading(false));
-        throw new Error("Something went wrong loading videos");
+        throw new Error("This movie doesn't have videos related.");
       }
 
       dispatch(videosActions.setVideos(fetchResult.results));
