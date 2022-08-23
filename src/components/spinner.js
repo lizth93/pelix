@@ -4,7 +4,7 @@ import styled from "styled-components";
 function RenderSpinner(props) {
   return (
     <>
-      <Spinner animation="border" variant="light" className={props.className} />
+      <Spinner animation="border" variant="dark" className={props.className} />
     </>
   );
 }

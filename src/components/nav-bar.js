@@ -19,19 +19,8 @@ const NavbarElement = (props) => {
           </div>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Movies</Nav.Link>
-              <Nav.Link href="#action3">Series</Nav.Link>
-              <Nav.Link href="#action4">My list</Nav.Link>
-              <Nav.Link href="#action4">
-                <DropDown />
-              </Nav.Link>
-            </Nav>
+            <DropDown />
+
             <Form className="d-flex">
               <Form.Control
                 type="search"

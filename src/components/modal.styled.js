@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import RenderModal from "./modal";
+import Modal from "./modal";
 
-export default styled(RenderModal)`
+export default styled(Modal)`
   .modal-content {
     color: #fff;
     background-color: black !important;

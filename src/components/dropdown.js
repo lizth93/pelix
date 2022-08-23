@@ -20,8 +20,13 @@ function DropDown(props) {
       <Navbar variant="dark" bg="dark" expand="lg">
         <Container fluid>
           <Navbar.Toggle aria-controls="navbar-dark-example" />
-          <Navbar.Collapse id="navbar-dark-example">
-            <Nav>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#action1">Home</Nav.Link>
+              <Nav.Link href="#action2">Movies</Nav.Link>
+              <Nav.Link href="#action3">Series</Nav.Link>
+              <Nav.Link href="#action4">My list</Nav.Link>
+
               <NavDropdown
                 id="nav-dropdown-dark-example"
                 title="Genres"

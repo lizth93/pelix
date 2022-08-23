@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import moviesSlice from "./collections/movies/movies-slice";
+import videosTvSlice from "./collections/tv/trailers/videos-tv-slice";
 import tvSlice from "./collections/tv/tv-slice";
 import genresSlice from "./genres/genres-slice";
-import videosSlice from "./trailers/videos-slice";
+import videosSlice from "./collections/movies/trailers/videos-slice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     genresCollection: genresSlice.reducer,
     videosCollection: videosSlice.reducer,
     tvCollection: tvSlice.reducer,
+    videosTvCollection: videosTvSlice.reducer,
   },
 });
 

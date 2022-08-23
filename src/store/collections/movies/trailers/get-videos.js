@@ -1,7 +1,12 @@
-import { API_KEY, URL_BASE, URL_LENGUAGE, URL_VIDEO } from "../../config";
+import {
+  API_KEY,
+  URL_BASE,
+  URL_LENGUAGE,
+  URL_VIDEO_MOVIES,
+} from "../../../../config";
 import { videosActions } from "./videos-slice";
 
-export const getVideos = (id) => {
+export const getVideosMovies = (id) => {
   return async (dispatch) => {
     try {
       dispatch(videosActions.setIsLoading(true));
@@ -25,7 +30,7 @@ export const getVideos = (id) => {
 };
 async function fetchVideos(id) {
   const response = await fetch(
-    `${URL_BASE}${id}${URL_VIDEO}${API_KEY}&${URL_LENGUAGE}`
+    `${URL_BASE}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`
   );
 
   if (!response.ok) {

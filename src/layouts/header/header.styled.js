@@ -60,6 +60,10 @@ export default styled(Header)`
     --bs-navbar-padding-x: 1;
   }
 
+  .navbar-collapse {
+    justify-content: space-between;
+  }
+
   .container-fluid {
     padding: 0;
   }
