@@ -12,13 +12,15 @@ export default function useInitialiceVideos() {
   const collectionId = useParams()?.collectionId;
 
   useEffect(() => {
-    dispatch(getMovie(collectionId));
-    dispatch(videosActions.setVideos([]));
-    if (typeCollection === "movies") {
-      dispatch(getVideosMovies(collectionId));
-    }
-    if (typeCollection === "tv") {
-      dispatch(getTvVideos(collectionId));
+    if (collectionId) {
+      dispatch(getMovie(collectionId));
+      dispatch(videosActions.setVideos([]));
+      if (typeCollection === "movies") {
+        dispatch(getVideosMovies(collectionId));
+      }
+      if (typeCollection === "tv") {
+        dispatch(getTvVideos(collectionId));
+      }
     }
   }, [dispatch, collectionId, typeCollection]);
 }

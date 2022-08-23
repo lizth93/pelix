@@ -2,11 +2,19 @@ import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import AddIcon from "../../icons/add";
 import ShowMoreIcon from "../../icons/more";
 import PlayIcon from "../../icons/play";
-import Modal from "../../components/modal.styled";
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
 
 const Movie = (props) => {
-  const [modalShow, setModalShow] = React.useState(false);
+  const dispatch = useDispatch();
+  const showModal = useSelector((state) => state.videosCollection.showModal);
+
+  const handleOpenModal = () => {
+    if (showModal === false) {
+      dispatch(videosActions.setModalShow(true));
+    }
+  };
 
   return (
     <div className={props.className} onClick={props.onClick}>
@@ -26,18 +34,9 @@ const Movie = (props) => {
             <PlayIcon />
             <AddIcon />
           </div>
-          <ShowMoreIcon variant="primary" onClick={() => setModalShow(true)} />
+          <ShowMoreIcon onClick={handleOpenModal} />
         </div>
       </div>
-
-      <Modal
-        show={modalShow}
-        onHide={() => {
-          console.log("testing");
-          setModalShow(false);
-        }}
-        id={props.collection.id}
-      />
     </div>
   );
 };

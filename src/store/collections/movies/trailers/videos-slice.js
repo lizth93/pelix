@@ -6,6 +6,7 @@ const videosSlice = createSlice({
     videos: [],
     isLoading: true,
     error: null,
+    showModal: false,
   },
   reducers: {
     setVideos(state, action) {
@@ -16,6 +17,9 @@ const videosSlice = createSlice({
     },
     setError(state, action) {
       state.error = action.payload;
+    },
+    setModalShow(state, action) {
+      state.showModal = action.payload;
     },
   },
 });

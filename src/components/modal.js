@@ -32,7 +32,6 @@ function Modal(props) {
     setPrincipalVideo(video);
   };
 
-  console.log(props.show, "props.show");
   return (
     <div className={props.className} onClick={props.onClick}>
       <BootstrapModal

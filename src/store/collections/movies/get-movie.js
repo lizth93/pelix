@@ -7,11 +7,6 @@ export const getMovie = (collectionId) => {
       dispatch(moviesActions.setIsLoadingCurrentMovie(true));
       const fetchResult = await fetchMovie(collectionId);
 
-      // if (fetchResult.results !== 0) {
-      //   dispatch(moviesActions.setIsLoading(false));
-      //   throw new Error("Doesn't have movies");
-      // }
-      console.log(fetchResult, "fetchresult what have");
       dispatch(moviesActions.setCurrentMovie(fetchResult));
 
       dispatch(moviesActions.setIsLoadingCurrentMovie(false));

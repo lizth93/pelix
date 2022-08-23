@@ -21,6 +21,7 @@ const Collections = (props) => {
     })
   );
 
+  console.log(tvPopular, "tvPopular");
   const handleModalTvCollection = (id) => {
     history.push(`${COLLECTIONS}/${TV_COLLECTION}/${id}`);
   };
