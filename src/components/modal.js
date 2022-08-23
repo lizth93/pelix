@@ -4,7 +4,7 @@ import Spinner from "./spinner";
 import VideoPlayer from "./video-player";
 import RenderCard from "./card";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 //own
@@ -12,21 +12,21 @@ import useInitialiceVideos from "../core/movies/use-initialice-videos";
 import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../config";
 
 function Modal(props) {
-  const [principalVideo, setPrincipalVideo] = useState("Official Trailer");
+  const [principalVideo, setPrincipalVideo] = useState(null);
   useInitialiceVideos();
 
-  const { videos, isLoading, error, currentMovie, isLoadingCurrentMovie } =
-    useSelector((state) => ({
-      videos: state.videosCollection.videos,
-      isLoading: state.videosCollection.isLoading,
-      error: state.videosCollection.error,
-      currentMovie: state.moviesCollection.currentMovie,
-      isLoadingCurrentMovie: state.moviesCollection.isLoadingCurrentMovie,
-    }));
+  const { videos, isLoading, error } = useSelector((state) => ({
+    videos: state.videosCollection.videos,
+    isLoading: state.videosCollection.isLoading,
+    error: state.videosCollection.error,
+  }));
+  console.log(videos);
 
-  if (isLoading || isLoadingCurrentMovie) {
-    return <Spinner />;
-  }
+  useEffect(() => {
+    if (videos.length !== 0) {
+      setPrincipalVideo(videos[0].name);
+    }
+  }, [videos]);
 
   const handlerShowVideo = (video) => {
     setPrincipalVideo(video);
@@ -40,29 +40,27 @@ function Modal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <BootstrapModal.Header closeButton>
-          {!isLoadingCurrentMovie && (
-            <BootstrapModal.Title id="contained-modal-title-vcenter">
-              {currentMovie.title}
-            </BootstrapModal.Title>
-          )}
-        </BootstrapModal.Header>
         {isLoading && <Spinner />}
         {!isLoading && (
           <BootstrapModal.Body>
-            Hellooooo
             {error && <p>{error}</p>}
             {!error &&
               videos.map((video) =>
                 video.name === principalVideo ? (
-                  <VideoPlayer video={video} key={video.id} />
+                  <>
+                    <BootstrapModal.Header closeButton>
+                      <BootstrapModal.Title id="contained-modal-title-vcenter">
+                        {video.name}
+                      </BootstrapModal.Title>
+                    </BootstrapModal.Header>
+
+                    <VideoPlayer video={video} key={video.id} />
+                  </>
                 ) : (
                   ""
                 )
               )}
-            <div>
-              <p className="overview">{currentMovie.overview}</p>
-            </div>
+
             {!error && (
               <>
                 <h4> Videos Related:</h4>

@@ -12,14 +12,19 @@ const videosSlice = createSlice({
     setVideos(state, action) {
       state.videos = action.payload;
     },
+
     setIsLoading(state, action) {
       state.isLoading = action.payload;
     },
+
     setError(state, action) {
       state.error = action.payload;
     },
     setModalShow(state, action) {
       state.showModal = action.payload;
+    },
+    setIsLoadingCurrentfilm(state, action) {
+      state.currentFilm = action.payload;
     },
   },
 });

@@ -4,9 +4,7 @@ const moviesSlice = createSlice({
   name: "moviesCollection",
   initialState: {
     movies: [],
-    currentMovie: null,
     isLoading: true,
-    isLoadingCurrentMovie: true,
     error: null,
     totalPages: null,
     totalResults: null,
@@ -18,10 +16,6 @@ const moviesSlice = createSlice({
     setCurrentMovie(state, action) {
       state.currentMovie = action.payload;
     },
-    setIsLoadingCurrentMovie(state, action) {
-      state.isLoadingCurrentMovie = action.payload;
-    },
-
     setIsLoading(state, action) {
       state.isLoading = action.payload;
     },

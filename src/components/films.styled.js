@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Movie from "./movie";
+import Films from "./films";
 
-export default styled(Movie)`
+export default styled(Films)`
   transition: all 0.2s;
   &:hover {
     transform: scale(1.1);

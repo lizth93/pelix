@@ -5,16 +5,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
 import Films from "../../components/films.styled";
 import { useHistory } from "react-router-dom";
-import { COLLECTIONS, MOVIE_COLLECTION } from "../../config";
 
-const Movie = (props) => {
+import { COLLECTIONS, TV_COLLECTION } from "../../config";
+const Tv = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const showModal = useSelector((state) => state.videosCollection.showModal);
 
-  const handleModalMoviesCollection = (id) => {
-    console.log(id, "click");
-    history.push(`${COLLECTIONS}/${MOVIE_COLLECTION}/${id}`);
+  const handleModalTvCollection = (id) => {
+    history.push(`${COLLECTIONS}/${TV_COLLECTION}/${id}`);
 
     if (showModal === false) {
       dispatch(videosActions.setModalShow(true));
@@ -24,13 +23,12 @@ const Movie = (props) => {
   return (
     <Films
       src={`${BASE_URL_IMG}${SIZE_IMAGE}${props.collection.poster_path}`}
-      title={props.collection.title}
-      onClick={props.onClick}
+      title={props.collection.name}
     >
       <ShowMoreIcon
-        onClick={() => handleModalMoviesCollection(props.collection.id)}
+        onClick={() => handleModalTvCollection(props.collection.id)}
       />
     </Films>
   );
 };
-export default Movie;
+export default Tv;
