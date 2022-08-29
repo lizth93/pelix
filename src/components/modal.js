@@ -20,7 +20,6 @@ function Modal(props) {
     isLoading: state.videosCollection.isLoading,
     error: state.videosCollection.error,
   }));
-  console.log(videos);
 
   useEffect(() => {
     if (videos.length !== 0) {
@@ -47,7 +46,7 @@ function Modal(props) {
             {!error &&
               videos.map((video) =>
                 video.name === principalVideo ? (
-                  <>
+                  <div key={video.id}>
                     <BootstrapModal.Header closeButton>
                       <BootstrapModal.Title id="contained-modal-title-vcenter">
                         {video.name}
@@ -55,7 +54,7 @@ function Modal(props) {
                     </BootstrapModal.Header>
 
                     <VideoPlayer video={video} key={video.id} />
-                  </>
+                  </div>
                 ) : (
                   ""
                 )

@@ -4,6 +4,7 @@ import videosTvSlice from "./collections/tv/trailers/videos-tv-slice";
 import tvSlice from "./collections/tv/tv-slice";
 import genresSlice from "./genres/genres-slice";
 import videosSlice from "./collections/movies/trailers/videos-slice";
+import searchSlice from "./search/search-slice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     videosCollection: videosSlice.reducer,
     tvCollection: tvSlice.reducer,
     videosTvCollection: videosTvSlice.reducer,
+    searchResults: searchSlice.reducer,
   },
 });
 

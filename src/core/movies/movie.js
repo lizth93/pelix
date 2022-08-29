@@ -13,7 +13,6 @@ const Movie = (props) => {
   const showModal = useSelector((state) => state.videosCollection.showModal);
 
   const handleModalMoviesCollection = (id) => {
-    console.log(id, "click");
     history.push(`${COLLECTIONS}/${MOVIE_COLLECTION}/${id}`);
 
     if (showModal === false) {

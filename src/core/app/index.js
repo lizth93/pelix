@@ -6,8 +6,9 @@ import Layout from "../../layouts/layout";
 import RenderCarousel from "../../components/carousel";
 
 import { Route, Redirect } from "react-router-dom";
-import { COLLECTIONS, COLLECTION_ID } from "../../config";
+import { COLLECTIONS, COLLECTION_ID, SEARCH_RESULTS } from "../../config";
 import VideoDetail from "../main/video-detail";
+import SearchResults from "../search/search-results";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
       </Route>
       <Route path={COLLECTION_ID} exact>
         <VideoDetail />
+      </Route>
+
+      <Route path={SEARCH_RESULTS}>
+        <SearchResults />
       </Route>
     </Layout>
   );
