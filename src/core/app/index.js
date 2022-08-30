@@ -8,7 +8,7 @@ import RenderCarousel from "../../components/carousel";
 import { Route, Redirect } from "react-router-dom";
 import { COLLECTIONS, COLLECTION_ID, SEARCH_RESULTS } from "../../config";
 import VideoDetail from "../main/video-detail";
-import SearchResults from "../search/search-results";
+import SearchResults from "../search/search-results.styled";
 
 function App() {
   return (

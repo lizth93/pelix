@@ -16,12 +16,13 @@ const SearchResults = (props) => {
 
   return (
     <div className={props.className}>
-      <label>Hola probando</label>
-      <section className="section-results">
-        {isLoading && <RenderSpinner />}
-        {results.map((film) => (
-          <Results key={film.id} collection={film} />
-        ))}
+      <section className="container ">
+        <div className="section-results">
+          {isLoading && <RenderSpinner />}
+          {results.map((film) => (
+            <Results key={film.id} collection={film} />
+          ))}
+        </div>
       </section>
     </div>
   );

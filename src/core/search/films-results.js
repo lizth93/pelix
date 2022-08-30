@@ -1,11 +1,12 @@
-import Films from "../../components/films";
-import ShowMoreIcon from "../../icons/more";
+import FilmsDetail from "../../components/films-detail.styled";
+import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
+import notFoundImg from "../../img/not-found-smaller.jpg";
 
 const Results = (props) => {
-  return (
-    <Films src={null} title={props.collection.name}>
-      <ShowMoreIcon />
-    </Films>
-  );
+  let image = `${BASE_URL_IMG}${SIZE_IMAGE}${props.collection.poster_path}`;
+  if (!props.collection.poster_path) {
+    image = notFoundImg;
+  }
+  return <FilmsDetail src={image} title={props.collection.title} />;
 };
 export default Results;

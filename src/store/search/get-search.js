@@ -1,4 +1,4 @@
-import { API_KEY, URL_QUERY, URL_SEARCH } from "../../config";
+import { API_KEY, URL_LENGUAGE, URL_QUERY, URL_SEARCH } from "../../config";
 import { searchActions } from "./search-slice";
 
 export const getSearch = (searchTerm) => {
@@ -27,7 +27,7 @@ export const getSearch = (searchTerm) => {
 
 async function fetchSearch(searchTerm) {
   const response = await fetch(
-    `${URL_SEARCH}${API_KEY}&${URL_QUERY}${searchTerm}`
+    `${URL_SEARCH}${API_KEY}&${URL_LENGUAGE}&${URL_QUERY}${searchTerm}`
   );
   console.log(response, "fron fetch search");
   if (!response.ok) {

@@ -17,7 +17,7 @@ export const API_YOUTUBE_URL = "https://www.youtube.com/embed/";
 export const URL_IMG_YOUTUBE = "http://img.youtube.com/vi/";
 export const IMG_SIZE_YOUTUBE = "hqdefault.jpg";
 
-export const URL_SEARCH = "https://api.themoviedb.org/3/search/company?";
+export const URL_SEARCH = "https://api.themoviedb.org/3/search/multi?";
 export const URL_QUERY = "query=";
 
 export const COLLECTIONS = "/collections";
