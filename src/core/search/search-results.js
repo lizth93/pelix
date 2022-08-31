@@ -1,19 +1,16 @@
 import { useSelector } from "react-redux";
-import Results from "./films-results";
-import RenderSpinner from "../../components/spinner";
+import FilmsResults from "./films-results";
+import Spinner from "../../components/spinner";
 import useInitialiceSearchTerm from "./use-initialice-search";
+import ListGroup from "../../components/list-group";
 
 const SearchResults = (props) => {
   useInitialiceSearchTerm();
-  const { results, isLoading, error } = useSelector((state) => ({
-    results: state.searchResults.results,
+  const { multipleResults, isLoading, error } = useSelector((state) => ({
+    multipleResults: state.searchResults.multipleResults,
     isLoading: state.searchResults.isLoading,
     error: state.searchResults.error,
   }));
-
-  if (error) {
-    console.log(error, "from search results");
-  }
 
   return (
     <div className={props.className}>
@@ -34,11 +31,14 @@ const SearchResults = (props) => {
       )}
       {!error && (
         <section className="container ">
+          <ListGroup className="list-group" />
           <div className="section-results">
-            {isLoading && <RenderSpinner />}
-            {results.map((film) => (
-              <Results key={film.id} collection={film} />
-            ))}
+            {isLoading && <Spinner />}
+
+            {!isLoading &&
+              multipleResults.map((film) => (
+                <FilmsResults key={film.id} collection={film} />
+              ))}
           </div>
         </section>
       )}

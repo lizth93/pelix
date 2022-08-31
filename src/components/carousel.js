@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import Carousel from "react-bootstrap/Carousel";
+import BootstrapCarousel from "react-bootstrap/Carousel";
 //own
 import { BASE_URL_IMG, SIZE_IMAGE } from "../config";
 
-function RenderCarousel(props) {
+function Carousel(props) {
   const { movies, isLoading } = useSelector((state) => ({
     movies: state.moviesCollection.movies,
     isLoading: state.moviesCollection.isLoading,
@@ -12,24 +12,24 @@ function RenderCarousel(props) {
   return (
     <div className={props.className}>
       {!isLoading && (
-        <Carousel className="carousel">
+        <BootstrapCarousel className="carousel">
           {movies.map((movie) => (
-            <Carousel.Item key={movie.id} interval={3000}>
+            <BootstrapCarousel.Item key={movie.id} interval={3000}>
               <img
                 className="d-block w-100"
                 src={`${BASE_URL_IMG}${SIZE_IMAGE}${movie.backdrop_path}`}
                 alt="First slide"
               />
-              <Carousel.Caption>
+              <BootstrapCarousel.Caption>
                 <h3>{movie.title}</h3>
                 <p>{movie.overview}</p>
-              </Carousel.Caption>
-            </Carousel.Item>
+              </BootstrapCarousel.Caption>
+            </BootstrapCarousel.Item>
           ))}
-        </Carousel>
+        </BootstrapCarousel>
       )}
     </div>
   );
 }
 
-export default RenderCarousel;
+export default Carousel;

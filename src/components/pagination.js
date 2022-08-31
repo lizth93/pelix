@@ -1,25 +1,25 @@
-import Pagination from "react-bootstrap/Pagination";
+import BootstrapPagination from "react-bootstrap/Pagination";
 
-function RenderPagination() {
+function Pagination() {
   return (
-    <Pagination>
-      <Pagination.First />
-      <Pagination.Prev />
-      <Pagination.Item>{1}</Pagination.Item>
-      <Pagination.Ellipsis />
+    <BootstrapPagination>
+      <BootstrapPagination.First />
+      <BootstrapPagination.Prev />
+      <BootstrapPagination.Item>{1}</BootstrapPagination.Item>
+      <BootstrapPagination.Ellipsis />
 
-      <Pagination.Item>{10}</Pagination.Item>
-      <Pagination.Item>{11}</Pagination.Item>
-      <Pagination.Item active>{12}</Pagination.Item>
-      <Pagination.Item>{13}</Pagination.Item>
-      <Pagination.Item disabled>{14}</Pagination.Item>
+      <BootstrapPagination.Item>{10}</BootstrapPagination.Item>
+      <BootstrapPagination.Item>{11}</BootstrapPagination.Item>
+      <BootstrapPagination.Item active>{12}</BootstrapPagination.Item>
+      <BootstrapPagination.Item>{13}</BootstrapPagination.Item>
+      <BootstrapPagination.Item disabled>{14}</BootstrapPagination.Item>
 
-      <Pagination.Ellipsis />
-      <Pagination.Item>{20}</Pagination.Item>
-      <Pagination.Next />
-      <Pagination.Last />
-    </Pagination>
+      <BootstrapPagination.Ellipsis />
+      <BootstrapPagination.Item>{20}</BootstrapPagination.Item>
+      <BootstrapPagination.Next />
+      <BootstrapPagination.Last />
+    </BootstrapPagination>
   );
 }
 
-export default RenderPagination;
+export default Pagination;

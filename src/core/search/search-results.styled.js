@@ -5,11 +5,20 @@ export default styled(SearchResults)`
   background-color: #343a40;
   color: #fff;
 
+  .container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 3rem;
+  }
+  .list-group {
+    min-width: 20rem;
+    font-size: 1.5rem;
+  }
   .section-results {
     margin: 0 auto;
     font-size: 2.5rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
