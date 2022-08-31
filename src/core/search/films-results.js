@@ -7,6 +7,6 @@ const Results = (props) => {
   if (!props.collection.poster_path) {
     image = notFoundImg;
   }
-  return <FilmsDetail src={image} title={props.collection.title} />;
+  return <FilmsDetail src={image} collection={props.collection} />;
 };
 export default Results;

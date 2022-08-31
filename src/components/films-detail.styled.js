@@ -12,6 +12,7 @@ export default styled(FilmsDetail)`
   background-color: #212529;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
+  display: flex;
 
   &:hover {
     transform: scale(1.1);
@@ -21,7 +22,6 @@ export default styled(FilmsDetail)`
     margin: 0;
   }
   .collection__title {
-    display: none;
     padding: 1rem;
     padding-top: 0;
   }
@@ -35,5 +35,24 @@ export default styled(FilmsDetail)`
     border-bottom-right-radius: 1.5rem;
 
     cursor: pointer;
+  }
+
+  .film {
+    &__details {
+      margin: 2rem;
+    }
+
+    &__overview {
+      max-height: 8rem;
+      overflow: hidden;
+      font-size: 1.6rem;
+      overflow-wrap: break-word;
+    }
+  }
+
+  time {
+    color: #ced4da;
+    font-size: 1.2rem;
+    font-family: inherit;
   }
 `;
