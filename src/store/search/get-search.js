@@ -32,6 +32,7 @@ export const getSearch = (searchTerm) => {
           tv: fetchResult[2].total_pages,
         })
       );
+
       dispatch(
         searchActions.setTotalResults({
           multiples: fetchResult[0].total_results,

@@ -34,7 +34,7 @@ const searchSlice = createSlice({
     },
     setTotalResults(state, action) {
       state.totalResultsMultiple = action.payload.multiple;
-      state.totalResultsMovies = action.payload.movie;
+      state.totalResultsMovies = action.payload.movies;
       state.totalResultsTv = action.payload.tv;
     },
   },

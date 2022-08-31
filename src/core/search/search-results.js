@@ -6,11 +6,23 @@ import ListGroup from "../../components/list-group";
 
 const SearchResults = (props) => {
   useInitialiceSearchTerm();
-  const { multipleResults, isLoading, error } = useSelector((state) => ({
+  const {
+    multipleResults,
+    isLoading,
+    error,
+    totalResultsMovies,
+    totalResultsTv,
+  } = useSelector((state) => ({
     multipleResults: state.searchResults.multipleResults,
+    totalResultsMovies: state.searchResults.totalResultsMovies,
+    totalResultsTv: state.searchResults.totalResultsTv,
     isLoading: state.searchResults.isLoading,
     error: state.searchResults.error,
   }));
+
+  if (!isLoading) {
+    console.log(totalResultsMovies, "what havedsadasd");
+  }
 
   return (
     <div className={props.className}>
@@ -31,7 +43,13 @@ const SearchResults = (props) => {
       )}
       {!error && (
         <section className="container ">
-          <ListGroup className="list-group" />
+          {!isLoading && (
+            <ListGroup
+              className="list-group"
+              totalResultsMovies={totalResultsMovies}
+              totalResultsTv={totalResultsTv}
+            />
+          )}
           <div className="section-results">
             {isLoading && <Spinner />}
 
