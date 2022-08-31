@@ -4,10 +4,11 @@ import { searchActions } from "./search-slice";
 export const getSearch = (searchTerm) => {
   return async (dispatch) => {
     try {
+      dispatch(searchActions.setError(null));
       dispatch(searchActions.setIsLoading(true));
+      dispatch(searchActions.setSearchResults([]));
       const fetchResult = await fetchSearch(searchTerm);
 
-      console.log(fetchResult, "fetchResult");
       if (fetchResult.results.length === 0) {
         dispatch(searchActions.setIsLoading(false));
         throw new Error("Something went wrong loading the results");
@@ -29,7 +30,6 @@ async function fetchSearch(searchTerm) {
   const response = await fetch(
     `${URL_SEARCH}${API_KEY}&${URL_LENGUAGE}&${URL_QUERY}${searchTerm}`
   );
-  console.log(response, "fron fetch search");
   if (!response.ok) {
     throw new Error("Error loading the results");
   }

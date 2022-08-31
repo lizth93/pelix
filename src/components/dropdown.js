@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useSelector } from "react-redux";
+import { COLLECTIONS } from "../config";
 //own
 
 import useInitialiceGenres from "../layouts/header/use-initialice-genres";
@@ -22,7 +23,7 @@ function DropDown(props) {
           <Navbar.Toggle aria-controls="navbar-dark-example" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#action1">Home</Nav.Link>
+              <Nav.Link href={COLLECTIONS}>Home</Nav.Link>
               <Nav.Link href="#action2">Movies</Nav.Link>
               <Nav.Link href="#action3">Series</Nav.Link>
               <Nav.Link href="#action4">My list</Nav.Link>

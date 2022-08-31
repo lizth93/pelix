@@ -15,4 +15,18 @@ export default styled(SearchResults)`
     flex-wrap: wrap;
     gap: 2rem;
   }
+
+  .error {
+    margin-top: 3rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.8rem;
+
+    &__suggestions {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
 `;
