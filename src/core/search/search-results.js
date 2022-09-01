@@ -3,58 +3,61 @@ import FilmsResults from "./films-results";
 import Spinner from "../../components/spinner";
 import useInitialiceSearchTerm from "./use-initialice-search";
 import ListGroup from "../../components/list-group";
+import { useState } from "react";
+import ErrorSearch from "../../components/error-search";
 
 const SearchResults = (props) => {
   useInitialiceSearchTerm();
+
   const {
     multipleResults,
+    moviesResults,
+    tvResults,
+    personsResults,
     isLoading,
     error,
-    totalResultsMovies,
-    totalResultsTv,
   } = useSelector((state) => ({
     multipleResults: state.searchResults.multipleResults,
-    totalResultsMovies: state.searchResults.totalResultsMovies,
-    totalResultsTv: state.searchResults.totalResultsTv,
+    moviesResults: state.searchResults.moviesResults,
+    personsResults: state.searchResults.personsResults,
+    tvResults: state.searchResults.tvResults,
     isLoading: state.searchResults.isLoading,
     error: state.searchResults.error,
   }));
 
-  if (!isLoading) {
-    console.log(totalResultsMovies, "what havedsadasd");
-  }
+  const [results, setResults] = useState(multipleResults);
+
+  const handleFilterOfSearch = (results) => {
+    if (results === "movies") {
+      setResults(moviesResults);
+    }
+    if (results === "tv") {
+      setResults(tvResults);
+    }
+    if (results === "persons") {
+      setResults(personsResults);
+    }
+    if (results === "all") {
+      setResults(multipleResults);
+    }
+  };
 
   return (
     <div className={props.className}>
-      {error && (
-        <div className="error">
-          <p>
-            <strong>{error}</strong>
-          </p>
-          <span className="error__suggestions">Suggestions:</span>
-          <ul>
-            <li>Try with keywords. </li>
-            <li>Are you looking for a movie? or a series?.</li>
-            <li>
-              Try searching for the type of genre or the name of the film.
-            </li>
-          </ul>
-        </div>
-      )}
+      {error && <ErrorSearch error={error} />}
       {!error && (
         <section className="container ">
           {!isLoading && (
             <ListGroup
               className="list-group"
-              totalResultsMovies={totalResultsMovies}
-              totalResultsTv={totalResultsTv}
+              onFilterOfSearchSelected={handleFilterOfSearch}
             />
           )}
           <div className="section-results">
             {isLoading && <Spinner />}
 
             {!isLoading &&
-              multipleResults.map((film) => (
+              results.map((film) => (
                 <FilmsResults key={film.id} collection={film} />
               ))}
           </div>

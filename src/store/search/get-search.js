@@ -4,6 +4,7 @@ import {
   URL_QUERY,
   URL_SEARCH,
   URL_SEARCH_MOVIES,
+  URL_SEARCH_PERSONS,
   URL_SEARCH_TV,
 } from "../../config";
 import { searchActions } from "./search-slice";
@@ -13,31 +14,49 @@ export const getSearch = (searchTerm) => {
     try {
       dispatch(searchActions.setError(null));
       dispatch(searchActions.setIsLoading(true));
-      dispatch(searchActions.setSearchResults([]));
+      dispatch(
+        searchActions.setSearchResults({
+          multiple: [],
+          movies: [],
+          tv: [],
+          persons: [],
+        })
+      );
       const fetchResult = await fetchSearch(searchTerm);
-      console.log(fetchResult[2].results, "from getSearch");
+      fetchResult.map((fetchResult) =>
+        fetchResult.results.length === 0
+          ? dispatch(searchActions.setError("Something went wrong"))
+          : ""
+      );
 
+      console.log(
+        fetchResult[3].results.map((res) => res.known_for[0]),
+        "persons with flat"
+      );
       dispatch(
         searchActions.setSearchResults({
           multiple: fetchResult[0].results,
           movies: fetchResult[1].results,
           tv: fetchResult[2].results,
+          persons: fetchResult[3].results.map((res) => res.known_for[0]),
         })
       );
 
       dispatch(
         searchActions.setTotalPages({
-          multiples: fetchResult[0].total_pages,
+          multiple: fetchResult[0].total_pages,
           movies: fetchResult[1].total_pages,
           tv: fetchResult[2].total_pages,
+          persons: fetchResult[3].total_pages,
         })
       );
 
       dispatch(
         searchActions.setTotalResults({
-          multiples: fetchResult[0].total_results,
+          multiple: fetchResult[0].total_results,
           movies: fetchResult[1].total_results,
           tv: fetchResult[2].total_results,
+          persons: fetchResult[3].total_results,
         })
       );
       dispatch(searchActions.setIsLoading(false));
@@ -59,11 +78,15 @@ async function fetchSearch(searchTerm) {
   const fetchTvShows = getJSON(
     `${URL_SEARCH_TV}${API_KEY}&${URL_LENGUAGE}&${URL_QUERY}${searchTerm}`
   );
+  const fetchPersons = getJSON(
+    `${URL_SEARCH_PERSONS}${API_KEY}&${URL_LENGUAGE}&${URL_QUERY}${searchTerm}`
+  );
 
   const response = await Promise.all([
     fetchMultiplesResults,
     fetchMovies,
     fetchTvShows,
+    fetchPersons,
   ]);
   return response;
 }

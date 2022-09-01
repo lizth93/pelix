@@ -14,6 +14,7 @@ export default styled(SearchResults)`
   .list-group {
     min-width: 20rem;
     font-size: 1.5rem;
+    cursor: pointer;
   }
   .section-results {
     margin: 0 auto;

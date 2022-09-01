@@ -20,6 +20,7 @@ export const IMG_SIZE_YOUTUBE = "hqdefault.jpg";
 export const URL_SEARCH = "https://api.themoviedb.org/3/search/multi?";
 export const URL_SEARCH_MOVIES = "https://api.themoviedb.org/3/search/movie?";
 export const URL_SEARCH_TV = "https://api.themoviedb.org/3/search/tv?";
+export const URL_SEARCH_PERSONS = "https://api.themoviedb.org/3/search/person?";
 export const URL_QUERY = "query=";
 export const SEARCH_RESULTS = "/search";
 export const SEARCH = "/search?q=";
