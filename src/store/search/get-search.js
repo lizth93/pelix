@@ -28,11 +28,6 @@ export const getSearch = (searchTerm) => {
           ? dispatch(searchActions.setError("Something went wrong"))
           : ""
       );
-
-      console.log(
-        fetchResult[3].results.map((res) => res.known_for[0]),
-        "persons with flat"
-      );
       dispatch(
         searchActions.setSearchResults({
           multiple: fetchResult[0].results,
@@ -59,6 +54,7 @@ export const getSearch = (searchTerm) => {
           persons: fetchResult[3].total_results,
         })
       );
+
       dispatch(searchActions.setIsLoading(false));
     } catch (error) {
       dispatch(searchActions.setIsLoading(false));

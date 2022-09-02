@@ -6,9 +6,15 @@ import Layout from "../../layouts/layout";
 import RenderCarousel from "../../components/carousel";
 
 import { Route, Redirect } from "react-router-dom";
-import { COLLECTIONS, COLLECTION_ID, SEARCH_RESULTS } from "../../config";
+import {
+  COLLECTIONS,
+  COLLECTION_ID,
+  MOVIES_SECTION,
+  SEARCH_RESULTS,
+} from "../../config";
 import VideoDetail from "../main/video-detail";
 import SearchResults from "../search/search-results.styled";
+import MoviesSection from "../movies/movies-section.styled";
 
 function App() {
   return (
@@ -26,6 +32,9 @@ function App() {
 
       <Route path={SEARCH_RESULTS}>
         <SearchResults />
+      </Route>
+      <Route path={MOVIES_SECTION}>
+        <MoviesSection />
       </Route>
     </Layout>
   );

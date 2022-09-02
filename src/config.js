@@ -29,6 +29,8 @@ export const COLLECTIONS = "/collections";
 export const COLLECTION_TYPE = "/collections/:typeCollection";
 export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
 
+export const MOVIES_SECTION = "/movies";
+
 export const MOVIE_COLLECTION = "movies";
 export const TV_COLLECTION = "tv";
 
