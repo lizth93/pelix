@@ -5,12 +5,13 @@ import Collections from "../main/collections.styled";
 import Layout from "../../layouts/layout";
 import RenderCarousel from "../../components/carousel";
 
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import {
   COLLECTIONS,
   COLLECTION_ID,
-  MOVIES_SECTION,
+  SECTION_MOVIES,
   SEARCH_RESULTS,
+  SECTION_MOVIES_ID,
 } from "../../config";
 import VideoDetail from "../main/video-detail";
 import SearchResults from "../search/search-results.styled";
@@ -22,19 +23,24 @@ function App() {
       <Route path="/" exact>
         <Redirect to={COLLECTIONS} />
       </Route>
-      <Route path={COLLECTIONS}>
-        <RenderCarousel />
-        <Collections />
-      </Route>
+      <Switch>
+        <Route path={SECTION_MOVIES}>
+          <MoviesSection />
+        </Route>
+        <Route path={COLLECTIONS}>
+          <RenderCarousel />
+          <Collections />
+        </Route>
+      </Switch>
       <Route path={COLLECTION_ID} exact>
+        <VideoDetail />
+      </Route>
+      <Route path={SECTION_MOVIES_ID} exact>
         <VideoDetail />
       </Route>
 
       <Route path={SEARCH_RESULTS}>
         <SearchResults />
-      </Route>
-      <Route path={MOVIES_SECTION}>
-        <MoviesSection />
       </Route>
     </Layout>
   );

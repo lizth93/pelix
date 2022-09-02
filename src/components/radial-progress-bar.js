@@ -1,31 +1,21 @@
-/* eslint-disable react/style-prop-object */
 import styled from "styled-components";
 
 const RadialProgressBar = (props) => {
-  console.log(props.values);
+  const value = Number(props.value);
+
   return (
     <div className={props.className}>
       <div
         role="progressbar"
-        aria-valuenow="20"
+        aria-valuenow={value}
         aria-valuemin="0"
         aria-valuemax="100"
-        style={{ "--value": 50 }}
+        style={{ "--value": value }}
       ></div>
     </div>
   );
 };
 export default styled(RadialProgressBar)`
-  @keyframes growProgressBar {
-    0%,
-    33% {
-      --pgPercentage: 0;
-    }
-    100% {
-      --pgPercentage: var(--value);
-    }
-  }
-
   @property --pgPercentage {
     syntax: "<number>";
     inherits: false;
@@ -33,9 +23,9 @@ export default styled(RadialProgressBar)`
   }
 
   div[role="progressbar"] {
-    --size: 12rem;
-    --fg: #369;
-    --bg: #def;
+    --size: 4rem;
+    --fg: #15aabf;
+    --bg: #c5f6fa;
     --pgPercentage: var(--value);
     animation: growProgressBar 3s 1 forwards;
     width: var(--size);
@@ -51,21 +41,12 @@ export default styled(RadialProgressBar)`
       ),
       conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
     font-family: Helvetica, Arial, sans-serif;
-    font-size: calc(var(--size) / 5);
+    font-size: calc(var(--size) / 3);
     color: var(--fg);
   }
 
   div[role="progressbar"]::before {
     counter-reset: percentage var(--value);
     content: counter(percentage) "%";
-  }
-
-  /* demo */
-  body {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
   }
 `;

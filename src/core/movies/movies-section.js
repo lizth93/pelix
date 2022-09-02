@@ -1,16 +1,30 @@
 import { useSelector } from "react-redux";
 import Spinner from "react-bootstrap/esm/Spinner";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 //own
 import useInitialiceMovies from "../main/use-initialice-movies";
 import Movie from "./movie";
-import RadialProgressBar from "../../components/radial-progress-bar";
+import { SECTION_MOVIES, MOVIE_COLLECTION } from "../../config";
+import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
 
 const MoviesSection = (props) => {
   useInitialiceMovies();
-  const { movies, isLoading } = useSelector((state) => ({
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const { movies, isLoading, showModal } = useSelector((state) => ({
     movies: state.moviesCollection.movies,
     isLoading: state.moviesCollection.isLoading,
+    showModal: state.videosCollection.showModal,
   }));
+
+  const handleModalMovies = (id) => {
+    history.push(`${SECTION_MOVIES}/${MOVIE_COLLECTION}/${id}`);
+
+    if (showModal === false) {
+      dispatch(videosActions.setModalShow(true));
+    }
+  };
 
   return (
     <main className={props.className}>
@@ -21,9 +35,13 @@ const MoviesSection = (props) => {
           {isLoading && <Spinner />}
 
           {!isLoading &&
-            movies.map((movie) => <Movie key={movie.id} collection={movie} />)}
-
-          <RadialProgressBar values={{ style: "--value:20" }} />
+            movies.map((movie) => (
+              <Movie
+                key={movie.id}
+                collection={movie}
+                onClickModal={handleModalMovies}
+              />
+            ))}
         </div>
       </section>
     </main>
