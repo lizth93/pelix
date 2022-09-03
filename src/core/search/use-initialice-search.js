@@ -7,12 +7,9 @@ export default function useInitialiceSearchTerm() {
   const dispatch = useDispatch();
   const { search } = useLocation();
 
-  console.log(search, "what search have");
-
   useEffect(() => {
     const searchParams = new URLSearchParams(search);
     const searchTerm = searchParams?.get("q");
-    console.log(searchTerm, "searchTErm");
     dispatch(getSearch(searchTerm));
   }, [dispatch, search]);
 }

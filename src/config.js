@@ -17,8 +17,13 @@ export const API_YOUTUBE_URL = "https://www.youtube.com/embed/";
 export const URL_IMG_YOUTUBE = "http://img.youtube.com/vi/";
 export const IMG_SIZE_YOUTUBE = "hqdefault.jpg";
 
-export const URL_SEARCH = "https://api.themoviedb.org/3/search/company?";
+export const URL_SEARCH = "https://api.themoviedb.org/3/search/multi?";
+export const URL_SEARCH_MOVIES = "https://api.themoviedb.org/3/search/movie?";
+export const URL_SEARCH_TV = "https://api.themoviedb.org/3/search/tv?";
+export const URL_SEARCH_PERSONS = "https://api.themoviedb.org/3/search/person?";
 export const URL_QUERY = "query=";
+export const SEARCH_RESULTS = "/search";
+export const SEARCH = "/search?q=";
 
 export const COLLECTIONS = "/collections";
 export const COLLECTION_TYPE = "/collections/:typeCollection";
@@ -26,9 +31,6 @@ export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
 
 export const MOVIE_COLLECTION = "movies";
 export const TV_COLLECTION = "tv";
-
-export const SEARCH_RESULTS = "/search";
-export const SEARCH = "/search?q=";
 
 // https://api.themoviedb.org/3/search/company?api_key=2b1fd64cd979487c5f0deddc18cc2dad&query=avatar
 

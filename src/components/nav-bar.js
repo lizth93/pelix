@@ -3,14 +3,14 @@ import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import Navbar from "react-bootstrap/Navbar";
+import BootstrapNavbar from "react-bootstrap/Navbar";
 import { useDispatch } from "react-redux";
 import Logo from "../layouts/brand/logo.styled";
 import { getSearch } from "../store/search/get-search";
 import DropDown from "./dropdown";
 import { SEARCH } from "../config.js";
 
-const NavbarElement = (props) => {
+const Navbar = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,16 +27,16 @@ const NavbarElement = (props) => {
 
   return (
     <div className={props.className}>
-      <Navbar bg="dark" variant="dark">
+      <BootstrapNavbar bg="dark" variant="dark">
         <Container fluid>
           <div className="logo">
             <Logo />
-            <Navbar.Brand href="#" className="logo-name">
+            <BootstrapNavbar.Brand href="#" className="logo-name">
               Pelix
-            </Navbar.Brand>
+            </BootstrapNavbar.Brand>
           </div>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <BootstrapNavbar.Toggle aria-controls="navbarScroll" />
+          <BootstrapNavbar.Collapse id="navbarScroll">
             <DropDown />
 
             <Form className="d-flex" onSubmit={handleSearchFilms}>
@@ -53,11 +53,11 @@ const NavbarElement = (props) => {
                 Search
               </Button>
             </Form>
-          </Navbar.Collapse>
+          </BootstrapNavbar.Collapse>
         </Container>
-      </Navbar>
+      </BootstrapNavbar>
     </div>
   );
 };
 
-export default NavbarElement;
+export default Navbar;

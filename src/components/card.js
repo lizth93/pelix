@@ -1,9 +1,9 @@
-import Card from "react-bootstrap/Card";
+import BootstrapCard from "react-bootstrap/Card";
 
-function RenderCard(props) {
+function Card(props) {
   const variant = "Dark";
   return (
-    <Card
+    <BootstrapCard
       bg={variant.toLowerCase()}
       key={variant}
       text={variant.toLowerCase() === "light" ? "dark" : "white"}
@@ -11,13 +11,13 @@ function RenderCard(props) {
       className="mb-2"
       onClick={props.onClick}
     >
-      <Card.Img variant="Secondary " src={props.image} />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.name}</Card.Text>
-      </Card.Body>
-    </Card>
+      <BootstrapCard.Img variant="Secondary " src={props.image} />
+      <BootstrapCard.Body>
+        <BootstrapCard.Title>{props.title}</BootstrapCard.Title>
+        <BootstrapCard.Text>{props.name}</BootstrapCard.Text>
+      </BootstrapCard.Body>
+    </BootstrapCard>
   );
 }
 
-export default RenderCard;
+export default Card;

@@ -1,15 +1,19 @@
-import Spinner from "react-bootstrap/Spinner";
+import BootstrapSpinner from "react-bootstrap/Spinner";
 import styled from "styled-components";
 
-function RenderSpinner(props) {
+function Spinner(props) {
   return (
     <>
-      <Spinner animation="border" variant="dark" className={props.className} />
+      <BootstrapSpinner
+        animation="border"
+        variant="dark"
+        className={props.className}
+      />
     </>
   );
 }
 
-export default styled(RenderSpinner)`
+export default styled(Spinner)`
   width: 4rem;
   height: 4rem;
   --bs-spinner-border-width: 0.5em;
