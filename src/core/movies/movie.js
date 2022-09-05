@@ -6,7 +6,7 @@ import styled from "styled-components";
 //own
 import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import ShowMoreIcon from "../../icons/more";
-import Films from "../../components/films.styled";
+import Films from "../../components/films";
 
 import RadialProgressBar from "../../components/radial-progress-bar";
 

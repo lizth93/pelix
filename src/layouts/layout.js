@@ -1,6 +1,6 @@
 //own
-import Header from "./header/header.styled";
-import Footer from "./footer/footer.styled";
+import Header from "./header";
+import Footer from "./footer";
 
 const Layout = (props) => {
   return (

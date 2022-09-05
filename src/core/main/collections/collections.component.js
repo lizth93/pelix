@@ -1,14 +1,14 @@
-import Spinner from "../../components/spinner";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 //own
-import Movie from "../movies/movie";
-import Tv from "../films/tv";
-import useInitialiceMovies from "./use-initialice-movies";
-import useInitialiceTv from "./use-initialice-tv";
-import { COLLECTIONS, MOVIE_COLLECTION } from "../../config";
-import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
+import Spinner from "../../../components/spinner";
+import Movie from "../../movies/movie";
+import Tv from "../../films/tv";
+import useInitialiceMovies from "../use-initialice-movies";
+import useInitialiceTv from "../use-initialice-tv";
+import { COLLECTIONS, MOVIE_COLLECTION } from "../../../config";
+import { videosActions } from "../../../store/collections/movies/trailers/videos-slice";
 
 const Collections = (props) => {
   useInitialiceMovies();

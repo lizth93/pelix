@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 const RadialProgressBar = (props) => {
-  const value = Number(props.value);
-
   return (
     <div className={props.className}>
       <div
         role="progressbar"
-        aria-valuenow={value}
+        aria-valuenow={Number(props.value)}
         aria-valuemin="0"
         aria-valuemax="100"
-        style={{ "--value": value }}
+        style={{ "--value": Number(props.value) }}
       ></div>
     </div>
   );

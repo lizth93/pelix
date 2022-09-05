@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Modal from "./modal";
+import Modal from "./modal.component";
 
 export default styled(Modal)`
   .modal-content {

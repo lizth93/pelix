@@ -1,15 +1,14 @@
-import Button from "react-bootstrap/Button";
-import BootstrapModal from "react-bootstrap/Modal";
-import Spinner from "./spinner";
-import VideoPlayer from "./video-player";
-import RenderCard from "./card";
-
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 //own
-import useInitialiceVideos from "../core/movies/use-initialice-videos";
-import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../config";
+import useInitialiceVideos from "../../core/movies/use-initialice-videos";
+import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../../config";
+import Button from "react-bootstrap/Button";
+import BootstrapModal from "react-bootstrap/Modal";
+import Spinner from "../spinner";
+import VideoPlayer from "../video-player";
+import RenderCard from "../card";
 
 function Modal(props) {
   const [principalVideo, setPrincipalVideo] = useState(null);

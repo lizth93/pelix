@@ -1,4 +1,5 @@
-import FilmsDetail from "../../components/films-detail.styled";
+//own
+import FilmsDetail from "../../components/films/detail";
 import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import notFoundImg from "../../img/not-found-smaller.jpg";
 

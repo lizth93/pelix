@@ -3,10 +3,10 @@ import Spinner from "react-bootstrap/esm/Spinner";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 //own
-import useInitialiceMovies from "../main/use-initialice-movies";
-import Movie from "./movie";
-import { SECTION_MOVIES, MOVIE_COLLECTION } from "../../config";
-import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
+import useInitialiceMovies from "../../main/use-initialice-movies";
+import Movie from "../movie";
+import { SECTION_MOVIES, MOVIE_COLLECTION } from "../../../config";
+import { videosActions } from "../../../store/collections/movies/trailers/videos-slice";
 
 const MoviesSection = (props) => {
   useInitialiceMovies();

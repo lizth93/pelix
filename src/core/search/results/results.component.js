@@ -1,11 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
-import FilmsResults from "./films-results";
-import Spinner from "../../components/spinner";
-import useInitialiceSearchTerm from "./use-initialice-search";
-import ListGroup from "../../components/list-group";
+//own
 
-import ErrorSearch from "../../components/error-search";
-import { searchActions } from "../../store/search/search-slice";
+import FilmsResults from "../films-results";
+import Spinner from "../../../components/spinner";
+
+import useInitialiceSearchTerm from "../use-initialice-search";
+
+import ListGroup from "../../../components/list-group";
+import ErrorSearch from "../../../components/error-search";
+import { searchActions } from "../../../store/search/search-slice";
 
 const SearchResults = (props) => {
   useInitialiceSearchTerm();

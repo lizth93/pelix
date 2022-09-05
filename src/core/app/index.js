@@ -1,10 +1,6 @@
-import "./app.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import Collections from "../main/collections.styled";
+import Collections from "../main/collections";
 import Layout from "../../layouts/layout";
 import RenderCarousel from "../../components/carousel";
-
 import { Route, Redirect, Switch } from "react-router-dom";
 import {
   COLLECTIONS,
@@ -14,8 +10,11 @@ import {
   SECTION_MOVIES_ID,
 } from "../../config";
 import VideoDetail from "../main/video-detail";
-import SearchResults from "../search/search-results.styled";
-import MoviesSection from "../movies/movies-section.styled";
+import SearchResults from "../search/results";
+import MoviesSection from "../movies/section";
+
+import "./app.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

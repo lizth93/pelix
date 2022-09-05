@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FilmsDetail from "./films-detail";
+import FilmsDetail from "./detail.component";
 
 export default styled(FilmsDetail)`
   transition: all 0.2s;
