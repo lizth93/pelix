@@ -3,7 +3,7 @@ import ShowMoreIcon from "../../icons/more";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
-import Films from "../../components/films.styled";
+import Films from "../../components/films";
 import { useHistory } from "react-router-dom";
 
 import { COLLECTIONS, TV_COLLECTION } from "../../config";

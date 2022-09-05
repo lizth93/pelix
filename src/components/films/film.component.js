@@ -1,5 +1,5 @@
-import AddIcon from "../icons/add";
-import PlayIcon from "../icons/play";
+import AddIcon from "../../icons/add";
+import PlayIcon from "../../icons/play";
 
 const Films = (props) => {
   return (

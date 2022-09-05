@@ -20,6 +20,7 @@ const searchSlice = createSlice({
     totalResultsMovies: null,
     totalResultsTv: null,
     totalResultsPersons: null,
+    showOnScreen: [],
   },
   reducers: {
     setSearchResults(state, action) {
@@ -27,6 +28,7 @@ const searchSlice = createSlice({
       state.moviesResults = action.payload.movies;
       state.tvResults = action.payload.tv;
       state.personsResults = action.payload.persons;
+      state.showOnScreen = state.multipleResults;
     },
     setIsLoading(state, action) {
       state.isLoading = action.payload;
@@ -45,6 +47,9 @@ const searchSlice = createSlice({
       state.totalResultsMovies = action.payload.movies;
       state.totalResultsTv = action.payload.tv;
       state.totalResultsPersons = action.payload.persons;
+    },
+    setShowOnTheScreen(state, action) {
+      state.showOnScreen = action.payload;
     },
   },
 });

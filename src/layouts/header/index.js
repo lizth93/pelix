@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "./header";
+import Header from "./header.component";
 
 export default styled(Header)`
   background-color: #212529;
@@ -25,6 +25,7 @@ export default styled(Header)`
     font-size: 3rem;
     padding: 0;
     margin: 0;
+    margin-bottom: 1rem;
   }
 
   a {

@@ -1,13 +1,18 @@
-import { useSelector } from "react-redux";
-import FilmsResults from "./films-results";
-import Spinner from "../../components/spinner";
-import useInitialiceSearchTerm from "./use-initialice-search";
-import ListGroup from "../../components/list-group";
-import { useState } from "react";
-import ErrorSearch from "../../components/error-search";
+import { useSelector, useDispatch } from "react-redux";
+//own
+
+import FilmsResults from "../films-results";
+import Spinner from "../../../components/spinner";
+
+import useInitialiceSearchTerm from "../use-initialice-search";
+
+import ListGroup from "../../../components/list-group";
+import ErrorSearch from "../../../components/error-search";
+import { searchActions } from "../../../store/search/search-slice";
 
 const SearchResults = (props) => {
   useInitialiceSearchTerm();
+  const dispatch = useDispatch();
 
   const {
     multipleResults,
@@ -16,6 +21,7 @@ const SearchResults = (props) => {
     personsResults,
     isLoading,
     error,
+    showOnScreen,
   } = useSelector((state) => ({
     multipleResults: state.searchResults.multipleResults,
     moviesResults: state.searchResults.moviesResults,
@@ -23,22 +29,21 @@ const SearchResults = (props) => {
     tvResults: state.searchResults.tvResults,
     isLoading: state.searchResults.isLoading,
     error: state.searchResults.error,
+    showOnScreen: state.searchResults.showOnScreen,
   }));
-
-  const [results, setResults] = useState(multipleResults);
 
   const handleFilterOfSearch = (results) => {
     if (results === "movies") {
-      setResults(moviesResults);
+      dispatch(searchActions.setShowOnTheScreen(moviesResults));
     }
     if (results === "tv") {
-      setResults(tvResults);
+      dispatch(searchActions.setShowOnTheScreen(tvResults));
     }
     if (results === "persons") {
-      setResults(personsResults);
+      dispatch(searchActions.setShowOnTheScreen(personsResults));
     }
     if (results === "all") {
-      setResults(multipleResults);
+      dispatch(searchActions.setShowOnTheScreen(multipleResults));
     }
   };
 
@@ -57,7 +62,7 @@ const SearchResults = (props) => {
             {isLoading && <Spinner />}
 
             {!isLoading &&
-              results.map((film) => (
+              showOnScreen.map((film) => (
                 <FilmsResults key={film.id} collection={film} />
               ))}
           </div>

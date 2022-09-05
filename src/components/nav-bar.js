@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import BootstrapNavbar from "react-bootstrap/Navbar";
 import { useDispatch } from "react-redux";
-import Logo from "../layouts/brand/logo.styled";
+import Logo from "../layouts/brand";
 import { getSearch } from "../store/search/get-search";
 import DropDown from "./dropdown";
 import { SEARCH } from "../config.js";
