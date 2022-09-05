@@ -7,6 +7,8 @@ export const URL_VIDEO_MOVIES = "/videos?";
 export const URL_TV_POPULAR = "https://api.themoviedb.org/3/tv/popular?";
 export const URL_TV_VIDEO = "https://api.themoviedb.org/3/tv/";
 
+export const URL_TOP_RATED = "https://api.themoviedb.org/3/movie/top_rated?";
+
 export const BASE_URL_IMG = "https://image.tmdb.org/t/p/";
 export const SIZE_IMAGE = "original";
 
@@ -28,14 +30,11 @@ export const SEARCH = "/search?q=";
 export const COLLECTIONS = "/collections";
 export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
 
-export const SECTION_MOVIES = "/section-movies";
-export const SECTION_MOVIES_ID =
-  "/section-movies/:typeCollection/:collectionId";
+export const SECTION_MOVIES = "/movies";
+export const SECTION_MOVIES_ID = "/:typeCollection/:collectionId";
 
-export const MOVIE_COLLECTION = "movies";
-export const TV_COLLECTION = "tv";
-
-// https://api.themoviedb.org/3/search/company?api_key=2b1fd64cd979487c5f0deddc18cc2dad&query=avatar
+export const SECTION_TV = "/tv";
+export const SECTION_TV_ID = "/:typeCollection/:collectionId";
 
 // Tamaño pequeño: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/default.jpg
 // Tamaño mediano: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/hqdefault.jpg

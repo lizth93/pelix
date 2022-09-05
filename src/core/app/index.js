@@ -8,6 +8,8 @@ import {
   SECTION_MOVIES,
   SEARCH_RESULTS,
   SECTION_MOVIES_ID,
+  SECTION_TV_ID,
+  SECTION_TV,
 } from "../../config";
 import VideoDetail from "../main/video-detail";
 import SearchResults from "../search/results";
@@ -15,6 +17,7 @@ import MoviesSection from "../movies/section";
 
 import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import TvSection from "../films/section/";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route path={SECTION_MOVIES}>
           <MoviesSection />
         </Route>
+        <Route path={SECTION_TV}>
+          <TvSection />
+        </Route>
         <Route path={COLLECTIONS}>
           <RenderCarousel />
           <Collections />
@@ -35,6 +41,9 @@ function App() {
         <VideoDetail />
       </Route>
       <Route path={SECTION_MOVIES_ID} exact>
+        <VideoDetail />
+      </Route>
+      <Route path={SECTION_TV_ID} exact>
         <VideoDetail />
       </Route>
 
