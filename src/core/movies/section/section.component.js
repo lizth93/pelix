@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 //own
 import useInitialiceMovies from "../../main/use-initialice-movies";
 import Movie from "../movie";
-import { SECTION_MOVIES, MOVIE_COLLECTION } from "../../../config";
 import { videosActions } from "../../../store/collections/movies/trailers/videos-slice";
 
 const MoviesSection = (props) => {
@@ -18,8 +17,8 @@ const MoviesSection = (props) => {
     showModal: state.videosCollection.showModal,
   }));
 
-  const handleModalMovies = (id) => {
-    history.push(`${SECTION_MOVIES}/${MOVIE_COLLECTION}/${id}`);
+  const handleModalMovies = (category, id) => {
+    history.push(`${category}/${id}`);
 
     if (showModal === false) {
       dispatch(videosActions.setModalShow(true));
@@ -40,6 +39,7 @@ const MoviesSection = (props) => {
                 key={movie.id}
                 collection={movie}
                 onClickModal={handleModalMovies}
+                withHover
               />
             ))}
         </div>
