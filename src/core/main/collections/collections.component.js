@@ -10,6 +10,7 @@ import useInitialiceTv from "../use-initialice-tv";
 import useInitialiceTopRated from "../use-initialice-top";
 import { COLLECTIONS } from "../../../config";
 import { videosActions } from "../../../store/collections/movies/trailers/videos-slice";
+import TopRated from "../top/top-rated";
 
 const Collections = (props) => {
   useInitialiceMovies();
@@ -51,22 +52,10 @@ const Collections = (props) => {
 
   return (
     <main className={props.className}>
-      <section className="container-top-rated ">
-        {!isLoadingTop && <h2 className="section-popular">Top Rated Movies</h2>}
-        <div className="section-top-rated ">
-          {isLoadingTop && <Spinner />}
-
-          {!isLoadingTop &&
-            topRatedMovies.map((movie) => (
-              <Movie
-                key={movie.id}
-                collection={movie}
-                className="film-top"
-                detailMode="static"
-              />
-            ))}
-        </div>
-      </section>
+      {isLoadingTop && <Spinner />}
+      {!isLoadingTop && (
+        <TopRated topRated={"movies"} collection={topRatedMovies} />
+      )}
 
       <section className="container ">
         {!isLoading && <h2 className="section-popular">Popular movies</h2>}
@@ -87,22 +76,9 @@ const Collections = (props) => {
         </div>
       </section>
 
-      <section className="container-top-rated ">
-        {!isLoadingTop && <h2 className="section-popular">Top Rated Tv</h2>}
-        <div className="section-top-rated ">
-          {isLoadingTop && <Spinner />}
+      {isLoadingTop && <Spinner />}
+      {!isLoadingTop && <TopRated topRated={"tv"} collection={topRatedTv} />}
 
-          {!isLoadingTop &&
-            topRatedTv.map((tv) => (
-              <Tv
-                key={tv.id}
-                collection={tv}
-                className="film-top"
-                detailMode="static"
-              />
-            ))}
-        </div>
-      </section>
       <section className="container ">
         {!isLoadingTv && <h2 className="section-popular">Popular Tv</h2>}
         <div className="section-collections">
