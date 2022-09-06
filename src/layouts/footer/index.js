@@ -39,7 +39,7 @@ export default styled(Footer)`
     padding-left: 0rem;
   }
   .text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.6rem;
   }
 
@@ -66,7 +66,7 @@ export default styled(Footer)`
   }
 
   .copyrigth {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #fff;
     line-height: 1.6;
     grid-column: 1 /-1;
