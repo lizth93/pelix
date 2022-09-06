@@ -3,13 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const topRatedSlice = createSlice({
   name: "topRatedCollection",
   initialState: {
-    topRated: [],
+    topRatedMovies: [],
+    topRatedTv: [],
     isLoadingTop: true,
     error: null,
   },
   reducers: {
     setTopRated(state, action) {
-      state.topRated = action.payload;
+      state.topRatedMovies = action.payload.topRatedMovies;
+      state.topRatedTv = action.payload.topRatedTv;
     },
     setIsLoading(state, action) {
       state.isLoadingTop = action.payload;

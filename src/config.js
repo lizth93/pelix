@@ -7,7 +7,10 @@ export const URL_VIDEO_MOVIES = "/videos?";
 export const URL_TV_POPULAR = "https://api.themoviedb.org/3/tv/popular?";
 export const URL_TV_VIDEO = "https://api.themoviedb.org/3/tv/";
 
-export const URL_TOP_RATED = "https://api.themoviedb.org/3/movie/top_rated?";
+export const URL_TOP_RATED_MOVIES =
+  "https://api.themoviedb.org/3/movie/top_rated?";
+
+export const URL_TOP_RATED_TV = "https://api.themoviedb.org/3/tv/top_rated?";
 
 export const BASE_URL_IMG = "https://image.tmdb.org/t/p/";
 export const SIZE_IMAGE = "original";

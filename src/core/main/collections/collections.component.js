@@ -19,7 +19,8 @@ const Collections = (props) => {
   const history = useHistory();
 
   const {
-    topRated,
+    topRatedMovies,
+    topRatedTv,
     isLoadingTop,
     movies,
     isLoading,
@@ -27,7 +28,8 @@ const Collections = (props) => {
     isLoadingTv,
     showModal,
   } = useSelector((state) => ({
-    topRated: state.topRatedCollection.topRated,
+    topRatedMovies: state.topRatedCollection.topRatedMovies,
+    topRatedTv: state.topRatedCollection.topRatedTv,
     isLoadingTop: state.topRatedCollection.isLoadingTop,
     movies: state.moviesCollection.movies,
     isLoading: state.moviesCollection.isLoading,
@@ -47,22 +49,19 @@ const Collections = (props) => {
     }
   }
 
-  if (!isLoadingTop) {
-    console.log(topRated, "to´p rated");
-  }
   return (
     <main className={props.className}>
       <section className="container-top-rated ">
-        {!isLoadingTop && <h2 className="section-popular">Top Rated</h2>}
-        <div className="section-top-rated">
+        {!isLoadingTop && <h2 className="section-popular">Top Rated Movies</h2>}
+        <div className="section-top-rated ">
           {isLoadingTop && <Spinner />}
 
           {!isLoadingTop &&
-            topRated.map((movie) => (
+            topRatedMovies.map((movie) => (
               <Movie
                 key={movie.id}
                 collection={movie}
-                className="movie-top"
+                className="film-top"
                 detailMode="static"
               />
             ))}
@@ -83,6 +82,23 @@ const Collections = (props) => {
                 withHover
                 onClickModal={handleModal}
                 detailMode="hover"
+              />
+            ))}
+        </div>
+      </section>
+
+      <section className="container-top-rated ">
+        {!isLoadingTop && <h2 className="section-popular">Top Rated Tv</h2>}
+        <div className="section-top-rated ">
+          {isLoadingTop && <Spinner />}
+
+          {!isLoadingTop &&
+            topRatedTv.map((tv) => (
+              <Tv
+                key={tv.id}
+                collection={tv}
+                className="film-top"
+                detailMode="static"
               />
             ))}
         </div>
