@@ -53,33 +53,48 @@ export default styled(Collections)`
 
     h1 {
       margin-top: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       font-weight: 500;
-      line-height: 0.6;
+      line-height: 0.8;
+      white-space: nowrap;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: -webkit-center;
     }
 
     .text-description {
       font-size: 1.4rem;
-      line-height: 0rem;
     }
 
     .collection__title {
+      max-width: 16rem;
+
       background-color: #212529;
 
+      padding: 0 1rem;
       border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
     }
 
     .collection__img {
       max-width: 16rem;
+      min-height: 24rem;
     }
 
+    figure {
+      margin: 0 0 0.4rem;
+    }
     .radial-bar {
       left: -1rem;
       top: -1rem;
       position: absolute;
 
       position: absolute;
+    }
+
+    .icons {
+      padding: 0 1rem 1rem 1rem;
     }
   }
 `;
