@@ -3,6 +3,7 @@ import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
 import React from "react";
 
 import Film from "../../components/films";
+import styled from "styled-components";
 
 const Tv = (props) => {
   const handleModalTvCollection = (id) => {
@@ -23,4 +24,12 @@ const Tv = (props) => {
     </div>
   );
 };
-export default Tv;
+export default styled(Tv)`
+  display: flex;
+  align-items: center;
+
+  .bNftMJ .icons {
+    display: flex;
+    align-items: center;
+  }
+`;

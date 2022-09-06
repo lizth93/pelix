@@ -103,7 +103,7 @@ const Collections = (props) => {
             ))}
         </div>
       </section>
-      <section className="container-fluid ">
+      <section className="container ">
         {!isLoadingTv && <h2 className="section-popular">Popular Tv</h2>}
         <div className="section-collections">
           {isLoadingTv && <Spinner />}
