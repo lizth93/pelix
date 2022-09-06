@@ -80,15 +80,10 @@ export default styled(Film)`
 
   .static-detail {
     .collection__title {
-      transform: scale(1.1);
       background-color: #212529;
       width: 100%;
       border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
-    }
-
-    &:hover {
-      transform: scale(1.01);
     }
   }
 `;
