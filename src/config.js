@@ -30,6 +30,8 @@ export const URL_QUERY = "query=";
 export const SEARCH_RESULTS = "/search";
 export const SEARCH = "/search?q=";
 
+export const STREAMING_TV = "https://api.themoviedb.org/3/tv/on_the_air?";
+
 export const COLLECTIONS = "/collections";
 export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
 

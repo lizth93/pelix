@@ -13,11 +13,12 @@ import {
 } from "../../config";
 import VideoDetail from "../main/video-detail";
 import SearchResults from "../search/results";
-import MoviesSection from "../movies/section";
+
+import SectionMovies from "../section-movies";
 
 import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TvSection from "../films/section/";
+import TvSection from "../section-tv";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
       </Route>
       <Switch>
         <Route path={SECTION_MOVIES}>
-          <MoviesSection />
+          <SectionMovies />
         </Route>
         <Route path={SECTION_TV}>
           <TvSection />

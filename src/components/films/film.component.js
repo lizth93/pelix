@@ -20,20 +20,22 @@ const Film = (props) => {
           <span className="text-description">{props.title}</span>
         </h1>
         <div className="icons">
-          <div>
-            <PlayIcon />
-            <AddIcon />
-          </div>
           {props.withMoreIcon && (
-            <div className="details-container">
-              <ShowMoreIcon
-                onClick={() => handleModalCollection(props.collection.id)}
-              />
-              <RadialProgressBar
-                className="radial-bar"
-                value={props.collection.vote_average * 10}
-              />
-            </div>
+            <>
+              <div>
+                <PlayIcon />
+                <AddIcon />
+              </div>
+              <div className="details-container">
+                <ShowMoreIcon
+                  onClick={() => handleModalCollection(props.collection.id)}
+                />
+                <RadialProgressBar
+                  className="radial-bar"
+                  value={props.collection.vote_average * 10}
+                />
+              </div>
+            </>
           )}
         </div>
       </div>

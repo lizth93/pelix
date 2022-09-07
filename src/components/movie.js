@@ -1,30 +1,30 @@
-import { BASE_URL_IMG, SIZE_IMAGE } from "../../config";
-
 import React from "react";
-
-import Film from "../../components/films";
 import styled from "styled-components";
+//own
+import { BASE_URL_IMG, SIZE_IMAGE } from "../config";
+import Film from "./films";
 
-const Tv = (props) => {
-  const handleModalTvCollection = (id) => {
-    props.onClickModal("tv", id);
+const Movie = (props) => {
+  const handleModalMoviesCollection = (id) => {
+    props.onClickModal("movies", id);
   };
 
   return (
     <div className={props.className}>
       <Film
         src={`${BASE_URL_IMG}${SIZE_IMAGE}${props.collection.poster_path}`}
-        title={props.collection.name}
+        title={props.collection.title}
         withHover={props.withHover}
         detailMode={props.detailMode}
-        withMoreIcon={true}
+        onClick={props.onClick}
         collection={props.collection}
-        onClickModal={handleModalTvCollection}
+        withMoreIcon={true}
+        onClickModal={handleModalMoviesCollection}
       />
     </div>
   );
 };
-export default styled(Tv)`
+export default styled(Movie)`
   display: flex;
   align-items: center;
 
