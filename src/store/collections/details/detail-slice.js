@@ -4,7 +4,7 @@ const detailSlice = createSlice({
   name: "detailsCollection",
   initialState: {
     videos: [],
-    currentMovie: [],
+    currentFilm: [],
     isLoading: true,
     error: null,
     showModal: false,
@@ -12,11 +12,11 @@ const detailSlice = createSlice({
   reducers: {
     setDetails(state, action) {
       state.videos = action.payload.videos;
-      state.currentMovie = action.payload.currentMovie;
+      state.currentFilm = action.payload.currentMovie;
     },
     setClearDetails(state) {
       state.videos = [];
-      state.currentMovie = [];
+      state.currentFilm = [];
     },
 
     setIsLoading(state, action) {

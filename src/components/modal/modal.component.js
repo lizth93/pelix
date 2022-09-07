@@ -15,9 +15,9 @@ function Modal(props) {
   const [principalVideo, setPrincipalVideo] = useState(null);
   useInitialiceVideos();
 
-  const { videos, isLoading, error, currentMovie } = useSelector((state) => ({
+  const { videos, isLoading, error, currentFilm } = useSelector((state) => ({
     videos: state.detailsCollection.videos,
-    currentMovie: state.detailsCollection.currentMovie,
+    currentFilm: state.detailsCollection.currentFilm,
     isLoading: state.detailsCollection.isLoading,
     error: state.detailsCollection.error,
   }));
@@ -63,10 +63,11 @@ function Modal(props) {
                 )
               )}
             <div className="overview">
-              <p>{currentMovie.overview}</p>
+              <h3>{currentFilm.title}</h3>
+              <p>{currentFilm.overview}</p>
               <span>Genres:</span>
               <ul>
-                {currentMovie.genres.map((genre) => (
+                {currentFilm.genres.map((genre) => (
                   <li key={genre.id}>{genre.name}</li>
                 ))}
               </ul>

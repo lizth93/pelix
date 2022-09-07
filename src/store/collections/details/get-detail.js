@@ -32,20 +32,8 @@ export const getDetailFilm = (id, category) => {
   };
 };
 async function fetchDetailFilm(id, category) {
-  let fetchVideos;
-  let fetchCurrentFilm;
-
-  if (category === "movies") {
-    fetchVideos = getJSON(
-      `${URL_BASE_MOVIES}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`
-    );
-    fetchCurrentFilm = getJSON(`${URL_BASE_MOVIES}${id}?${API_KEY}`);
-  } else {
-    fetchVideos = getJSON(
-      `${URL_TV_VIDEO}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`
-    );
-    fetchCurrentFilm = getJSON(`${URL_TV_VIDEO}${id}?${API_KEY}`);
-  }
+  const fetchVideos = await getJSON(getUrlVideos(id, category));
+  const fetchCurrentFilm = await getJSON(getUrlCurrentFilm(id, category));
 
   const response = await Promise.all([fetchVideos, fetchCurrentFilm]);
   return response;
@@ -56,4 +44,25 @@ function getJSON(url, errorMessage = "Something went wrong") {
     if (!response.ok) throw new Error(`${errorMessage} (${response.status})`);
     return response.json();
   });
+}
+
+function getUrlVideos(id, category) {
+  let fetchVideos;
+  if (category === "movies") {
+    fetchVideos = `${URL_BASE_MOVIES}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
+  } else {
+    fetchVideos = `${URL_TV_VIDEO}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
+  }
+
+  return fetchVideos;
+}
+
+function getUrlCurrentFilm(id, category) {
+  let fetchCurrentFilm;
+  if (category === "movies") {
+    fetchCurrentFilm = `${URL_BASE_MOVIES}${id}?${API_KEY}`;
+  } else {
+    fetchCurrentFilm = `${URL_TV_VIDEO}${id}?${API_KEY}`;
+  }
+  return fetchCurrentFilm;
 }

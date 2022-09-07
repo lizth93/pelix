@@ -19,7 +19,7 @@ const TvSection = (props) => {
   }));
 
   const handleModalTv = (category, id) => {
-    history.push(`${category}/${id}`);
+    history.push(`/${category}/${id}`);
 
     if (showModal === false) {
       dispatch(detailActions.setModalShow(true));
