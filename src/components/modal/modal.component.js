@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 //own
-import useInitialiceVideos from "../../core/movies/use-initialice-videos";
+
+import useInitialiceVideos from "../../core/main/use-initialice-videos";
 import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../../config";
 import Button from "react-bootstrap/Button";
 import BootstrapModal from "react-bootstrap/Modal";
@@ -14,17 +15,20 @@ function Modal(props) {
   const [principalVideo, setPrincipalVideo] = useState(null);
   useInitialiceVideos();
 
-  const { videos, isLoading, error } = useSelector((state) => ({
-    videos: state.videosCollection.videos,
-    isLoading: state.videosCollection.isLoading,
-    error: state.videosCollection.error,
+  const { videos, isLoading, error, currentFilm } = useSelector((state) => ({
+    videos: state.detailsCollection.videos,
+    currentFilm: state.detailsCollection.currentFilm,
+    isLoading: state.detailsCollection.isLoading,
+    error: state.detailsCollection.error,
   }));
 
   useEffect(() => {
-    if (videos.length !== 0) {
-      setPrincipalVideo(videos[0].name);
+    if (!isLoading) {
+      if (videos.length !== 0) {
+        setPrincipalVideo(videos[0].name);
+      }
     }
-  }, [videos]);
+  }, [videos, isLoading]);
 
   const handlerShowVideo = (video) => {
     setPrincipalVideo(video);
@@ -58,7 +62,16 @@ function Modal(props) {
                   ""
                 )
               )}
-
+            <div className="overview">
+              <h3>{currentFilm.title}</h3>
+              <p>{currentFilm.overview}</p>
+              <span>Genres:</span>
+              <ul>
+                {currentFilm.genres.map((genre) => (
+                  <li key={genre.id}>{genre.name}</li>
+                ))}
+              </ul>
+            </div>
             {!error && (
               <>
                 <h4> Videos Related:</h4>

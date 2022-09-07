@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import { getVideosFilm } from "../../store/collections/movies/trailers/get-videos";
-import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
+import { getDetailFilm } from "../../store/collections/details/get-detail";
+import { detailActions } from "../../store/collections/details/detail-slice";
 
 export default function useInitialiceVideos() {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export default function useInitialiceVideos() {
   const collectionId = useParams()?.collectionId;
 
   useEffect(() => {
-    dispatch(videosActions.setVideos([]));
-    dispatch(getVideosFilm(collectionId, typeCollection));
+    dispatch(detailActions.setDetails([]));
+    dispatch(getDetailFilm(collectionId, typeCollection));
   }, [dispatch, collectionId, typeCollection]);
 }

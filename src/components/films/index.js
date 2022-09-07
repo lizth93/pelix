@@ -52,8 +52,14 @@ export default styled(Film)`
     display: flex;
     gap: 0.8rem;
     justify-content: space-between;
+    align-items: center;
   }
 
+  .details-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
   .play-icon {
     fill: #e3fafc;
     cursor: pointer;
@@ -85,5 +91,21 @@ export default styled(Film)`
       border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
     }
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 0.8;
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: -webkit-center;
+  }
+
+  .text-description {
+    font-size: 1.6rem;
   }
 `;

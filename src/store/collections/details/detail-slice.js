@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const videosSlice = createSlice({
-  name: "videosCollection",
+const detailSlice = createSlice({
+  name: "detailsCollection",
   initialState: {
     videos: [],
+    currentFilm: [],
     isLoading: true,
     error: null,
     showModal: false,
   },
   reducers: {
-    setVideos(state, action) {
-      state.videos = action.payload;
+    setDetails(state, action) {
+      state.videos = action.payload.videos;
+      state.currentFilm = action.payload.currentMovie;
+    },
+    setClearDetails(state) {
+      state.videos = [];
+      state.currentFilm = [];
     },
 
     setIsLoading(state, action) {
@@ -29,5 +35,5 @@ const videosSlice = createSlice({
   },
 });
 
-export const videosActions = videosSlice.actions;
-export default videosSlice;
+export const detailActions = detailSlice.actions;
+export default detailSlice;

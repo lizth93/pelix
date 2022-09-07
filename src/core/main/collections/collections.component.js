@@ -9,7 +9,8 @@ import useInitialiceMovies from "../use-initialice-movies";
 import useInitialiceTv from "../use-initialice-tv";
 import useInitialiceTopRated from "../use-initialice-top";
 import { COLLECTIONS } from "../../../config";
-import { videosActions } from "../../../store/collections/movies/trailers/videos-slice";
+import { detailActions } from "../../../store/collections/details/detail-slice";
+
 import TopRated from "../top/top-rated";
 
 const Collections = (props) => {
@@ -36,7 +37,7 @@ const Collections = (props) => {
     isLoading: state.moviesCollection.isLoading,
     tvPopular: state.tvCollection.tvPopular,
     isLoadingTv: state.tvCollection.isLoadingTv,
-    showModal: state.videosCollection.showModal,
+    showModal: state.detailsCollection.showModal,
   }));
 
   const handleModal = (category, id) => {
@@ -46,7 +47,7 @@ const Collections = (props) => {
 
   function validateModal() {
     if (showModal === false) {
-      dispatch(videosActions.setModalShow(true));
+      dispatch(detailActions.setModalShow(true));
     }
   }
 

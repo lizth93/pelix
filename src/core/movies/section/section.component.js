@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 //own
 import useInitialiceMovies from "../../main/use-initialice-movies";
 import Movie from "../movie";
-import { videosActions } from "../../../store/collections/movies/trailers/videos-slice";
+import { detailActions } from "../../../store/collections/details/detail-slice";
 
 const MoviesSection = (props) => {
   useInitialiceMovies();
@@ -14,14 +14,14 @@ const MoviesSection = (props) => {
   const { movies, isLoading, showModal } = useSelector((state) => ({
     movies: state.moviesCollection.movies,
     isLoading: state.moviesCollection.isLoading,
-    showModal: state.videosCollection.showModal,
+    showModal: state.detailsCollection.showModal,
   }));
 
   const handleModalMovies = (category, id) => {
-    history.push(`${category}/${id}`);
+    history.push(`/${category}/${id}`);
 
     if (showModal === false) {
-      dispatch(videosActions.setModalShow(true));
+      dispatch(detailActions.setModalShow(true));
     }
   };
 
