@@ -89,8 +89,6 @@ export default styled(Collections)`
       left: -1rem;
       top: -1rem;
       position: absolute;
-
-      position: absolute;
     }
 
     .icons {
