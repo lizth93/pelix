@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 //own
-import useInitialiceVideos from "../../core/movies/use-initialice-videos";
+
+import useInitialiceVideos from "../../core/main/use-initialice-videos";
 import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../../config";
 import Button from "react-bootstrap/Button";
 import BootstrapModal from "react-bootstrap/Modal";

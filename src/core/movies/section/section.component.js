@@ -14,7 +14,7 @@ const MoviesSection = (props) => {
   const { movies, isLoading, showModal } = useSelector((state) => ({
     movies: state.moviesCollection.movies,
     isLoading: state.moviesCollection.isLoading,
-    showModal: state.videosCollection.showModal,
+    showModal: state.detailsCollection.showModal,
   }));
 
   const handleModalMovies = (category, id) => {

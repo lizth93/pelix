@@ -3,17 +3,18 @@ import {
   URL_BASE_MOVIES,
   URL_LENGUAGE,
   URL_VIDEO_MOVIES,
-} from "../../../../config";
+  URL_TV_VIDEO,
+} from "../../../config";
 import { detailActions } from "./detail-slice";
 
-export const getDetailMovies = (id) => {
+export const getDetailFilm = (id, category) => {
   return async (dispatch) => {
     try {
       dispatch(detailActions.setClearDetails());
       dispatch(detailActions.setIsLoading(true));
       dispatch(detailActions.setError(null));
 
-      const fetchResult = await fetchDetailMovies(id);
+      const fetchResult = await fetchDetailFilm(id, category);
       console.log(fetchResult[1].results);
 
       dispatch(
@@ -30,13 +31,23 @@ export const getDetailMovies = (id) => {
     }
   };
 };
-async function fetchDetailMovies(id) {
-  const fetchVideosMovies = getJSON(
-    `${URL_BASE_MOVIES}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`
-  );
-  const fetchCurrentMovie = getJSON(`${URL_BASE_MOVIES}${id}?${API_KEY}`);
+async function fetchDetailFilm(id, category) {
+  let fetchVideos;
+  let fetchCurrentFilm;
 
-  const response = await Promise.all([fetchVideosMovies, fetchCurrentMovie]);
+  if (category === "movies") {
+    fetchVideos = getJSON(
+      `${URL_BASE_MOVIES}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`
+    );
+    fetchCurrentFilm = getJSON(`${URL_BASE_MOVIES}${id}?${API_KEY}`);
+  } else {
+    fetchVideos = getJSON(
+      `${URL_TV_VIDEO}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`
+    );
+    fetchCurrentFilm = getJSON(`${URL_TV_VIDEO}${id}?${API_KEY}`);
+  }
+
+  const response = await Promise.all([fetchVideos, fetchCurrentFilm]);
   return response;
 }
 
