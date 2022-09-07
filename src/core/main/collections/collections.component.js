@@ -9,7 +9,7 @@ import useInitialiceMovies from "../use-initialice-movies";
 import useInitialiceTv from "../use-initialice-tv";
 import useInitialiceTopRated from "../use-initialice-top";
 import { COLLECTIONS } from "../../../config";
-import { detailActions } from "../../../store/collections/movies/details/detail-slice";
+import { detailActions } from "../../../store/collections/details/detail-slice";
 
 import TopRated from "../top/top-rated";
 
