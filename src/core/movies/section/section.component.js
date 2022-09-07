@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 //own
 import useInitialiceMovies from "../../main/use-initialice-movies";
 import Movie from "../movie";
-import { videosActions } from "../../../store/collections/movies/trailers/videos-slice";
+import { videosActions } from "../../../store/collections/movies/details/detail-slice";
 
 const MoviesSection = (props) => {
   useInitialiceMovies();

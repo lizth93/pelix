@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import { getVideosFilm } from "../../store/collections/movies/trailers/get-videos";
-import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
+import { getVideosFilm } from "../../store/collections/movies/details/get-detail";
+import { videosActions } from "../../store/collections/movies/details/detail-slice";
 
 export default function useInitialiceVideos() {
   const dispatch = useDispatch();

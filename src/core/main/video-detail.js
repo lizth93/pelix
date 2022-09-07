@@ -2,7 +2,7 @@ import Modal from "../../components/modal";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { videosActions } from "../../store/collections/movies/trailers/videos-slice";
+import { videosActions } from "../../store/collections/movies/details/detail-slice";
 
 const VideoDetail = () => {
   const dispatch = useDispatch();

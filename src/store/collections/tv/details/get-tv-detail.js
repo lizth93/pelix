@@ -4,7 +4,7 @@ import {
   URL_TV_VIDEO,
   URL_VIDEO_MOVIES,
 } from "../../../../config";
-import { videosTvActions } from "./videos-tv-slice";
+import { videosTvActions } from "./detail-tv-slice";
 
 export const getTvVideos = (id) => {
   return async (dispatch) => {
