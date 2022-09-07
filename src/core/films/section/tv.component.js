@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 //own
 import useInitialiceTv from "../../main/use-initialice-tv";
-import { videosActions } from "../../../store/collections/movies/details/detail-slice";
+import { detailActions } from "../../../store/collections/movies/details/detail-slice";
 import Spinner from "../../../components/spinner";
 import Tv from "../tv";
 
@@ -21,7 +21,7 @@ const TvSection = (props) => {
     history.push(`${category}/${id}`);
 
     if (showModal === false) {
-      dispatch(videosActions.setModalShow(true));
+      dispatch(detailActions.setModalShow(true));
     }
   };
 

@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import Movie from "../../movies/movie";
 import Tv from "../../films/tv";
 import { COLLECTIONS } from "../../../config";
-import { videosActions } from "../../../store/collections/movies/details/detail-slice";
+import { detailActions } from "../../../store/collections/movies/details/detail-slice";
 
 const TopRated = (props) => {
   const history = useHistory();
@@ -13,7 +13,7 @@ const TopRated = (props) => {
   const categoryTopRated = props.topRated;
 
   const { showModal } = useSelector((state) => ({
-    showModal: state.videosCollection.showModal,
+    showModal: state.detailsCollection.showModal,
   }));
 
   const handleModal = (category, id) => {
@@ -23,7 +23,7 @@ const TopRated = (props) => {
 
   function validateModal() {
     if (showModal === false) {
-      dispatch(videosActions.setModalShow(true));
+      dispatch(detailActions.setModalShow(true));
     }
   }
 

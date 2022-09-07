@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 //own
 import useInitialiceMovies from "../../main/use-initialice-movies";
 import Movie from "../movie";
-import { videosActions } from "../../../store/collections/movies/details/detail-slice";
+import { detailActions } from "../../../store/collections/movies/details/detail-slice";
 
 const MoviesSection = (props) => {
   useInitialiceMovies();
@@ -21,7 +21,7 @@ const MoviesSection = (props) => {
     history.push(`${category}/${id}`);
 
     if (showModal === false) {
-      dispatch(videosActions.setModalShow(true));
+      dispatch(detailActions.setModalShow(true));
     }
   };
 

@@ -1,47 +1,48 @@
 import {
   API_KEY,
-  URL_BASE,
+  URL_BASE_MOVIES,
   URL_LENGUAGE,
   URL_VIDEO_MOVIES,
-  URL_TV_VIDEO,
 } from "../../../../config";
-import { videosActions } from "./detail-slice";
+import { detailActions } from "./detail-slice";
 
-export const getVideosFilm = (id, typeCollection) => {
+export const getDetailMovies = (id) => {
   return async (dispatch) => {
     try {
-      dispatch(videosActions.setIsLoading(true));
-      dispatch(videosActions.setError(null));
+      dispatch(detailActions.setClearDetails());
+      dispatch(detailActions.setIsLoading(true));
+      dispatch(detailActions.setError(null));
 
-      const fetchResult = await fetchVideos(id, typeCollection);
+      const fetchResult = await fetchDetailMovies(id);
+      console.log(fetchResult[1].results);
 
-      if (fetchResult.results.length === 0) {
-        dispatch(videosActions.setIsLoading(false));
-        throw new Error("This movie doesn't have videos related.");
-      }
-
-      dispatch(videosActions.setVideos(fetchResult.results));
-      dispatch(videosActions.setIsLoading(false));
+      dispatch(
+        detailActions.setDetails({
+          videos: fetchResult[0].results,
+          currentMovie: fetchResult[1],
+        })
+      );
+      dispatch(detailActions.setIsLoading(false));
     } catch (error) {
-      dispatch(videosActions.setIsLoading(false));
-      dispatch(videosActions.setError(error.message));
+      dispatch(detailActions.setIsLoading(false));
+      dispatch(detailActions.setError(error.message));
       console.log(error);
     }
   };
 };
-async function fetchVideos(id, typeCollection) {
-  const response = await fetch(getUrl(id, typeCollection));
+async function fetchDetailMovies(id) {
+  const fetchVideosMovies = getJSON(
+    `${URL_BASE_MOVIES}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`
+  );
+  const fetchCurrentMovie = getJSON(`${URL_BASE_MOVIES}${id}?${API_KEY}`);
 
-  if (!response.ok) {
-    throw new Error("Error loading videos");
-  }
-  return response.json();
+  const response = await Promise.all([fetchVideosMovies, fetchCurrentMovie]);
+  return response;
 }
 
-function getUrl(id, typeCollection) {
-  if (typeCollection === "movies") {
-    return `${URL_BASE}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
-  } else {
-    return `${URL_TV_VIDEO}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
-  }
+function getJSON(url, errorMessage = "Something went wrong") {
+  return fetch(url).then((response) => {
+    if (!response.ok) throw new Error(`${errorMessage} (${response.status})`);
+    return response.json();
+  });
 }
