@@ -12,7 +12,8 @@ export default styled(Collections)`
     margin-bottom: 5rem;
     max-height: 45rem;
   }
-  .section-top-rated {
+  .section-top-rated,
+  .section-advances {
     background-color: #0b7285;
     border-radius: 2rem;
     border-bottom-left-radius: 0;
@@ -20,6 +21,7 @@ export default styled(Collections)`
     margin: 0 auto;
     padding: 2rem;
     display: flex;
+
     gap: 2rem;
     flex-wrap: nowrap;
     overflow: hidden;
@@ -29,7 +31,9 @@ export default styled(Collections)`
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     scrollbar-width: thin;
+  }
 
+  .section-top-rated {
     &::-webkit-scrollbar {
       height: 10px;
       width: 10px;
