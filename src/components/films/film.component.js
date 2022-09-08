@@ -23,7 +23,7 @@ const Film = (props) => {
           {props.withMoreIcon && (
             <>
               <div>
-                <PlayIcon />
+                <PlayIcon className="play-icon" />
                 <AddIcon />
               </div>
               <div className="details-container">

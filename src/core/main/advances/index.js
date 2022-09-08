@@ -5,11 +5,49 @@ export default styled(AdvancesFilms)`
   .container-advances {
     margin-bottom: 5rem;
     max-height: 45rem;
-    position: relative;
-    max-width: 100%;
   }
   .section-films {
     display: flex;
+    gap: 2rem;
+
+    .film {
+      max-width: 20rem;
+      position: relative;
+
+      &:hover {
+        transform: scale(1.08);
+      }
+
+      .play-icon {
+        fill: #e3fafc;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        z-index: 1000;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(110%, -86%);
+
+        width: 6rem;
+        height: 6rem;
+
+        &:hover {
+          fill: #3bc9db;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: -webkit-center;
   }
 
   .section-advances {
@@ -34,9 +72,5 @@ export default styled(AdvancesFilms)`
     top: 0;
     left: 0;
     z-index: 1;
-  }
-  .section-films {
-    display: flex;
-    gap: 2rem;
   }
 `;

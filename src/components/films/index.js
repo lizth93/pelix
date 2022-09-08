@@ -54,12 +54,6 @@ export default styled(Film)`
     justify-content: space-between;
     align-items: center;
   }
-
-  .details-container {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-  }
   .play-icon {
     fill: #e3fafc;
     cursor: pointer;
@@ -69,6 +63,12 @@ export default styled(Film)`
       fill: #3bc9db;
       cursor: pointer;
     }
+  }
+
+  .details-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   .add-icon,
