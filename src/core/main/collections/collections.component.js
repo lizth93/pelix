@@ -14,12 +14,15 @@ import { detailActions } from "../../../store/collections/details/detail-slice";
 import TopRated from "../top/top-rated";
 import AdvancesFilms from "../advances";
 import useInitialiceAdvances from "../use-initialice-advances";
+import { useState } from "react";
 
 const Collections = (props) => {
+  const [filmAdvance, setFilmAdvance] = useState("streaming");
   useInitialiceMovies();
   useInitialiceTv();
   useInitialiceTopRated();
-  useInitialiceAdvances();
+
+  useInitialiceAdvances(filmAdvance);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -58,6 +61,9 @@ const Collections = (props) => {
     }
   }
 
+  const handleClickAdvance = (category) => {
+    setFilmAdvance(category);
+  };
   return (
     <main className={props.className}>
       {isLoadingTop && <Spinner />}
@@ -103,7 +109,12 @@ const Collections = (props) => {
         </div>
       </section>
       {isLoadingAdvances && <Spinner />}
-      {!isLoadingAdvances && <AdvancesFilms collection={advanceFilms} />}
+      {!isLoadingAdvances && (
+        <AdvancesFilms
+          collection={advanceFilms}
+          onClickAdvance={handleClickAdvance}
+        />
+      )}
     </main>
   );
 };

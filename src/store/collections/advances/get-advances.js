@@ -1,13 +1,21 @@
-import { API_KEY, STREAMING_TV, URL_LENGUAGE } from "../../../config";
+import {
+  API_KEY,
+  STREAMING_TV,
+  URL_TV_AIRING,
+  URL_LENGUAGE,
+  CATEGORY_TV_AIRING,
+  CATEGORY_TEATHERS,
+  CATEGORY_STREAMING,
+  URL_TEATHERS,
+} from "../../../config";
 import { advancesAction } from "./advances-slice";
 
-export const getAdvancesFilm = (type = "streaming") => {
+export const getAdvancesFilm = (type = { CATEGORY_STREAMING }) => {
   return async (dispatch) => {
     try {
       dispatch(advancesAction.setIsLoading(true));
       const fetchResult = await fetchAdvancesFilm(type);
 
-      console.log(fetchResult, "from get advances");
       if (fetchResult.results.length === 0) {
         dispatch(advancesAction.setIsLoading(false));
         throw new Error("Doesn't have movies");
@@ -33,8 +41,15 @@ async function fetchAdvancesFilm(type) {
 
 function getUrl(type) {
   let fetchAdvance;
-  if (type === "streaming") {
+  console.log(type, CATEGORY_STREAMING);
+  if (type === CATEGORY_STREAMING) {
     fetchAdvance = `${STREAMING_TV}${API_KEY}&${URL_LENGUAGE}`;
+  }
+  if (type === CATEGORY_TV_AIRING) {
+    fetchAdvance = `${URL_TV_AIRING}${API_KEY}&${URL_LENGUAGE}`;
+  }
+  if (type === CATEGORY_TEATHERS) {
+    fetchAdvance = `${URL_TEATHERS}${API_KEY}&${URL_LENGUAGE}`;
   }
   return fetchAdvance;
 }

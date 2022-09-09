@@ -31,6 +31,8 @@ export const SEARCH_RESULTS = "/search";
 export const SEARCH = "/search?q=";
 
 export const STREAMING_TV = "https://api.themoviedb.org/3/tv/on_the_air?";
+export const URL_TV_AIRING = "https://api.themoviedb.org/3/tv/airing_today?";
+export const URL_TEATHERS = "https://api.themoviedb.org/3/movie/now_playing?";
 
 export const COLLECTIONS = "/collections";
 export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
@@ -40,6 +42,10 @@ export const SECTION_MOVIES_ID = "/:typeCollection/:collectionId";
 
 export const SECTION_TV = "/tv";
 export const SECTION_TV_ID = "/:typeCollection/:collectionId";
+
+export const CATEGORY_TV_AIRING = "tv";
+export const CATEGORY_TEATHERS = "theaters";
+export const CATEGORY_STREAMING = "streaming";
 
 // Tamaño pequeño: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/default.jpg
 // Tamaño mediano: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/hqdefault.jpg

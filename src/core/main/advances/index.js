@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import AdvancesFilms from "./advance.component";
+import AdvancesFilms from "./advance-films.component";
 
 export default styled(AdvancesFilms)`
   .container-advances {
@@ -13,10 +13,6 @@ export default styled(AdvancesFilms)`
     .film {
       max-width: 20rem;
       position: relative;
-
-      &:hover {
-        transform: scale(1.08);
-      }
 
       .play-icon {
         fill: #e3fafc;
