@@ -9,6 +9,7 @@ export default styled(AdvancesFilms)`
   .section-films {
     display: flex;
     gap: 2rem;
+    min-height: 15rem;
 
     .film {
       max-width: 20rem;
