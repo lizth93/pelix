@@ -1,6 +1,6 @@
 import ButtonsGroup from "../../../components/buttons-group";
 import Film from "../../../components/films";
-import { BASE_URL_IMG, SIZE_IMAGE } from "../../../config";
+import { BASE_URL_IMG, SMALL_SIZE } from "../../../config";
 import PlayIcon from "../../../icons/play";
 
 const AdvancesFilms = (props) => {
@@ -22,7 +22,7 @@ const AdvancesFilms = (props) => {
             {props.collection.map((film) => (
               <div className="film" key={film.id}>
                 <Film
-                  src={`${BASE_URL_IMG}${SIZE_IMAGE}${film.backdrop_path}`}
+                  src={`${BASE_URL_IMG}${SMALL_SIZE}${film.backdrop_path}`}
                   title={film.name}
                   className="film"
                 />
