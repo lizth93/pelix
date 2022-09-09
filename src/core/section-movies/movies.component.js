@@ -3,11 +3,11 @@ import Spinner from "react-bootstrap/esm/Spinner";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 //own
-import useInitialiceMovies from "../../main/use-initialice-movies";
-import Movie from "../movie";
-import { detailActions } from "../../../store/collections/details/detail-slice";
+import useInitialiceMovies from "../main/use-initialice-movies";
+import Movie from "../../components/movie";
+import { detailActions } from "../../store/collections/details/detail-slice";
 
-const MoviesSection = (props) => {
+const SectionMovies = (props) => {
   useInitialiceMovies();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -47,4 +47,4 @@ const MoviesSection = (props) => {
     </main>
   );
 };
-export default MoviesSection;
+export default SectionMovies;

@@ -2,8 +2,8 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-import Movie from "../../movies/movie";
-import Tv from "../../films/tv";
+import Movie from "../../../components/movie";
+import Tv from "../../../components/tv";
 import { COLLECTIONS } from "../../../config";
 
 import { detailActions } from "../../../store/collections/details/detail-slice";

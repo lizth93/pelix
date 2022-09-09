@@ -15,7 +15,6 @@ export const getDetailFilm = (id, category) => {
       dispatch(detailActions.setError(null));
 
       const fetchResult = await fetchDetailFilm(id, category);
-      console.log(fetchResult[1].results);
 
       dispatch(
         detailActions.setDetails({

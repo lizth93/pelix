@@ -5,6 +5,7 @@ import genresSlice from "./genres/genres-slice";
 import detailSlice from "./collections/details/detail-slice";
 import searchSlice from "./search/search-slice";
 import topRatedSlice from "./collections/top/top-rated-slice";
+import advancesSlice from "./collections/advances/advances-slice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     tvCollection: tvSlice.reducer,
     searchResults: searchSlice.reducer,
     topRatedCollection: topRatedSlice.reducer,
+    advancesCollection: advancesSlice.reducer,
   },
 });
 
