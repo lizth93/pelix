@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import BootstrapCarousel from "react-bootstrap/Carousel";
 //own
+import BootstrapCarousel from "react-bootstrap/Carousel";
 import { BASE_URL_IMG, SIZE_IMAGE } from "../config";
 
 function Carousel(props) {

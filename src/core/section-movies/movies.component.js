@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
-import Spinner from "react-bootstrap/esm/Spinner";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 //own
 import useInitialiceMovies from "../main/use-initialice-movies";
+import Spinner from "react-bootstrap/esm/Spinner";
 import Movie from "../../components/movie";
 import { detailActions } from "../../store/collections/details/detail-slice";
 

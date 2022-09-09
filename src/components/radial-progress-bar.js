@@ -7,6 +7,7 @@ const RadialProgressBar = (props) => {
         role="progressbar"
         aria-valuenow={Number(props.value)}
         aria-valuemin="0"
+        aria-label="progressbar"
         aria-valuemax="100"
         style={{ "--value": Number(props.value) }}
       ></div>

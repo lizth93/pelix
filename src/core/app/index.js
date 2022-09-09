@@ -1,7 +1,8 @@
+import { Route, Redirect, Switch } from "react-router-dom";
+//own
 import Collections from "../main/collections";
 import Layout from "../../layouts/layout";
 import RenderCarousel from "../../components/carousel";
-import { Route, Redirect, Switch } from "react-router-dom";
 import {
   COLLECTIONS,
   COLLECTION_ID,
@@ -13,12 +14,10 @@ import {
 } from "../../config";
 import VideoDetail from "../main/video-detail";
 import SearchResults from "../search/results";
-
 import SectionMovies from "../section-movies";
-
+import TvSection from "../section-tv";
 import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TvSection from "../section-tv";
 
 function App() {
   return (
