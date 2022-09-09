@@ -14,6 +14,7 @@ export const URL_TOP_RATED_TV = "https://api.themoviedb.org/3/tv/top_rated?";
 
 export const BASE_URL_IMG = "https://image.tmdb.org/t/p/";
 export const SIZE_IMAGE = "original";
+export const SMALL_SIZE = "w300";
 
 export const URL_GENRES = "https://api.themoviedb.org/3/genre/movie/list?";
 export const URL_LENGUAGE = "language=en-US";

@@ -1,4 +1,4 @@
-import { BASE_URL_IMG, SIZE_IMAGE } from "../config";
+import { BASE_URL_IMG, SMALL_SIZE } from "../config";
 
 import React from "react";
 
@@ -13,7 +13,7 @@ const Tv = (props) => {
   return (
     <div className={props.className}>
       <Film
-        src={`${BASE_URL_IMG}${SIZE_IMAGE}${props.collection.poster_path}`}
+        src={`${BASE_URL_IMG}${SMALL_SIZE}${props.collection.poster_path}`}
         title={props.collection.name}
         withHover={props.withHover}
         detailMode={props.detailMode}

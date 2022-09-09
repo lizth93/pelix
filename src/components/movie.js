@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 //own
-import { BASE_URL_IMG, SIZE_IMAGE } from "../config";
+import { BASE_URL_IMG, SMALL_SIZE } from "../config";
 import Film from "./films";
 
 const Movie = (props) => {
@@ -12,7 +12,7 @@ const Movie = (props) => {
   return (
     <div className={props.className}>
       <Film
-        src={`${BASE_URL_IMG}${SIZE_IMAGE}${props.collection.poster_path}`}
+        src={`${BASE_URL_IMG}${SMALL_SIZE}${props.collection.poster_path}`}
         title={props.collection.title}
         withHover={props.withHover}
         detailMode={props.detailMode}
