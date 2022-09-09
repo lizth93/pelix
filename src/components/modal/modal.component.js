@@ -49,7 +49,7 @@ function Modal(props) {
             {!error &&
               videos.map((video) =>
                 video.name === principalVideo ? (
-                  <div key={video.id}>
+                  <div className="ppal-video" key={video.id}>
                     <BootstrapModal.Header closeButton>
                       <BootstrapModal.Title id="contained-modal-title-vcenter">
                         {video.name}
@@ -74,7 +74,7 @@ function Modal(props) {
             </div>
             {!error && (
               <>
-                <h4> Videos Related:</h4>
+                <h4 className="videos-related"> Videos Related:</h4>
 
                 <ul className="more-videos">
                   {videos.map((video) => (
