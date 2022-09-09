@@ -1,9 +1,8 @@
-import { BASE_URL_IMG, SMALL_SIZE } from "../config";
-
 import React from "react";
-
-import Film from "./films";
 import styled from "styled-components";
+//own
+import { BASE_URL_IMG, SMALL_SIZE } from "../config";
+import Film from "./films";
 
 const Tv = (props) => {
   const handleModalTvCollection = (id) => {

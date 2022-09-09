@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+//own
 import Spinner from "../../spinner";
 
 const FilmsDetail = (props) => {

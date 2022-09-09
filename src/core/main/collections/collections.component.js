@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 
 //own
 import Spinner from "../../../components/spinner";
@@ -10,18 +11,15 @@ import useInitialiceTv from "../use-initialice-tv";
 import useInitialiceTopRated from "../use-initialice-top";
 import { COLLECTIONS } from "../../../config";
 import { detailActions } from "../../../store/collections/details/detail-slice";
-
 import TopRated from "../top/top-rated";
 import AdvancesFilms from "../advances";
 import useInitialiceAdvances from "../use-initialice-advances";
-import { useState } from "react";
 
 const Collections = (props) => {
   const [filmAdvance, setFilmAdvance] = useState("streaming");
   useInitialiceMovies();
   useInitialiceTv();
   useInitialiceTopRated();
-
   useInitialiceAdvances(filmAdvance);
   const dispatch = useDispatch();
   const history = useHistory();

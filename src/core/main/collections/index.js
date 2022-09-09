@@ -73,9 +73,7 @@ export default styled(Collections)`
 
     .collection__title {
       max-width: 16rem;
-
       background-color: #212529;
-
       padding: 0 1rem;
       border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;

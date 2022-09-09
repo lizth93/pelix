@@ -1,4 +1,5 @@
-import ButtonsGroup from "../../../components/buttons-group";
+//own
+import ButtonsGroup from "../../../components/btn-group/";
 import Film from "../../../components/films";
 import { BASE_URL_IMG, SMALL_SIZE } from "../../../config";
 import PlayIcon from "../../../icons/play";
