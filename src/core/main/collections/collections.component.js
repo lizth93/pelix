@@ -7,7 +7,7 @@ import Tv from "../../../components/tv";
 import useInitialiceMovies from "../use-initialice-movies";
 import useInitialiceTv from "../use-initialice-tv";
 import useInitialiceTopRated from "../use-initialice-top";
-import { COLLECTIONS } from "../../../config";
+import { COLLECTIONS, PLAY_VIDEO } from "../../../config";
 import { detailActions } from "../../../store/collections/details/detail-slice";
 import TopRated from "../top/top-rated";
 import AdvancesFilms from "../advances";
@@ -28,6 +28,7 @@ const Collections = (props) => {
     tvPopular,
     isLoadingTv,
     showModal,
+    currentFilm,
   } = useSelector((state) => ({
     topRatedMovies: state.topRatedCollection.topRatedMovies,
     topRatedTv: state.topRatedCollection.topRatedTv,
@@ -37,10 +38,16 @@ const Collections = (props) => {
     tvPopular: state.tvCollection.tvPopular,
     isLoadingTv: state.tvCollection.isLoadingTv,
     showModal: state.detailsCollection.showModal,
+    currentFilm: state.advancesCollection.currentFilm,
   }));
 
   const handleModal = (category, id) => {
     history.push(`${COLLECTIONS}/${category}/${id}`);
+    validateModal();
+  };
+
+  const handleModalPlay = (id) => {
+    history.push(`${COLLECTIONS}${PLAY_VIDEO}/${currentFilm}/${id}`);
     validateModal();
   };
 
@@ -91,7 +98,7 @@ const Collections = (props) => {
             ))}
         </div>
       </section>
-      <AdvancesFilms />
+      <AdvancesFilms onClickModal={handleModalPlay} />
     </main>
   );
 };

@@ -56,7 +56,12 @@ function Modal(props) {
                       </BootstrapModal.Title>
                     </BootstrapModal.Header>
 
-                    <VideoPlayer video={video} key={video.id} />
+                    <VideoPlayer
+                      video={video}
+                      key={video.id}
+                      width="720"
+                      height="405"
+                    />
                   </div>
                 ) : (
                   ""

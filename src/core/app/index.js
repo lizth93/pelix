@@ -8,9 +8,9 @@ import {
   COLLECTION_ID,
   SECTION_MOVIES,
   SEARCH_RESULTS,
-  SECTION_MOVIES_ID,
-  SECTION_TV_ID,
+  SECTION_COLLECTION_ID,
   SECTION_TV,
+  MODAL_LATEST_ADVANCES,
 } from "../../config";
 import VideoDetail from "../main/video-detail";
 import SearchResults from "../search/results";
@@ -18,6 +18,7 @@ import SectionMovies from "../section-movies";
 import TvSection from "../section-tv";
 import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PlayVideo from "../main/advances/play-video";
 
 function App() {
   return (
@@ -40,11 +41,12 @@ function App() {
       <Route path={COLLECTION_ID} exact>
         <VideoDetail />
       </Route>
-      <Route path={SECTION_MOVIES_ID} exact>
+      <Route path={SECTION_COLLECTION_ID} exact>
         <VideoDetail />
       </Route>
-      <Route path={SECTION_TV_ID} exact>
-        <VideoDetail />
+
+      <Route path={MODAL_LATEST_ADVANCES} exact>
+        <PlayVideo />
       </Route>
 
       <Route path={SEARCH_RESULTS}>

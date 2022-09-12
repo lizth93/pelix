@@ -14,6 +14,7 @@ export const getAdvancesFilm = (type = { CATEGORY_STREAMING }) => {
   return async (dispatch) => {
     try {
       dispatch(advancesAction.setIsLoading(true));
+      dispatch(advancesAction.setClearAdvances());
       const fetchResult = await fetchAdvancesFilm(type);
 
       if (fetchResult.results.length === 0) {
@@ -21,7 +22,12 @@ export const getAdvancesFilm = (type = { CATEGORY_STREAMING }) => {
         throw new Error("Doesn't have movies");
       }
 
-      dispatch(advancesAction.setAdvanceVideos(fetchResult.results));
+      dispatch(
+        advancesAction.setAdvanceVideos({
+          advanceFilms: fetchResult.results,
+          currentFilm: type,
+        })
+      );
       dispatch(advancesAction.setIsLoading(false));
     } catch (error) {
       dispatch(advancesAction.setIsLoading(false));
@@ -41,7 +47,7 @@ async function fetchAdvancesFilm(type) {
 
 function getUrl(type) {
   let fetchAdvance;
-  console.log(type, CATEGORY_STREAMING);
+
   if (type === CATEGORY_STREAMING) {
     fetchAdvance = `${STREAMING_TV}${API_KEY}&${URL_LENGUAGE}`;
   }

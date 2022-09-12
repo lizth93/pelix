@@ -20,6 +20,9 @@ const AdvancesFilms = (props) => {
   const handleClickAdvance = (category) => {
     setFilmAdvance(category);
   };
+  const handlePlayVideo = (id) => {
+    props.onClickModal(id);
+  };
 
   return (
     <div className={props.className}>
@@ -35,7 +38,13 @@ const AdvancesFilms = (props) => {
             {isLoadingAdvances && <Spinner className="spinner-center" />}
             {!isLoadingAdvances &&
               advanceFilms.map((film) => (
-                <div className="film" key={film.id}>
+                <div
+                  className="film"
+                  key={film.id}
+                  onClick={() => {
+                    handlePlayVideo(film.id);
+                  }}
+                >
                   <Film
                     src={`${BASE_URL_IMG}${SMALL_SIZE}${film.backdrop_path}`}
                     title={film.name ? film.name : film.title}

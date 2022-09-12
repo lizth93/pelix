@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 //own
 import { getDetailFilm } from "../../store/collections/details/get-detail";
-import { detailActions } from "../../store/collections/details/detail-slice";
 
 export default function useInitialiceVideos() {
   const dispatch = useDispatch();
@@ -11,7 +10,6 @@ export default function useInitialiceVideos() {
   const collectionId = useParams()?.collectionId;
 
   useEffect(() => {
-    dispatch(detailActions.setDetails([]));
     dispatch(getDetailFilm(collectionId, typeCollection));
   }, [dispatch, collectionId, typeCollection]);
 }
