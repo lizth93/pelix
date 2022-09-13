@@ -5,6 +5,7 @@ import useInitialiceMovies from "../main/use-initialice-movies";
 import Spinner from "react-bootstrap/esm/Spinner";
 import Movie from "../../components/movie";
 import { detailActions } from "../../store/collections/details/detail-slice";
+import Pagination from "../../components/pagination";
 
 const SectionMovies = (props) => {
   useInitialiceMovies();
@@ -42,6 +43,7 @@ const SectionMovies = (props) => {
               />
             ))}
         </div>
+        <Pagination />
       </section>
     </main>
   );
