@@ -8,6 +8,7 @@ const detailSlice = createSlice({
     isLoading: true,
     error: null,
     showModal: false,
+    currentVideo: null,
   },
   reducers: {
     setDetails(state, action) {
@@ -17,6 +18,7 @@ const detailSlice = createSlice({
     setClearDetails(state) {
       state.videos = [];
       state.currentFilm = [];
+      state.currentVideo = null;
     },
 
     setIsLoading(state, action) {
@@ -31,6 +33,9 @@ const detailSlice = createSlice({
     },
     setIsLoadingCurrentfilm(state, action) {
       state.currentFilm = action.payload;
+    },
+    setCurrentVideo(state, action) {
+      state.currentVideo = action.payload;
     },
   },
 });

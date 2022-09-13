@@ -15,7 +15,6 @@ const advancesSlice = createSlice({
     },
     setClearAdvances(state) {
       state.advanceFilms = [];
-      state.currentFilm = [];
     },
     setIsLoading(state, action) {
       state.isLoadingAdvances = action.payload;
