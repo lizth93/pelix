@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 //own
 import BootstrapAccordion from "react-bootstrap/Accordion";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import useInitialiceGenres from "../core/section-movies/use-initialice-genres";
+import SwitchOption from "./switch-options";
+import { Form } from "react-bootstrap";
 
 function Accordion() {
   useInitialiceGenres();
@@ -14,22 +15,23 @@ function Accordion() {
   return (
     <BootstrapAccordion defaultActiveKey="0">
       <BootstrapAccordion.Item eventKey="0">
-        <BootstrapAccordion.Header>Filters</BootstrapAccordion.Header>
+        <BootstrapAccordion.Header>Filter by genre</BootstrapAccordion.Header>
         <BootstrapAccordion.Body>
-          <NavDropdown
-            id="nav-dropdown-dark-example"
-            title="Genres"
-            menuVariant="dark"
-          >
+          <SwitchOption>
             {!isLoading &&
               genres.map((genre) => (
-                <NavDropdown.Item key={genre.id}>{genre.name}</NavDropdown.Item>
+                <Form.Check
+                  type="switch"
+                  id={genre.id}
+                  key={genre.id}
+                  label={genre.name}
+                />
               ))}
-          </NavDropdown>
+          </SwitchOption>
         </BootstrapAccordion.Body>
       </BootstrapAccordion.Item>
       <BootstrapAccordion.Item eventKey="1">
-        <BootstrapAccordion.Header>Accordion Item #2</BootstrapAccordion.Header>
+        <BootstrapAccordion.Header>Where you can see</BootstrapAccordion.Header>
         <BootstrapAccordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
