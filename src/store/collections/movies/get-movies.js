@@ -7,6 +7,7 @@ export const getMovies = () => {
       dispatch(moviesActions.setIsLoading(true));
       const fetchResult = await fetchMovies();
 
+      console.log(fetchResult, "what have this");
       if (fetchResult.results.length === 0) {
         dispatch(moviesActions.setIsLoading(false));
         throw new Error("Doesn't have movies");
