@@ -16,6 +16,11 @@ export const getDetailFilm = (id, category) => {
 
       const fetchResult = await fetchDetailFilm(id, category);
 
+      if (fetchResult[0].results.length === 0) {
+        dispatch(detailActions.setIsLoading(false));
+        dispatch(detailActions.setError("No videos related"));
+      }
+
       dispatch(
         detailActions.setDetails({
           videos: fetchResult[0].results,

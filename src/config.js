@@ -39,13 +39,17 @@ export const COLLECTIONS = "/collections";
 export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
 
 export const SECTION_MOVIES = "/movies";
-export const SECTION_MOVIES_ID = "/:typeCollection/:collectionId";
+export const SECTION_COLLECTION_ID = "/:typeCollection/:collectionId";
 
 export const SECTION_TV = "/tv";
 export const SECTION_TV_ID = "/:typeCollection/:collectionId";
 
+export const PLAY_VIDEO = "/play";
+export const MODAL_LATEST_ADVANCES =
+  "/collections/play/:typeCollection/:collectionId";
+
 export const CATEGORY_TV_AIRING = "tv";
-export const CATEGORY_TEATHERS = "theaters";
+export const CATEGORY_TEATHERS = "movies";
 export const CATEGORY_STREAMING = "streaming";
 
 // Tamaño pequeño: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/default.jpg

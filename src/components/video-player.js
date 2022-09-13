@@ -4,8 +4,8 @@ const VideoPlayer = (props) => {
   return (
     <iframe
       className={props.className}
-      width="720"
-      height="405"
+      width={props.width}
+      height={props.height}
       src={`${API_YOUTUBE_URL}${props.video.key}`}
       title="YouTube video player"
       frameborder="0"

@@ -6,11 +6,12 @@ const advancesSlice = createSlice({
     advanceFilms: [],
     isLoadingAdvances: true,
     errorAdvances: null,
-    showModalAdvances: false,
+    currentFilm: null,
   },
   reducers: {
     setAdvanceVideos(state, action) {
-      state.advanceFilms = action.payload;
+      state.advanceFilms = action.payload.advanceFilms;
+      state.currentFilm = action.payload.currentFilm;
     },
     setClearAdvances(state) {
       state.advanceFilms = [];
@@ -20,9 +21,6 @@ const advancesSlice = createSlice({
     },
     setError(state, action) {
       state.errorAdvances = action.payload;
-    },
-    setModalShow(state, action) {
-      state.showModalAdvances = action.payload;
     },
   },
 });
