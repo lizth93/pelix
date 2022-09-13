@@ -5,6 +5,7 @@ import useInitialiceMovies from "../main/use-initialice-movies";
 import Spinner from "react-bootstrap/esm/Spinner";
 import Movie from "../../components/movie";
 import { detailActions } from "../../store/collections/details/detail-slice";
+import Accordion from "../../components/accordion";
 import Pagination from "../../components/pagination";
 
 const SectionMovies = (props) => {
@@ -27,9 +28,9 @@ const SectionMovies = (props) => {
 
   return (
     <main className={props.className}>
-      <section className="container ">
-        {!isLoading && <h2 className="section-popular">Popular movies</h2>}
-
+      {!isLoading && <h2 className="section-popular">Popular movies</h2>}
+      <section className="container-fluid ">
+        <Accordion className="accordion" />
         <div className="section-collections">
           {isLoading && <Spinner />}
 
