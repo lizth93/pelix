@@ -10,10 +10,10 @@ import {
 } from "../../config";
 
 function ButtonsGroup(props) {
-  const [activeButton, setActiveButton] = useState(true);
+  const [activeButton, setActiveButton] = useState(CATEGORY_STREAMING);
 
   const handleClick = (category) => {
-    setActiveButton(false);
+    setActiveButton(category);
     props.onClickAdvance(category);
   };
 
@@ -22,7 +22,7 @@ function ButtonsGroup(props) {
       <BootstrapButtonGroup aria-label="Basic example">
         <Button
           variant="secondary"
-          active={activeButton}
+          active={activeButton === CATEGORY_STREAMING ? true : false}
           onClick={(e) => {
             e.preventDefault();
             handleClick(CATEGORY_STREAMING);
@@ -32,6 +32,7 @@ function ButtonsGroup(props) {
         </Button>
         <Button
           variant="secondary"
+          active={activeButton === CATEGORY_TV_AIRING ? true : false}
           onClick={(e) => {
             e.preventDefault();
             handleClick(CATEGORY_TV_AIRING);
@@ -41,6 +42,7 @@ function ButtonsGroup(props) {
         </Button>
         <Button
           variant="secondary"
+          active={activeButton === CATEGORY_TEATHERS ? true : false}
           onClick={(e) => {
             e.preventDefault();
             handleClick(CATEGORY_TEATHERS);
