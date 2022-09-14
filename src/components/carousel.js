@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux/es/hooks/useSelector";
 //own
 import BootstrapCarousel from "react-bootstrap/Carousel";
-// TODO: fix absolute import.
 import { BASE_URL_IMG, SIZE_IMAGE } from "constants";
 
 function Carousel() {
@@ -19,8 +18,7 @@ function Carousel() {
           <img
             className="d-block w-100"
             src={`${BASE_URL_IMG}${SIZE_IMAGE}${movie.backdrop_path}`}
-            // TODO: Improve the alt attribute
-            alt="First slide"
+            alt={movie.title}
           />
           <BootstrapCarousel.Caption>
             <h3>{movie.title}</h3>
