@@ -1,4 +1,4 @@
-import logo from "./logo-icon.png";
+import logo from "layouts/brand/logo-icon.png";
 const Logo = (props) => {
   return (
     <a className={props.className} href="/">

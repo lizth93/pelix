@@ -4,8 +4,8 @@ import {
   URL_LENGUAGE,
   URL_VIDEO_MOVIES,
   URL_TV_VIDEO,
-} from "../../../constants";
-import { detailActions } from "./detail-slice";
+} from "constants";
+import { detailActions } from "store/collections/details/detail-slice";
 
 export const getDetailFilm = (id, category) => {
   return async (dispatch) => {

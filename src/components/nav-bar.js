@@ -6,10 +6,10 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import BootstrapNavbar from "react-bootstrap/Navbar";
-import Logo from "../layouts/brand";
-import { getSearch } from "../store/search/get-search";
-import DropDown from "./dropdown";
-import { SEARCH } from "../constants.js";
+import Logo from "layouts/brand";
+import { getSearch } from "store/search/get-search";
+import DropDown from "components/dropdown";
+import { SEARCH } from "constants.js";
 
 const Navbar = (props) => {
   const dispatch = useDispatch();

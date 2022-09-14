@@ -2,7 +2,7 @@ import { useSelector } from "react-redux/es/exports";
 //own
 import Badge from "react-bootstrap/Badge";
 import BootstrapListGroup from "react-bootstrap/ListGroup";
-import Spinner from "./spinner";
+import Spinner from "components/spinner";
 
 function ListGroup(props) {
   const {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ModalPlay from "./modal-play.component";
+import ModalPlay from "components/modal/play/modal-play.component";
 
 export default styled(ModalPlay)`
   .modal-content {

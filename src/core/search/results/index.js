@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchResults from "./results.component";
+import SearchResults from "core/search/results/results.component";
 
 export default styled(SearchResults)`
   background-color: #343a40;
