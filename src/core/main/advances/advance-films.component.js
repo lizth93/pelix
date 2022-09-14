@@ -4,7 +4,7 @@ import { useState } from "react";
 import ButtonsGroup from "../../../components/btn-group/";
 import Film from "../../../components/films";
 import Spinner from "../../../components/spinner";
-import { BASE_URL_IMG, SMALL_SIZE } from "../../../config";
+import { BASE_URL_IMG, SMALL_SIZE } from "../../../constants";
 import PlayIcon from "../../../icons/play";
 import useInitialiceAdvances from "../use-initialice-advances";
 

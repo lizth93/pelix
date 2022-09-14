@@ -2,7 +2,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 //own
 import Collections from "../main/collections";
 import Layout from "../../layouts/layout";
-import RenderCarousel from "../../components/carousel";
+import RenderCarousel from "components/carousel";
 import {
   COLLECTIONS,
   COLLECTION_ID,
@@ -11,7 +11,7 @@ import {
   SECTION_COLLECTION_ID,
   SECTION_TV,
   MODAL_LATEST_ADVANCES,
-} from "../../config";
+} from "constants";
 import VideoDetail from "../main/video-detail";
 import SearchResults from "../search/results";
 import SectionMovies from "../section-movies";

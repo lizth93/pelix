@@ -1,6 +1,6 @@
 //own
 import FilmsDetail from "../../components/films/detail";
-import { BASE_URL_IMG, SMALL_SIZE } from "../../config";
+import { BASE_URL_IMG, SMALL_SIZE } from "../../constants";
 import notFoundImg from "../../img/not-found-smaller.jpg";
 
 const FilmsResults = (props) => {

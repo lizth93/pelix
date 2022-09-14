@@ -6,7 +6,7 @@ import {
   URL_SEARCH_MOVIES,
   URL_SEARCH_PERSONS,
   URL_SEARCH_TV,
-} from "../../config";
+} from "../../constants";
 import { searchActions } from "./search-slice";
 
 export const getSearch = (searchTerm) => {

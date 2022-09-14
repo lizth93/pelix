@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux/es/hooks/useSelector";
 //own
 import BootstrapCarousel from "react-bootstrap/Carousel";
-import { BASE_URL_IMG, SIZE_IMAGE } from "../config";
+import { BASE_URL_IMG, SIZE_IMAGE } from "../constants";
 
 function Carousel(props) {
   const { movies, isLoading } = useSelector((state) => ({

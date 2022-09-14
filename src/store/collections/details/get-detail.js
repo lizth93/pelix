@@ -4,7 +4,7 @@ import {
   URL_LENGUAGE,
   URL_VIDEO_MOVIES,
   URL_TV_VIDEO,
-} from "../../../config";
+} from "../../../constants";
 import { detailActions } from "./detail-slice";
 
 export const getDetailFilm = (id, category) => {

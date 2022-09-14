@@ -7,7 +7,7 @@ import Tv from "../../../components/tv";
 import useInitialiceMovies from "../use-initialice-movies";
 import useInitialiceTv from "../use-initialice-tv";
 import useInitialiceTopRated from "../use-initialice-top";
-import { COLLECTIONS, PLAY_VIDEO } from "../../../config";
+import { COLLECTIONS, PLAY_VIDEO } from "../../../constants";
 import { detailActions } from "../../../store/collections/details/detail-slice";
 import TopRated from "../top/top-rated";
 import AdvancesFilms from "../advances";

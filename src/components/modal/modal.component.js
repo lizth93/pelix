@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 //own
 
 import useInitialiceVideos from "../../core/main/use-initialice-videos";
-import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../../config";
+import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../../constants";
 import Button from "react-bootstrap/Button";
 import BootstrapModal from "react-bootstrap/Modal";
 import Spinner from "../spinner";

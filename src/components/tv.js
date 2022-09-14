@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 //own
-import { BASE_URL_IMG, SMALL_SIZE } from "../config";
+import { BASE_URL_IMG, SMALL_SIZE } from "../constants";
 import Film from "./films";
 
 const Tv = (props) => {
