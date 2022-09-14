@@ -1,15 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 //own
-import Spinner from "../../../components/spinner";
-import Movie from "../../../components/movie";
-import Tv from "../../../components/tv";
-import useInitialiceMovies from "../use-initialice-movies";
-import useInitialiceTv from "../use-initialice-tv";
+import Spinner from "components/spinner";
+import Movie from "components/movie";
+import Tv from "components/tv";
+import useInitialiceMovies from "core/main/use-initialice-movies";
+import useInitialiceTv from "core/main/use-initialice-tv";
 import useInitialiceTopRated from "../use-initialice-top";
-import { COLLECTIONS, PLAY_VIDEO } from "../../../constants";
-import { detailActions } from "../../../store/collections/details/detail-slice";
-import TopRated from "../top/top-rated";
+import { COLLECTIONS, PLAY_VIDEO } from "constants";
+import { detailActions } from "store/collections/details/detail-slice";
+import TopRated from "core/main/top-rated";
 import AdvancesFilms from "../advances";
 
 const Collections = (props) => {
@@ -20,7 +20,6 @@ const Collections = (props) => {
   const history = useHistory();
 
   const {
-    topRatedMovies,
     topRatedTv,
     isLoadingTop,
     movies,
@@ -30,7 +29,6 @@ const Collections = (props) => {
     showModal,
     currentFilm,
   } = useSelector((state) => ({
-    topRatedMovies: state.topRatedCollection.topRatedMovies,
     topRatedTv: state.topRatedCollection.topRatedTv,
     isLoadingTop: state.topRatedCollection.isLoadingTop,
     movies: state.moviesCollection.movies,
@@ -59,10 +57,7 @@ const Collections = (props) => {
 
   return (
     <main className={props.className}>
-      {!isLoadingTop && <Spinner />}
-      {!isLoadingTop && (
-        <TopRated topRated={"movies"} collection={topRatedMovies} />
-      )}
+      <TopRated category="movies" />
       <section className="container ">
         {!isLoading && <h2 className="section-popular">Popular movies</h2>}
 

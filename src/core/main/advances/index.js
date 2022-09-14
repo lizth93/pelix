@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import AdvancesFilms from "./advance-films.component";
+import AdvancesFilms from "core/main/advances/advance-films.component";
 
 export default styled(AdvancesFilms)`
   .container-advances {

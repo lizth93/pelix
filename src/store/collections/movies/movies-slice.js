@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const moviesSlice = createSlice({
+  // TODO: Rename this slice with "moviesState" eliminating the sufix "collection".
   name: "moviesCollection",
   initialState: {
     movies: [],
@@ -33,3 +34,5 @@ const moviesSlice = createSlice({
 
 export const moviesActions = moviesSlice.actions;
 export default moviesSlice;
+
+// TODO: move out all the slices that are inside the "collections" folder.

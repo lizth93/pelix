@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Footer from "./footer.component";
+import Footer from "layouts/footer/footer.component";
 
 export default styled(Footer)`
   background-color: #212529;

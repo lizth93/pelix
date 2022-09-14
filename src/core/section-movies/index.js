@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SectionMovies from "./movies.component";
+import SectionMovies from "core/section-movies/movies.component";
 
 export default styled(SectionMovies)`
   background-color: #343a40;

@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import moviesSlice from "./collections/movies/movies-slice";
-import tvSlice from "./collections/tv/tv-slice";
-import genresSlice from "./genres/genres-slice";
-import detailSlice from "./collections/details/detail-slice";
-import searchSlice from "./search/search-slice";
-import topRatedSlice from "./collections/top/top-rated-slice";
-import advancesSlice from "./collections/advances/advances-slice";
+import moviesSlice from "store/collections/movies/movies-slice";
+import tvSlice from "store/collections/tv/tv-slice";
+import genresSlice from "store/genres/genres-slice";
+import detailSlice from "store/collections/details/detail-slice";
+import searchSlice from "store/search/search-slice";
+import topRatedSlice from "store/collections/top/top-rated-slice";
+import advancesSlice from "store/collections/advances/advances-slice";
 
 const store = configureStore({
   reducer: {

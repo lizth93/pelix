@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Collections from "./collections.component";
+import Collections from "core/main/collections/collections.component";
 
 export default styled(Collections)`
   background-color: #343a40;

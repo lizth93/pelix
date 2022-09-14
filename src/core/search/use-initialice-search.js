@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 //own
-import { getSearch } from "../../store/search/get-search";
+import { getSearch } from "store/search/get-search";
 
 export default function useInitialiceSearchTerm() {
   const dispatch = useDispatch();

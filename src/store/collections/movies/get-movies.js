@@ -1,5 +1,5 @@
-import { API_KEY, URL_MOVIES } from "../../../constants";
-import { moviesActions } from "./movies-slice";
+import { API_KEY, URL_MOVIES } from "constants";
+import { moviesActions } from "store/collections/movies/movies-slice";
 
 export const getMovies = () => {
   return async (dispatch) => {

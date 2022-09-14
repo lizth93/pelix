@@ -1,8 +1,9 @@
 //own
-import AddIcon from "../../icons/add";
-import PlayIcon from "../../icons/play";
-import ShowMoreIcon from "../../icons/more";
-import RadialProgressBar from "../radial-progress-bar";
+import AddIcon from "icons/add";
+
+import PlayIcon from "icons/play";
+import ShowMoreIcon from "icons/more";
+import RadialProgressBar from "components/radial-progress-bar";
 
 const Film = (props) => {
   const className = getClassName(props);
