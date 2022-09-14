@@ -1,16 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 //own
-import Spinner from "../../../components/spinner";
-import Movie from "../../../components/movie";
-import Tv from "../../../components/tv";
-import useInitialiceMovies from "../use-initialice-movies";
-import useInitialiceTv from "../use-initialice-tv";
-import useInitialiceTopRated from "../use-initialice-top";
-import { COLLECTIONS, PLAY_VIDEO } from "../../../constants";
-import { detailActions } from "../../../store/collections/details/detail-slice";
-import TopRated from "../top/top-rated";
-import AdvancesFilms from "../advances";
+import Spinner from "components/spinner";
+import Movie from "components/movie";
+import Tv from "components/tv";
+import useInitialiceMovies from "core/main/use-initialice-movies";
+import useInitialiceTv from "core/main/use-initialice-tv";
+import useInitialiceTopRated from "core/main/use-initialice-top";
+import { COLLECTIONS, PLAY_VIDEO } from "constants";
+import { detailActions } from "store/collections/details/detail-slice";
+import TopRated from "core/main/top-rated/top-rated";
+import AdvancesFilms from "core/main/advances";
 
 const Collections = (props) => {
   useInitialiceMovies();

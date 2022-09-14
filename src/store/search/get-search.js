@@ -6,8 +6,8 @@ import {
   URL_SEARCH_MOVIES,
   URL_SEARCH_PERSONS,
   URL_SEARCH_TV,
-} from "../../constants";
-import { searchActions } from "./search-slice";
+} from "constants";
+import { searchActions } from "store/search/search-slice";
 
 export const getSearch = (searchTerm) => {
   return async (dispatch) => {

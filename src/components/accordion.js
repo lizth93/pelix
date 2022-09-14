@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 //own
 import BootstrapAccordion from "react-bootstrap/Accordion";
-import useInitialiceGenres from "../core/section-movies/use-initialice-genres";
-import SwitchOption from "./switch-options";
+import useInitialiceGenres from "core/section-movies/use-initialice-genres";
+import SwitchOption from "components/switch-options";
 import { Form } from "react-bootstrap";
 
 function Accordion() {

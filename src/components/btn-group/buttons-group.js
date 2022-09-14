@@ -7,7 +7,7 @@ import {
   CATEGORY_TV_AIRING,
   CATEGORY_TEATHERS,
   CATEGORY_STREAMING,
-} from "../../constants";
+} from "constants";
 
 function ButtonsGroup(props) {
   const [activeButton, setActiveButton] = useState(CATEGORY_STREAMING);

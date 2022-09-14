@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "./header.component";
+import Header from "layouts/header/header.component";
 
 export default styled(Header)`
   background-color: #212529;

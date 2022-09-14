@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 //own
-import Spinner from "../../spinner";
+import Spinner from "components/spinner";
 
 const FilmsDetail = (props) => {
   const { isLoading } = useSelector((state) => ({

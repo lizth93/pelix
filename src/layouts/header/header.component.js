@@ -1,4 +1,4 @@
-import NavbarElement from "../../components/nav-bar";
+import NavbarElement from "components/nav-bar";
 
 function Header(props) {
   return (
