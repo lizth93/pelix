@@ -3,7 +3,7 @@ import {
   URL_LENGUAGE,
   URL_TOP_RATED_MOVIES,
   URL_TOP_RATED_TV,
-} from "../../../config";
+} from "../../../constants";
 import { topRatedActions } from "./top-rated-slice";
 
 export const getTopRated = () => {

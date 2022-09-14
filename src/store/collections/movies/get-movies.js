@@ -1,4 +1,4 @@
-import { API_KEY, URL_MOVIES } from "../../../config";
+import { API_KEY, URL_MOVIES } from "../../../constants";
 import { moviesActions } from "./movies-slice";
 
 export const getMovies = () => {

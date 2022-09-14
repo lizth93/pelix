@@ -1,4 +1,4 @@
-import { API_YOUTUBE_URL } from "../config";
+import { API_YOUTUBE_URL } from "../constants";
 
 const VideoPlayer = (props) => {
   return (
