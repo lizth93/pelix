@@ -1,5 +1,5 @@
-import Logo from "../brand/logo.component";
-import ContactMe from "./contact-me";
+import Logo from "layouts/brand/logo.component";
+import ContactMe from "layouts/footer/contact-me";
 const Footer = (props) => {
   return (
     <footer className={props.className}>

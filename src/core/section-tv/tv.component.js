@@ -2,10 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 //own
-import useInitialiceTv from "../main/use-initialice-tv";
-import { detailActions } from "../../store/collections/details/detail-slice";
-import Spinner from "../../components/spinner";
-import Tv from "../../components/tv";
+import useInitialiceTv from "core/main/use-initialice-tv";
+import { detailActions } from "store/collections/details/detail-slice";
+import Spinner from "components/spinner";
+import Tv from "components/tv";
 
 const TvSection = (props) => {
   useInitialiceTv();

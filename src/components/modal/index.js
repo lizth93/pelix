@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Modal from "./modal.component";
+import Modal from "components/modal/modal.component";
 
 export default styled(Modal)`
   &::-webkit-scrollbar {
