@@ -4,7 +4,7 @@ import {
   URL_TOP_RATED_MOVIES,
   URL_TOP_RATED_TV,
 } from "constants";
-import { topRatedActions } from "store/collections/top/top-rated-slice";
+import { topRatedActions } from "store/top/top-rated-slice";
 
 export const getTopRated = () => {
   return async (dispatch) => {
