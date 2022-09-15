@@ -8,7 +8,7 @@ import useInitialiceMovies from "core/main/use-initialice-movies";
 import useInitialiceTv from "core/main/use-initialice-tv";
 import useInitialiceTopRated from "core/main/use-initialice-top";
 import { COLLECTIONS, PLAY_VIDEO } from "constants";
-import { detailActions } from "store/collections/details/detail-slice";
+import { detailActions } from "store/details/detail-slice";
 import TopRated from "core/main/top-rated/top-rated";
 import AdvancesFilms from "core/main/advances";
 

@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import moviesSlice from "store/collections/movies/movies-slice";
 import tvSlice from "store/collections/tv/tv-slice";
 import genresSlice from "store/genres/genres-slice";
-import detailSlice from "store/collections/details/detail-slice";
+import detailSlice from "store/details/detail-slice";
 import searchSlice from "store/search/search-slice";
 import topRatedSlice from "store/collections/top/top-rated-slice";
 import advancesSlice from "store/advances/advances-slice";

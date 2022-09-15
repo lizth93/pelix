@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 //own
-import { getDetailFilm } from "store/collections/details/get-detail";
+import { getDetailFilm } from "store/details/get-detail";
 
 export default function useInitialiceVideos() {
   const dispatch = useDispatch();

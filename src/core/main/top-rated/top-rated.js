@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import Movie from "components/movie";
 import Tv from "components/tv";
 import { COLLECTIONS } from "constants";
-import { detailActions } from "store/collections/details/detail-slice";
+import { detailActions } from "store/details/detail-slice";
 
 const TopRated = (props) => {
   const history = useHistory();
