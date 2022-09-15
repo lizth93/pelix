@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import BootstrapModal from "react-bootstrap/Modal";
 import useInitialiceVideos from "core/main/use-initialice-videos";
 import VideoPlayer from "components/video-player";
-import { detailActions } from "store/collections/details/detail-slice";
+import { detailActions } from "store/details/detail-slice";
 import Spinner from "components/spinner";
 
 function ModalPlay(props) {

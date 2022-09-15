@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 //own
-import { detailActions } from "store/collections/details/detail-slice";
+import { detailActions } from "store/details/detail-slice";
 import ModalPlay from "components/modal/play/";
 const PlayVideo = () => {
   const dispatch = useDispatch();

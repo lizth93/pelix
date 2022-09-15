@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import useInitialiceMovies from "core/main/use-initialice-movies";
 import Spinner from "components/spinner";
 import Movie from "components/movie";
-import { detailActions } from "store/collections/details/detail-slice";
+import { detailActions } from "store/details/detail-slice";
 import Accordion from "components/accordion";
 
 const SectionMovies = (props) => {

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 //own
 import useInitialiceTv from "core/main/use-initialice-tv";
-import { detailActions } from "store/collections/details/detail-slice";
+import { detailActions } from "store/details/detail-slice";
 import Spinner from "components/spinner";
 import Tv from "components/tv";
 const TvSection = (props) => {
