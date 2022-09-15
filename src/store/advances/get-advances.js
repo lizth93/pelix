@@ -8,7 +8,7 @@ import {
   CATEGORY_STREAMING,
   URL_TEATHERS,
 } from "constants";
-import { advancesAction } from "store/collections/advances/advances-slice";
+import { advancesAction } from "store/advances/advances-slice";
 
 export const getAdvancesFilm = (type = { CATEGORY_STREAMING }) => {
   return async (dispatch) => {

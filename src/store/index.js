@@ -5,7 +5,7 @@ import genresSlice from "store/genres/genres-slice";
 import detailSlice from "store/collections/details/detail-slice";
 import searchSlice from "store/search/search-slice";
 import topRatedSlice from "store/collections/top/top-rated-slice";
-import advancesSlice from "store/collections/advances/advances-slice";
+import advancesSlice from "store/advances/advances-slice";
 
 const store = configureStore({
   reducer: {
