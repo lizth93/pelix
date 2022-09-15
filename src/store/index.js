@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import moviesSlice from "store/collections/movies/movies-slice";
+import moviesSlice from "store/movies/movies-slice";
 import tvSlice from "store/collections/tv/tv-slice";
 import genresSlice from "store/genres/genres-slice";
 import detailSlice from "store/details/detail-slice";
