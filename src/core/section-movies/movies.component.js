@@ -44,8 +44,8 @@ const SectionMovies = (props) => {
               />
             ))}
         </div>
-        <Pagination />
       </section>
+      <Pagination />
     </main>
   );
 };

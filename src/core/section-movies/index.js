@@ -20,4 +20,7 @@ export default styled(SectionMovies)`
 
     justify-content: flex-start;
   }
+  .pagination {
+    justify-content: center;
+  }
 `;

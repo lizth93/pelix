@@ -1,4 +1,4 @@
-import { API_KEY, URL_MOVIES } from "../../../config";
+import { API_KEY, URL_LENGUAGE, URL_MOVIES } from "../../../config";
 import { moviesActions } from "./movies-slice";
 
 export const getMovies = () => {
@@ -36,5 +36,5 @@ async function fetchMovies() {
 }
 
 function getUrl() {
-  return `${URL_MOVIES}${API_KEY}`;
+  return `${URL_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
 }

@@ -24,8 +24,8 @@ const Footer = (props) => {
         </div>
         <p className="copyrigth">
           This website is handmade by Luz Edith Tobar ❤ with JavaScript, REACT,
-          Redux, html and CSS, SCSS and Bootstrap, Check the code of this
-          website on GitHub.
+          Redux, html, CSS, SCSS and Bootstrap, Check the code of this website
+          on GitHub.
         </p>
       </div>
     </footer>

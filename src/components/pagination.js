@@ -5,13 +5,11 @@ function Pagination() {
     <BootstrapPagination>
       <BootstrapPagination.First />
       <BootstrapPagination.Prev />
-      <BootstrapPagination.Item>{1}</BootstrapPagination.Item>
+      <BootstrapPagination.Item active>{1}</BootstrapPagination.Item>
       <BootstrapPagination.Item>{2}</BootstrapPagination.Item>
-
       <BootstrapPagination.Item>{3}</BootstrapPagination.Item>
       <BootstrapPagination.Item>{4}</BootstrapPagination.Item>
-      <BootstrapPagination.Item active>{5}</BootstrapPagination.Item>
-
+      <BootstrapPagination.Item>{5}</BootstrapPagination.Item>
       <BootstrapPagination.Ellipsis />
       <BootstrapPagination.Item>{20}</BootstrapPagination.Item>
       <BootstrapPagination.Next />
