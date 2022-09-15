@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 //own
-import Modal from "../../components/modal";
-import { detailActions } from "../../store/collections/details/detail-slice";
+import Modal from "components/modal";
+import { detailActions } from "store/details/detail-slice";
 
 const VideoDetail = () => {
   const dispatch = useDispatch();

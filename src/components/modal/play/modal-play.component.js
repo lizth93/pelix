@@ -4,10 +4,10 @@ import { useEffect } from "react";
 
 //own
 import BootstrapModal from "react-bootstrap/Modal";
-import useInitialiceVideos from "../../../core/main/use-initialice-videos";
-import VideoPlayer from "../../video-player";
-import { detailActions } from "../../../store/collections/details/detail-slice";
-import { Spinner } from "react-bootstrap";
+import useInitialiceVideos from "core/main/use-initialice-videos";
+import VideoPlayer from "components/video-player";
+import { detailActions } from "store/details/detail-slice";
+import Spinner from "components/spinner";
 
 function ModalPlay(props) {
   const dispatch = useDispatch();

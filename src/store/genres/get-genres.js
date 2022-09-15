@@ -1,5 +1,5 @@
-import { genresActions } from "./genres-slice";
-import { URL_GENRES, API_KEY, URL_LENGUAGE } from "../../config";
+import { genresActions } from "store/genres/genres-slice";
+import { URL_GENRES, API_KEY, URL_LENGUAGE } from "constants";
 
 export const getGenres = () => {
   return async (dispatch) => {

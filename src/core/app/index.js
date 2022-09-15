@@ -1,8 +1,8 @@
 import { Route, Redirect, Switch } from "react-router-dom";
 //own
-import Collections from "../main/collections";
-import Layout from "../../layouts/layout";
-import RenderCarousel from "../../components/carousel";
+import Collections from "core/main/collections";
+import Layout from "layouts";
+import Carousel from "components/carousel";
 import {
   COLLECTIONS,
   COLLECTION_ID,
@@ -11,14 +11,14 @@ import {
   SECTION_COLLECTION_ID,
   SECTION_TV,
   MODAL_LATEST_ADVANCES,
-} from "../../config";
-import VideoDetail from "../main/video-detail";
-import SearchResults from "../search/results";
-import SectionMovies from "../section-movies";
-import TvSection from "../section-tv";
-import "./app.css";
+} from "constants";
+import VideoDetail from "core/main/video-detail";
+import SearchResults from "core/search/results";
+import SectionMovies from "core/section-movies";
+import TvSection from "core/section-tv";
+import "core/app/app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PlayVideo from "../main/advances/play-video";
+import PlayVideo from "core/main/advances/play-video";
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
           <TvSection />
         </Route>
         <Route path={COLLECTIONS}>
-          <RenderCarousel />
+          <Carousel />
           <Collections />
         </Route>
       </Switch>

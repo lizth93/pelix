@@ -3,8 +3,8 @@ import {
   URL_LENGUAGE,
   URL_TOP_RATED_MOVIES,
   URL_TOP_RATED_TV,
-} from "../../../config";
-import { topRatedActions } from "./top-rated-slice";
+} from "constants";
+import { topRatedActions } from "store/top/top-rated-slice";
 
 export const getTopRated = () => {
   return async (dispatch) => {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ButtonsGroup from "./buttons-group";
+import ButtonsGroup from "components/btn-group/buttons-group";
 
 export default styled(ButtonsGroup)`
   .btn {

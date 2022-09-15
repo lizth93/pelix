@@ -1,5 +1,5 @@
-import { API_KEY, URL_LENGUAGE, URL_MOVIES } from "../../../config";
-import { moviesActions } from "./movies-slice";
+import { API_KEY, URL_MOVIES, URL_LENGUAGE } from "constants";
+import { moviesActions } from "store/movies/movies-slice";
 
 export const getMovies = () => {
   return async (dispatch) => {

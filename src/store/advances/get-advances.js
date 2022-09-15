@@ -7,8 +7,8 @@ import {
   CATEGORY_TEATHERS,
   CATEGORY_STREAMING,
   URL_TEATHERS,
-} from "../../../config";
-import { advancesAction } from "./advances-slice";
+} from "constants";
+import { advancesAction } from "store/advances/advances-slice";
 
 export const getAdvancesFilm = (type = { CATEGORY_STREAMING }) => {
   return async (dispatch) => {

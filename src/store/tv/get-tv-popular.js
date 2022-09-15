@@ -1,5 +1,5 @@
-import { API_KEY, URL_LENGUAGE, URL_TV_POPULAR } from "../../../config";
-import { tvActions } from "./tv-slice";
+import { API_KEY, URL_LENGUAGE, URL_TV_POPULAR } from "constants";
+import { tvActions } from "store/tv/tv-slice";
 
 export const getTvPopular = () => {
   return async (dispatch) => {

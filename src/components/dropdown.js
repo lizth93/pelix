@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import { COLLECTIONS, SECTION_MOVIES, SECTION_TV } from "../config";
+import { COLLECTIONS, SECTION_MOVIES, SECTION_TV } from "constants";
 
 function DropDown(props) {
   return (

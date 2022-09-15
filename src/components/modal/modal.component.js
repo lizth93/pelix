@@ -3,13 +3,13 @@ import { useSelector } from "react-redux";
 
 //own
 
-import useInitialiceVideos from "../../core/main/use-initialice-videos";
-import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "../../config";
+import useInitialiceVideos from "core/main/use-initialice-videos";
+import { IMG_SIZE_YOUTUBE, URL_IMG_YOUTUBE } from "constants";
 import Button from "react-bootstrap/Button";
 import BootstrapModal from "react-bootstrap/Modal";
-import Spinner from "../spinner";
-import VideoPlayer from "../video-player";
-import RenderCard from "../card";
+import Spinner from "components/spinner";
+import VideoPlayer from "components/video-player";
+import RenderCard from "components/card";
 
 function Modal(props) {
   const [principalVideo, setPrincipalVideo] = useState(null);

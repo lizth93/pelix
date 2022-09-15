@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 //own
-import useInitialiceMovies from "../main/use-initialice-movies";
-import Spinner from "react-bootstrap/esm/Spinner";
-import Movie from "../../components/movie";
-import { detailActions } from "../../store/collections/details/detail-slice";
-import Accordion from "../../components/accordion";
-import Pagination from "../../components/pagination";
+import useInitialiceMovies from "core/main/use-initialice-movies";
+import Spinner from "components/spinner";
+import Movie from "components/movie";
+import { detailActions } from "store/details/detail-slice";
+import Accordion from "components/accordion";
+import Pagination from "components/pagination";
 
 const SectionMovies = (props) => {
   useInitialiceMovies();

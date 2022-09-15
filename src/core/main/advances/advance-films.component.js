@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 //own
-import ButtonsGroup from "../../../components/btn-group/";
-import Film from "../../../components/films";
-import Spinner from "../../../components/spinner";
-import { BASE_URL_IMG, SMALL_SIZE } from "../../../config";
-import PlayIcon from "../../../icons/play";
-import useInitialiceAdvances from "../use-initialice-advances";
+import ButtonsGroup from "components/btn-group/";
+import Film from "components/films";
+import Spinner from "components/spinner";
+import { BASE_URL_IMG, SMALL_SIZE } from "constants";
+import PlayIcon from "icons/play";
+import useInitialiceAdvances from "core/main/use-initialice-advances";
 
 const AdvancesFilms = (props) => {
   const [filmAdvance, setFilmAdvance] = useState("streaming");
