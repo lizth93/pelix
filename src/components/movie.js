@@ -5,7 +5,7 @@ import { BASE_URL_IMG, SMALL_SIZE } from "constants";
 import Film from "components/films";
 
 const Movie = (props) => {
-  const handleModalMoviesCollection = (id) => {
+  const onClick = (id) => {
     props.onClickModal("movies", id);
   };
 
@@ -19,7 +19,7 @@ const Movie = (props) => {
         onClick={props.onClick}
         collection={props.collection}
         withMoreIcon={true}
-        onClickModal={handleModalMoviesCollection}
+        onClickModal={onClick}
       />
     </div>
   );

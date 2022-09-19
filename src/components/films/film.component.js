@@ -3,6 +3,7 @@ import AddIcon from "icons/add";
 import PlayIcon from "icons/play";
 import ShowMoreIcon from "icons/more";
 import RadialProgressBar from "components/radial-progress-bar";
+import { BASE_URL_IMG, SMALL_SIZE } from "constants";
 
 const Film = (props) => {
   const className = getClassName(props);
@@ -14,7 +15,11 @@ const Film = (props) => {
   return (
     <div className={className}>
       <figure className="collection__fig">
-        <img src={props.src} alt={props.title} className="collection__img" />
+        <img
+          src={useImgSrc(props)}
+          alt={props.title}
+          className="collection__img"
+        />
       </figure>
       <div className="collection__title">
         <h1>
@@ -43,6 +48,17 @@ const Film = (props) => {
     </div>
   );
 };
+
+function useImgSrc(props) {
+  let src = "";
+  if (props.src) {
+    src = props.src;
+  } else {
+    src = `${BASE_URL_IMG}${SMALL_SIZE}${props.imgName}`;
+  }
+
+  return src;
+}
 
 function getClassName(props) {
   const classNames = [props.className];
