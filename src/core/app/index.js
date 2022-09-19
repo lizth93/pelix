@@ -2,7 +2,6 @@ import { Route, Redirect, Switch } from "react-router-dom";
 //own
 import Collections from "core/main/collections";
 import Layout from "layouts";
-import Carousel from "components/carousel";
 import {
   COLLECTIONS,
   COLLECTION_ID,
@@ -34,7 +33,6 @@ function App() {
           <TvSection />
         </Route>
         <Route path={COLLECTIONS}>
-          <Carousel />
           <Collections />
         </Route>
       </Switch>

@@ -11,6 +11,7 @@ import { COLLECTIONS, PLAY_VIDEO } from "constants";
 import { detailActions } from "store/details/detail-slice";
 import TopRated from "core/main/top-rated/top-rated";
 import AdvancesFilms from "core/main/advances";
+import Carousel from "components/carousel";
 
 const Collections = (props) => {
   useInitialiceMovies();
@@ -58,48 +59,51 @@ const Collections = (props) => {
   }
 
   return (
-    <main className={props.className}>
-      {!isLoadingTop && <Spinner />}
-      {!isLoadingTop && (
-        <TopRated topRated={"movies"} collection={topRatedMovies} />
-      )}
-      <section className="container ">
-        {!isLoading && <h2 className="section-popular">Popular movies</h2>}
+    <>
+      <Carousel />
+      <main className={props.className}>
+        {!isLoadingTop && <Spinner />}
+        {!isLoadingTop && (
+          <TopRated topRated={"movies"} collection={topRatedMovies} />
+        )}
+        <section className="container ">
+          {!isLoading && <h2 className="section-popular">Popular movies</h2>}
 
-        <div className="section-collections">
-          {isLoading && <Spinner />}
+          <div className="section-collections">
+            {isLoading && <Spinner />}
 
-          {!isLoading &&
-            movies.map((movie) => (
-              <Movie
-                key={movie.id}
-                collection={movie}
-                withHover
-                onClickModal={handleModal}
-                detailMode="hover"
-              />
-            ))}
-        </div>
-      </section>
-      {isLoadingTop && <Spinner />}
-      {!isLoadingTop && <TopRated topRated={"tv"} collection={topRatedTv} />}
-      <section className="container ">
-        {!isLoadingTv && <h2 className="section-popular">Popular Tv</h2>}
-        <div className="section-collections">
-          {isLoadingTv && <Spinner />}
-          {!isLoadingTv &&
-            tvPopular.map((tv) => (
-              <Tv
-                key={tv.id}
-                collection={tv}
-                withHover
-                onClickModal={handleModal}
-              />
-            ))}
-        </div>
-      </section>
-      <AdvancesFilms onClickModal={handleModalPlay} />
-    </main>
+            {!isLoading &&
+              movies.map((movie) => (
+                <Movie
+                  key={movie.id}
+                  collection={movie}
+                  withHover
+                  onClickModal={handleModal}
+                  detailMode="hover"
+                />
+              ))}
+          </div>
+        </section>
+        {isLoadingTop && <Spinner />}
+        {!isLoadingTop && <TopRated topRated={"tv"} collection={topRatedTv} />}
+        <section className="container ">
+          {!isLoadingTv && <h2 className="section-popular">Popular Tv</h2>}
+          <div className="section-collections">
+            {isLoadingTv && <Spinner />}
+            {!isLoadingTv &&
+              tvPopular.map((tv) => (
+                <Tv
+                  key={tv.id}
+                  collection={tv}
+                  withHover
+                  onClickModal={handleModal}
+                />
+              ))}
+          </div>
+        </section>
+        <AdvancesFilms onClickModal={handleModalPlay} />
+      </main>
+    </>
   );
 };
 
