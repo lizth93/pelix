@@ -44,7 +44,8 @@ export const URL_MOVIES_SECTION = "/movies";
 export const SECTION_COLLECTION_ID =
   "/:typeCollection/page/:numPage/id/:collectionId";
 
-export const SECTION_TV = "/tv";
+export const SECTION_TV = "/tv/page/:numPage";
+export const URL_SECTION_TV = "/tv";
 export const SECTION_TV_ID = "/:typeCollection/:collectionId";
 
 export const PLAY_VIDEO = "/play";

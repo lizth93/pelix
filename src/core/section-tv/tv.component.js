@@ -6,6 +6,7 @@ import useInitialiceTv from "core/main/use-initialice-tv";
 import { detailActions } from "store/details/detail-slice";
 import Spinner from "components/spinner";
 import Tv from "components/tv";
+import PaginationTv from "./pagination-tv";
 const TvSection = (props) => {
   useInitialiceTv();
 
@@ -44,6 +45,7 @@ const TvSection = (props) => {
             ))}
         </div>
       </section>
+      <PaginationTv />
     </main>
   );
 };

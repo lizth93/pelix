@@ -20,7 +20,7 @@ const Pagination = (props) => {
         marginPagesDisplayed={2}
         pageRangeDisplayed={3}
         onPageChange={onClick}
-        containerClassName={"pagination"}
+        containerClassName={"pagination justify-content-center"}
         pageClassName={"page-item"}
         pageLinkClassName={"page-link"}
         previousClassName={"page-item"}
@@ -47,6 +47,8 @@ export default styled(Pagination)`
     --bs-pagination-disabled-color: #343a40;
     --bs-pagination-disabled-bg: #495057;
     --bs-pagination-disabled-border-color: #343a40;
+
+    --bs-pagination-font-size: 2rem;
   }
   .active > .page-link,
   .page-link.active {

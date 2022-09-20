@@ -1,23 +1,24 @@
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 //own
-import { moviesActions } from "store/movies/movies-slice";
-import { URL_MOVIES_SECTION } from "constants";
-import Pagination from "components/pagination";
 
-const PaginationMovies = () => {
+import Pagination from "components/pagination";
+import { tvActions } from "store/tv/tv-slice";
+import { URL_SECTION_TV } from "constants";
+
+const PaginationTv = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
   const { totalPages } = useSelector((state) => ({
-    totalPages: state.moviesCollection.totalPages,
+    totalPages: state.tvCollection.totalPages,
   }));
 
   const handlePageClick = (page) => {
-    dispatch(moviesActions.setCurrentPage(page));
-    history.push(`${URL_MOVIES_SECTION}/page/${page}`);
+    dispatch(tvActions.setCurrentPage(page));
+    history.push(`${URL_SECTION_TV}/page/${page}`);
   };
 
   return <Pagination totalPages={totalPages} pageClick={handlePageClick} />;
 };
-export default PaginationMovies;
+export default PaginationTv;
