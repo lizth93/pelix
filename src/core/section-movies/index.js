@@ -20,9 +20,4 @@ export default styled(SectionMovies)`
 
     justify-content: flex-start;
   }
-  .pagination {
-    justify-content: center;
-
-    --bs-pagination-font-size: 2rem;
-  }
 `;
