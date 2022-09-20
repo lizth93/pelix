@@ -2,13 +2,12 @@ import { PAGE } from "constants";
 import { API_KEY, URL_MOVIES, URL_LENGUAGE } from "constants";
 import { moviesActions } from "store/movies/movies-slice";
 
-export const getMovies = (numberPage) => {
+export const getMovies = (numberPage = 1) => {
   return async (dispatch) => {
     try {
       dispatch(moviesActions.setIsLoading(true));
       const fetchResult = await fetchMovies(numberPage);
 
-      console.log(fetchResult, "what have this");
       if (fetchResult.results.length === 0) {
         dispatch(moviesActions.setIsLoading(false));
         throw new Error("Doesn't have movies");
@@ -36,6 +35,6 @@ async function fetchMovies(numberPage) {
   return response.json();
 }
 
-function getUrl(numberPage = 1) {
+function getUrl(numberPage) {
   return `${URL_MOVIES}${API_KEY}&${URL_LENGUAGE}${PAGE}${numberPage}`;
 }
