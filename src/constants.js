@@ -56,6 +56,7 @@ export const CATEGORY_TEATHERS = "movies";
 export const CATEGORY_STREAMING = "streaming";
 
 export const PAGE = "&page=";
+export const MAX_PAGES = 500;
 
 // Tamaño pequeño: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/default.jpg
 // Tamaño mediano: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/hqdefault.jpg
