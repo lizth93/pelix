@@ -6,7 +6,7 @@ import Spinner from "components/spinner";
 import Movie from "components/movie";
 import { detailActions } from "store/details/detail-slice";
 import Accordion from "components/accordion";
-import Pagination from "components/pagination";
+import PaginationMovies from "./pagination-movies";
 
 const SectionMovies = (props) => {
   useInitialiceMovies();
@@ -45,7 +45,7 @@ const SectionMovies = (props) => {
             ))}
         </div>
       </section>
-      <Pagination />
+      <PaginationMovies />
     </main>
   );
 };

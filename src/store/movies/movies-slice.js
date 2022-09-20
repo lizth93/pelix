@@ -6,6 +6,7 @@ const moviesSlice = createSlice({
     movies: [],
     isLoading: true,
     error: null,
+    currentPage: 1,
     totalPages: null,
     totalResults: null,
   },
@@ -21,6 +22,9 @@ const moviesSlice = createSlice({
     },
     setError(state, action) {
       state.error = action.payload;
+    },
+    setCurrentPage(state, action) {
+      state.currentPage = action.payload;
     },
     setTotalPages(state, action) {
       state.totalPages = action.payload;
