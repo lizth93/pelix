@@ -5,7 +5,7 @@ import useInitialiceMovies from "core/main/use-initialice-movies";
 import Spinner from "components/spinner";
 import Movie from "components/movie";
 import { detailActions } from "store/details/detail-slice";
-import Accordion from "components/accordion";
+import Accordion from "components/accordion/";
 import PaginationMovies from "./pagination-movies";
 
 const SectionMovies = (props) => {

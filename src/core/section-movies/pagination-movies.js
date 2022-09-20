@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 //own
-import Pagination from "components/pagination";
+import Pagination from "components/pagination/";
 import { moviesActions } from "store/movies/movies-slice";
 import { URL_MOVIES_SECTION } from "constants";
 
