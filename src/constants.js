@@ -38,8 +38,11 @@ export const URL_TEATHERS = "https://api.themoviedb.org/3/movie/now_playing?";
 export const COLLECTIONS = "/collections";
 export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
 
-export const SECTION_MOVIES = "/movies";
-export const SECTION_COLLECTION_ID = "/:typeCollection/:collectionId";
+export const SECTION_MOVIES = "/movies/page/:numPage";
+export const URL_MOVIES_SECTION = "/movies";
+
+export const SECTION_COLLECTION_ID =
+  "/:typeCollection/page/:numPage/id/:collectionId";
 
 export const SECTION_TV = "/tv";
 export const SECTION_TV_ID = "/:typeCollection/:collectionId";
@@ -51,6 +54,9 @@ export const MODAL_LATEST_ADVANCES =
 export const CATEGORY_TV_AIRING = "tv";
 export const CATEGORY_TEATHERS = "movies";
 export const CATEGORY_STREAMING = "streaming";
+
+export const PAGE = "&page=";
+export const MAX_PAGES = 500;
 
 // Tamaño pequeño: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/default.jpg
 // Tamaño mediano: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/hqdefault.jpg
