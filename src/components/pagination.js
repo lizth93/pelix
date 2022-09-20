@@ -22,6 +22,7 @@ function Pagination(props) {
   };
   const handleClickPagination = (numberPage) => {
     props.onClickPaginationNumber(numberPage);
+    setNumberPagesMove(numberPage);
   };
 
   const statusPrev = props.currentPage <= 1 ? true : false;
@@ -42,6 +43,7 @@ function Pagination(props) {
       />
       {pages.map((page) => (
         <BootstrapPagination.Item
+          key={page + props.currentPage}
           onClick={() => {
             handleClickPagination(page + props.currentPage);
           }}

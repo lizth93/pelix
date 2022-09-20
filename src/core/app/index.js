@@ -26,6 +26,7 @@ function App() {
       <Route path="/" exact>
         <Redirect to={COLLECTIONS} />
       </Route>
+
       <Switch>
         <Route path={SECTION_MOVIES}>
           <SectionMovies />

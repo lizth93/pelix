@@ -12,14 +12,17 @@ const SectionMovies = (props) => {
   useInitialiceMovies();
   const dispatch = useDispatch();
   const history = useHistory();
-  const { movies, isLoading, showModal } = useSelector((state) => ({
-    movies: state.moviesCollection.movies,
-    isLoading: state.moviesCollection.isLoading,
-    showModal: state.detailsCollection.showModal,
-  }));
+  const { movies, isLoading, showModal, currentPage } = useSelector(
+    (state) => ({
+      movies: state.moviesCollection.movies,
+      isLoading: state.moviesCollection.isLoading,
+      showModal: state.detailsCollection.showModal,
+      currentPage: state.moviesCollection.currentPage,
+    })
+  );
 
   const handleModalMovies = (category, id) => {
-    history.push(`/${category}/${id}`);
+    history.push(`/${category}/page/${currentPage}/id/${id}`);
 
     if (showModal === false) {
       dispatch(detailActions.setModalShow(true));
