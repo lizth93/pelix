@@ -12,14 +12,17 @@ const TvSection = (props) => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const { tvPopular, isLoadingTv, showModal } = useSelector((state) => ({
-    tvPopular: state.tvCollection.tvPopular,
-    isLoadingTv: state.tvCollection.isLoadingTv,
-    showModal: state.detailsCollection.showModal,
-  }));
+  const { tvPopular, isLoadingTv, showModal, currentPage } = useSelector(
+    (state) => ({
+      tvPopular: state.tvCollection.tvPopular,
+      isLoadingTv: state.tvCollection.isLoadingTv,
+      showModal: state.detailsCollection.showModal,
+      currentPage: state.tvCollection.currentPage,
+    })
+  );
 
   const handleModalTv = (category, id) => {
-    history.push(`/${category}/${id}`);
+    history.push(`/${category}/page/${currentPage}/id/${id}`);
 
     if (showModal === false) {
       dispatch(detailActions.setModalShow(true));
