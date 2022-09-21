@@ -59,7 +59,7 @@ const Collections = (props) => {
 
   return (
     <main className={props.className}>
-      {!isLoadingTop && <Spinner />}
+      {isLoadingTop && <Spinner />}
       {!isLoadingTop && (
         <TopRated topRated={"movies"} collection={topRatedMovies} />
       )}
