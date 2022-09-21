@@ -12,12 +12,13 @@ const SectionMovies = (props) => {
   useInitialiceMovies();
   const dispatch = useDispatch();
   const history = useHistory();
-  const { movies, isLoading, showModal, currentPage } = useSelector(
+  const { movies, isLoading, showModal, currentPage, genres } = useSelector(
     (state) => ({
       movies: state.moviesCollection.movies,
       isLoading: state.moviesCollection.isLoading,
       showModal: state.detailsCollection.showModal,
       currentPage: state.moviesCollection.currentPage,
+      genres: state.genresCollection.genres,
     })
   );
 
@@ -33,7 +34,7 @@ const SectionMovies = (props) => {
     <main className={props.className}>
       {!isLoading && <h2 className="section-popular">Popular movies</h2>}
       <section className="container-fluid ">
-        <Accordion className="accordion" />
+        <Accordion className="accordion" genres={genres} />
         <div className="section-collections">
           {isLoading && <Spinner />}
 
