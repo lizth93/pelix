@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Demo Project: https://pelix-luze.netlify.app
+## Demo Project: 
+Its not finished yet, but you can see the advance in this link:
+https://pelix-luze.netlify.app
 
 ## Available Scripts
 
