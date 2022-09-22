@@ -25,7 +25,6 @@ const Film = (props) => {
             <>
               <div>
                 <PlayIcon className="play-icon" />
-                <AddIcon />
               </div>
               <div className="details-container">
                 <ShowMoreIcon
