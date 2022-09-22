@@ -81,7 +81,7 @@ const Collections = (props) => {
             ))}
         </div>
       </section>
-      {isLoadingTop && <Spinner />}
+
       {!isLoadingTop && <TopRated topRated={"tv"} collection={topRatedTv} />}
       <section className="container ">
         {!isLoadingTv && <h2 className="section-popular">Popular Tv</h2>}

@@ -7,7 +7,6 @@ import BootstrapModal from "react-bootstrap/Modal";
 import useInitialiceVideos from "core/main/use-initialice-videos";
 import VideoPlayer from "components/video-player";
 import { detailActions } from "store/details/detail-slice";
-import Spinner from "components/spinner";
 
 function ModalPlay(props) {
   const dispatch = useDispatch();
@@ -36,7 +35,6 @@ function ModalPlay(props) {
   return (
     <div className={props.className} onClick={props.onClick}>
       <>
-        {isLoading && <Spinner />}
         {!isLoading && (
           <BootstrapModal
             {...props}
