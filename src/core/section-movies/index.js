@@ -5,6 +5,11 @@ export default styled(SectionMovies)`
   background-color: #343a40;
   color: #fff;
 
+  .section-popular {
+    margin: 3rem;
+    font-size: 2.5rem;
+  }
+
   .container-fluid {
     display: flex;
     margin: 3rem;
