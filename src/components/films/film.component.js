@@ -1,5 +1,4 @@
 //own
-import PlayIcon from "icons/play";
 import ShowMoreIcon from "icons/more";
 import RadialProgressBar from "components/radial-progress-bar";
 
@@ -21,15 +20,18 @@ const Film = (props) => {
         </h1>
         <div className="icons">
           {props.withMoreIcon && (
-            <div className="details-container">
+            <>
               <ShowMoreIcon
                 onClick={() => handleModalCollection(props.collection.id)}
               />
-              <RadialProgressBar
-                className="radial-bar"
-                value={props.collection.vote_average * 10}
-              />
-            </div>
+
+              <div className="details-container">
+                <RadialProgressBar
+                  className="radial-bar"
+                  value={props.collection.vote_average * 10}
+                />
+              </div>
+            </>
           )}
         </div>
       </div>

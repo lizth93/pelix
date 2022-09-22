@@ -95,6 +95,9 @@ export default styled(Collections)`
 
     .icons {
       padding: 0 1rem 1rem 1rem;
+      justify-content: flex-end;
     }
+
+    /* justify-content: flex-end; */
   }
 `;
