@@ -1,14 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 //own
 import { BASE_URL_IMG, SMALL_SIZE } from "constants";
 import Film from "components/films";
 
 const Movie = (props) => {
+  const history = useHistory();
   const handleModalMoviesCollection = (id) => {
     props.onClickModal("movies", id);
   };
 
+  const handleClick = (id) => {
+    history.push(`/movies/${id}/detail`);
+  };
   return (
     <div className={props.className}>
       <Film
@@ -20,6 +25,7 @@ const Movie = (props) => {
         collection={props.collection}
         withMoreIcon={true}
         onClickModal={handleModalMoviesCollection}
+        onClickFilm={handleClick}
       />
     </div>
   );

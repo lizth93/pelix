@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 //own
 import { getDetailFilm } from "store/details/get-detail";
 
-export default function useInitialiceVideos() {
+export default function useInitialiceDetails() {
   const dispatch = useDispatch();
   const typeCollection = useParams()?.typeCollection;
   const collectionId = useParams()?.collectionId;

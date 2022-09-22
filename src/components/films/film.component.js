@@ -9,8 +9,11 @@ const Film = (props) => {
     props.onClickModal(id);
   };
 
+  const handleClick = () => {
+    props.onClickFilm(props.collection.id);
+  };
   return (
-    <div className={className}>
+    <div className={className} onClick={handleClick}>
       <figure className="collection__fig">
         <img src={props.src} alt={props.title} className="collection__img" />
       </figure>
