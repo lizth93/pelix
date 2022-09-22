@@ -7,7 +7,6 @@ import Movie from "components/movie";
 import { detailActions } from "store/details/detail-slice";
 import Accordion from "components/accordion/";
 import PaginationMovies from "./pagination-movies";
-import { useEffect, useState } from "react";
 import { moviesActions } from "store/movies/movies-slice";
 
 const SectionMovies = (props) => {
@@ -24,8 +23,6 @@ const SectionMovies = (props) => {
       genres: state.genresCollection.genres,
       filterByGenre: state.moviesCollection.filterByGenre,
     }));
-
-  // const [moviesFilter, setMoviesFilter] = useState(movies);
 
   const handleFilterGenre = (id) => {
     if (id === "all") {
@@ -44,6 +41,16 @@ const SectionMovies = (props) => {
     }
   };
 
+  const filterMovies = movies
+    .filter((movie) => movie.genre_ids.some((genre) => genre === filterByGenre))
+    .map((movie) => (
+      <Movie
+        key={movie.id}
+        collection={movie}
+        onClickModal={handleModalMovies}
+        withHover
+      />
+    ));
   return (
     <main className={props.className}>
       {!isLoading && <h2 className="section-popular">Popular movies</h2>}
@@ -66,20 +73,11 @@ const SectionMovies = (props) => {
                 withHover
               />
             ))}
-          {!isLoading &&
-            filterByGenre !== "all" &&
-            movies
-              .filter((movie) =>
-                movie.genre_ids.some((genre) => genre === filterByGenre)
-              )
-              .map((movie) => (
-                <Movie
-                  key={movie.id}
-                  collection={movie}
-                  onClickModal={handleModalMovies}
-                  withHover
-                />
-              ))}
+          {filterByGenre !== "all" && filterMovies.length === 0 ? (
+            <p className="message">We can find movies with this genre</p>
+          ) : (
+            filterMovies
+          )}
         </div>
       </section>
       <PaginationMovies />

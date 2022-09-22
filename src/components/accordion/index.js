@@ -5,6 +5,7 @@ export default styled(Accordion)`
     --bs-accordion-color: #fff;
     --bs-accordion-bg: #212529;
     --bs-accordion-border-color: #0b7285;
+    font-size: 1.2rem;
   }
   .accordion-button {
     color: #fff;
@@ -13,5 +14,9 @@ export default styled(Accordion)`
   .form-check-input:checked {
     background-color: #22b8cf;
     border-color: #0b7285;
+  }
+
+  .accordion-item .accordion-button {
+    font-size: 1.4rem;
   }
 `;
