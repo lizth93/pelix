@@ -9,6 +9,7 @@ const moviesSlice = createSlice({
     currentPage: 1,
     totalPages: null,
     totalResults: null,
+    filterByGenre: "all",
   },
   reducers: {
     setMovies(state, action) {
@@ -30,6 +31,9 @@ const moviesSlice = createSlice({
     },
     setTotalResults(state, action) {
       state.totalResults = action.payload;
+    },
+    setFilterByGenre(state, action) {
+      state.filterByGenre = action.payload;
     },
   },
 });

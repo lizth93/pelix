@@ -13,7 +13,7 @@ function Accordion(props) {
   }));
 
   const handleFilterGenre = (genreId) => {
-    console.log(genreId);
+    props.onClickGenre(genreId);
   };
   return (
     <div className={props.className}>
@@ -21,17 +21,27 @@ function Accordion(props) {
         <BootstrapAccordion.Item eventKey="0">
           <BootstrapAccordion.Header>Filter by genre</BootstrapAccordion.Header>
           <BootstrapAccordion.Body>
-            {!isLoading &&
-              props.genres.map((genre) => (
-                <Form.Check
-                  key={genre.id}
-                  label={genre.name}
-                  name="group1"
-                  type={"radio"}
-                  id={`inline-radio-${genre.id}`}
-                  onClick={() => handleFilterGenre(genre.id)}
-                />
-              ))}
+            <>
+              <Form.Check
+                key={"all"}
+                label={"All"}
+                name="group1"
+                type={"radio"}
+                id={`inline-radio-all`}
+                onClick={() => handleFilterGenre("all")}
+              />
+              {!isLoading &&
+                props.genres.map((genre) => (
+                  <Form.Check
+                    key={genre.id}
+                    label={genre.name}
+                    name="group1"
+                    type={"radio"}
+                    id={`inline-radio-${genre.id}`}
+                    onClick={() => handleFilterGenre(genre.id)}
+                  />
+                ))}
+            </>
           </BootstrapAccordion.Body>
         </BootstrapAccordion.Item>
         <BootstrapAccordion.Item eventKey="1">
