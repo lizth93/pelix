@@ -30,7 +30,6 @@ function ModalPlay(props) {
       }
     }
   }, [videos, isLoading, dispatch]);
-  console.log(currentFilm);
 
   return (
     <div className={props.className} onClick={props.onClick}>
