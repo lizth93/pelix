@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import { COLLECTIONS, SECTION_MOVIES, SECTION_TV } from "constants";
+import { COLLECTIONS, URL_SECTION_MOVIES, URL_TV } from "constants";
 
 function DropDown(props) {
   return (
@@ -14,8 +14,8 @@ function DropDown(props) {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href={COLLECTIONS}>Home</Nav.Link>
-              <Nav.Link href={SECTION_MOVIES}>Movies</Nav.Link>
-              <Nav.Link href={SECTION_TV}>Tv</Nav.Link>
+              <Nav.Link href={URL_SECTION_MOVIES}>Movies</Nav.Link>
+              <Nav.Link href={URL_TV}>Tv</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

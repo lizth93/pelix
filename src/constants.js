@@ -17,6 +17,7 @@ export const SIZE_IMAGE = "original";
 export const SMALL_SIZE = "w300";
 
 export const URL_GENRES = "https://api.themoviedb.org/3/genre/movie/list?";
+export const URL_GENRES_TV = "https://api.themoviedb.org/3/genre/tv/list?";
 export const URL_LENGUAGE = "language=en-US";
 
 export const API_YOUTUBE_URL = "https://www.youtube.com/embed/";
@@ -39,12 +40,14 @@ export const COLLECTIONS = "/collections";
 export const COLLECTION_ID = "/collections/:typeCollection/:collectionId";
 
 export const SECTION_MOVIES = "/movies/page/:numPage";
+export const URL_SECTION_MOVIES = "/movies/page/1";
 export const URL_MOVIES_SECTION = "/movies";
 
 export const SECTION_COLLECTION_ID =
   "/:typeCollection/page/:numPage/id/:collectionId";
 
 export const SECTION_TV = "/tv/page/:numPage";
+export const URL_TV = "/tv/page/1";
 export const URL_SECTION_TV = "/tv";
 export const SECTION_TV_ID = "/:typeCollection/:collectionId";
 

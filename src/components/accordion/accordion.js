@@ -6,7 +6,7 @@ import useInitialiceGenres from "core/section-movies/use-initialice-genres";
 import { Form } from "react-bootstrap";
 
 function Accordion(props) {
-  useInitialiceGenres();
+  useInitialiceGenres(props.type);
 
   const { isLoading } = useSelector((state) => ({
     isLoading: state.genresCollection.isLoading,
