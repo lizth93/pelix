@@ -40,7 +40,7 @@ const Navbar = (props) => {
           <BootstrapNavbar.Collapse id="navbarScroll">
             <DropDown />
 
-            <Form className="d-flex" onSubmit={handleSearchFilms}>
+            <Form className="d-flex search-form" onSubmit={handleSearchFilms}>
               <Form.Control
                 type="search"
                 placeholder="Search"

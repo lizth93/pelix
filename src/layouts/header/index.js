@@ -61,6 +61,9 @@ export default styled(Header)`
     --bs-navbar-padding-x: 1;
   }
 
+  .search-form {
+    margin-right: 3rem;
+  }
   .navbar-collapse {
     justify-content: space-between;
   }
