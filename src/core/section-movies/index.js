@@ -20,4 +20,8 @@ export default styled(SectionMovies)`
 
     justify-content: flex-start;
   }
+  .message {
+    font-size: 1.8rem;
+    align-self: center;
+  }
 `;
