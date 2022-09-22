@@ -14,15 +14,15 @@ const SectionMovies = (props) => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const { movies, isLoading, showModal, currentPage, genres, filterByGenre } =
-    useSelector((state) => ({
+  const { movies, isLoading, currentPage, genres, filterByGenre } = useSelector(
+    (state) => ({
       movies: state.moviesCollection.movies,
       isLoading: state.moviesCollection.isLoading,
-      showModal: state.detailsCollection.showModal,
       currentPage: state.moviesCollection.currentPage,
       genres: state.genresCollection.genres,
       filterByGenre: state.moviesCollection.filterByGenre,
-    }));
+    })
+  );
 
   const handleFilterGenre = (id) => {
     if (id === "all") {
@@ -36,9 +36,7 @@ const SectionMovies = (props) => {
   const handleModalMovies = (category, id = 1) => {
     history.push(`/${category}/page/${currentPage}/id/${id}`);
 
-    if (showModal === false) {
-      dispatch(detailActions.setModalShow(true));
-    }
+    dispatch(detailActions.setModalShow(true));
   };
 
   const filterMovies = movies
@@ -59,6 +57,7 @@ const SectionMovies = (props) => {
           className="accordion"
           genres={genres}
           onClickGenre={handleFilterGenre}
+          type="movies"
         />
         <div className="section-collections">
           {isLoading && <Spinner />}

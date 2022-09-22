@@ -15,14 +15,12 @@ const moviesSlice = createSlice({
     setMovies(state, action) {
       state.movies = action.payload;
     },
-
     setIsLoading(state, action) {
       state.isLoading = action.payload;
     },
     setError(state, action) {
       state.error = action.payload;
     },
-
     setCurrentPage(state, action) {
       state.currentPage = action.payload;
     },

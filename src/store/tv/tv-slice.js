@@ -9,12 +9,12 @@ const tvSlice = createSlice({
     currentPage: 1,
     totalPages: null,
     totalResults: null,
+    filterByGenre: "all",
   },
   reducers: {
     setTvPopular(state, action) {
       state.tvPopular = action.payload;
     },
-
     setIsLoading(state, action) {
       state.isLoadingTv = action.payload;
     },
@@ -29,6 +29,9 @@ const tvSlice = createSlice({
     },
     setTotalResults(state, action) {
       state.totalResults = action.payload;
+    },
+    setFilterByGenre(state, action) {
+      state.filterByGenre = action.payload;
     },
   },
 });
