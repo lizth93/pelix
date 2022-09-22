@@ -15,12 +15,10 @@ const PlayVideo = () => {
     }
   }, [dispatch, collectionId]);
   return (
-    <>
-      <ModalPlay
-        show={showModal}
-        onHide={() => dispatch(detailActions.setModalShow(false))}
-      />
-    </>
+    <ModalPlay
+      show={showModal}
+      onHide={() => dispatch(detailActions.setModalShow(false))}
+    />
   );
 };
 

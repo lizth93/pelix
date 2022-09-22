@@ -82,6 +82,8 @@ export default styled(Collections)`
     .collection__img {
       max-width: 16rem;
       min-height: 24rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
 
     figure {
@@ -95,6 +97,9 @@ export default styled(Collections)`
 
     .icons {
       padding: 0 1rem 1rem 1rem;
+      justify-content: flex-end;
     }
+
+    /* justify-content: flex-end; */
   }
 `;
