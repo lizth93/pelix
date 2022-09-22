@@ -82,6 +82,8 @@ export default styled(Collections)`
     .collection__img {
       max-width: 16rem;
       min-height: 24rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
 
     figure {
