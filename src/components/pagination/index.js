@@ -36,6 +36,7 @@ const Pagination = (props) => {
 };
 export default styled(Pagination)`
   .pagination {
+    padding-top: 3rem;
     --bs-pagination-focus-color: #0b7285;
     --bs-pagination-color: #fff;
     --bs-pagination-bg: #495057;
@@ -54,5 +55,6 @@ export default styled(Pagination)`
   .page-link.active {
     background-color: #1098ad;
     border-color: #0b7285;
+    z-index: 0;
   }
 `;
