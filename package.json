@@ -43,5 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cypress": "^9.7.0",
+    "cypress-xpath": "^2.0.1"
+  }
 }
