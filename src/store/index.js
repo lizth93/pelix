@@ -6,6 +6,7 @@ import detailSlice from "store/details/detail-slice";
 import searchSlice from "store/search/search-slice";
 import topRatedSlice from "store/top/top-rated-slice";
 import advancesSlice from "store/advances/advances-slice";
+import creditsSlice from "./credits/credits-slice";
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     searchResults: searchSlice.reducer,
     topRatedCollection: topRatedSlice.reducer,
     advancesCollection: advancesSlice.reducer,
+    creditsCollection: creditsSlice.reducer,
   },
 });
 

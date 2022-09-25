@@ -3,7 +3,7 @@ import DetailFilm from "./detail-film";
 
 export default styled(DetailFilm)`
   background-color: #0b7285;
-  max-height: 60vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   background-size: cover;

@@ -4,8 +4,10 @@ export const URL_BASE_MOVIES = "https://api.themoviedb.org/3/movie/";
 export const URL_MOVIES = "https://api.themoviedb.org/3/movie/popular?";
 export const URL_VIDEO_MOVIES = "/videos?";
 
+export const URL_CREDITS = "/credits?";
+
 export const URL_TV_POPULAR = "https://api.themoviedb.org/3/tv/popular?";
-export const URL_TV_VIDEO = "https://api.themoviedb.org/3/tv/";
+export const URL_BASE_TV = "https://api.themoviedb.org/3/tv/";
 
 export const URL_TOP_RATED_MOVIES =
   "https://api.themoviedb.org/3/movie/top_rated?";

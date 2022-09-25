@@ -3,7 +3,7 @@ import {
   URL_BASE_MOVIES,
   URL_LENGUAGE,
   URL_VIDEO_MOVIES,
-  URL_TV_VIDEO,
+  URL_BASE_TV,
 } from "constants";
 import { detailActions } from "store/details/detail-slice";
 
@@ -55,7 +55,7 @@ function getUrlVideos(id, category) {
   if (category === "movies") {
     fetchVideos = `${URL_BASE_MOVIES}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
   } else {
-    fetchVideos = `${URL_TV_VIDEO}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
+    fetchVideos = `${URL_BASE_TV}${id}${URL_VIDEO_MOVIES}${API_KEY}&${URL_LENGUAGE}`;
   }
 
   return fetchVideos;
@@ -66,7 +66,7 @@ function getUrlCurrentFilm(id, category) {
   if (category === "movies") {
     fetchCurrentFilm = `${URL_BASE_MOVIES}${id}?${API_KEY}`;
   } else {
-    fetchCurrentFilm = `${URL_TV_VIDEO}${id}?${API_KEY}`;
+    fetchCurrentFilm = `${URL_BASE_TV}${id}?${API_KEY}`;
   }
   return fetchCurrentFilm;
 }
