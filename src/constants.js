@@ -4,8 +4,10 @@ export const URL_BASE_MOVIES = "https://api.themoviedb.org/3/movie/";
 export const URL_MOVIES = "https://api.themoviedb.org/3/movie/popular?";
 export const URL_VIDEO_MOVIES = "/videos?";
 
+export const URL_CREDITS = "/credits?";
+
 export const URL_TV_POPULAR = "https://api.themoviedb.org/3/tv/popular?";
-export const URL_TV_VIDEO = "https://api.themoviedb.org/3/tv/";
+export const URL_BASE_TV = "https://api.themoviedb.org/3/tv/";
 
 export const URL_TOP_RATED_MOVIES =
   "https://api.themoviedb.org/3/movie/top_rated?";
@@ -15,6 +17,7 @@ export const URL_TOP_RATED_TV = "https://api.themoviedb.org/3/tv/top_rated?";
 export const BASE_URL_IMG = "https://image.tmdb.org/t/p/";
 export const SIZE_IMAGE = "original";
 export const SMALL_SIZE = "w300";
+export const MEDIUM_SIZE = "w500";
 
 export const URL_GENRES = "https://api.themoviedb.org/3/genre/movie/list?";
 export const URL_GENRES_TV = "https://api.themoviedb.org/3/genre/tv/list?";
@@ -49,7 +52,7 @@ export const SECTION_COLLECTION_ID =
 export const SECTION_TV = "/tv/page/:numPage";
 export const URL_TV = "/tv/page/1";
 export const URL_SECTION_TV = "/tv";
-export const SECTION_TV_ID = "/:typeCollection/:collectionId";
+// export const SECTION_TV_ID = "/:typeCollection/:collectionId";
 
 export const PLAY_VIDEO = "/play";
 export const MODAL_LATEST_ADVANCES =
@@ -61,6 +64,8 @@ export const CATEGORY_STREAMING = "streaming";
 
 export const PAGE = "&page=";
 export const MAX_PAGES = 500;
+
+export const DETAIL_SECTION = "/:typeCollection/:collectionId/detail";
 
 // Tamaño pequeño: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/default.jpg
 // Tamaño mediano: https://img.youtube.com/vi/IDENTIFICADOR_DEL_VIDEO/hqdefault.jpg

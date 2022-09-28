@@ -1,15 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-//own
-import { getDetailFilm } from "store/details/get-detail";
+import { getCredits } from "store/credits/get-credits";
 
-export default function useInitialiceDetails() {
+export default function useLoadCredits() {
   const dispatch = useDispatch();
   const typeCollection = useParams()?.typeCollection;
   const collectionId = useParams()?.collectionId;
 
   useEffect(() => {
-    dispatch(getDetailFilm(collectionId, typeCollection));
-  }, [dispatch, collectionId, typeCollection]);
+    dispatch(getCredits(typeCollection, collectionId));
+  }, [dispatch, typeCollection, collectionId]);
 }

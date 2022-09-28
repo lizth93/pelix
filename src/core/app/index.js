@@ -11,6 +11,7 @@ import {
   SECTION_COLLECTION_ID,
   SECTION_TV,
   MODAL_LATEST_ADVANCES,
+  DETAIL_SECTION,
 } from "constants";
 import VideoDetail from "core/main/video-detail";
 import SearchResults from "core/search/results";
@@ -19,6 +20,7 @@ import TvSection from "core/section-tv";
 import "core/app/app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PlayVideo from "core/main/advances/play-video";
+import DetailFilm from "core/detail";
 
 function App() {
   return (
@@ -52,6 +54,10 @@ function App() {
 
       <Route path={SEARCH_RESULTS}>
         <SearchResults />
+      </Route>
+
+      <Route path={DETAIL_SECTION}>
+        <DetailFilm />
       </Route>
     </Layout>
   );

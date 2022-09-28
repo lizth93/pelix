@@ -4,14 +4,14 @@ import { useEffect } from "react";
 
 //own
 import BootstrapModal from "react-bootstrap/Modal";
-import useInitialiceVideos from "core/main/use-initialice-videos";
+import useInitialiceDetails from "core/main/use-initialice-videos";
 import VideoPlayer from "components/video-player";
 import { detailActions } from "store/details/detail-slice";
 
 function ModalPlay(props) {
   const dispatch = useDispatch();
 
-  useInitialiceVideos();
+  useInitialiceDetails();
 
   const { videos, isLoading, error, currentVideo, currentFilm } = useSelector(
     (state) => ({
