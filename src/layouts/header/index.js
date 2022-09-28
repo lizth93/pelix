@@ -59,13 +59,28 @@ export default styled(Header)`
   }
   .navbar {
     --bs-navbar-padding-x: 1;
+    @media (max-width: 37.5em) {
+      margin-right: 1rem;
+    }
   }
 
   .search-form {
     margin-right: 3rem;
+
+    @media (max-width: 37.5em) {
+      //600px
+      margin-right: 1rem;
+    }
   }
   .navbar-collapse {
     justify-content: space-between;
+
+    @media (max-width: 37.5em) {
+      //600px
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1.5rem;
+    }
   }
 
   .container-fluid {

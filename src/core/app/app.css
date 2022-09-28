@@ -19,6 +19,22 @@
 .carousel-caption h3 {
   font-size: calc(5.3rem + 0.6vw);
 }
+@media (max-width: 37.5em) {
+  .carousel-caption h3 {
+    font-size: calc(3.3rem + 0.6vw);
+  }
+  .carousel-caption p {
+    font-size: calc(1rem + 0.6vw);
+  }
+}
+@media (max-width: 20.625em) {
+  .carousel-caption h3 {
+    font-size: calc(2.3rem + 0.6vw);
+  }
+  .carousel-caption p {
+    display: none;
+  }
+}
 
 .section-collections {
   margin-top: 3rem;

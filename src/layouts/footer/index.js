@@ -10,6 +10,15 @@ export default styled(Footer)`
   width: 100%;
   height: 20rem;
 
+  @media (max-width: 37.5em) {
+    //600px
+    padding: 2rem;
+  }
+
+  @media (max-width: 68.75em) {
+    //1100px
+    height: 100%;
+  }
   .logo-name {
     display: flex;
     justify-content: center;
@@ -23,13 +32,58 @@ export default styled(Footer)`
     padding: 0;
     margin: 0;
     margin-bottom: 1rem;
+
+    @media (max-width: 68.75em) {
+      //1100px
+      grid-column: 1 /-1;
+    }
   }
 
   .grid--4-cols {
     display: grid;
     gap: 2.4rem;
     grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 68.75em) {
+      //1100px
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+    }
+
+    @media (max-width: 37.5em) {
+      //600px
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
+  .title-section {
+    @media (max-width: 37.5em) {
+      //600px
+      text-align: center;
+      line-height: 0.5rem;
+    }
+  }
+  .about {
+    @media (max-width: 37.5em) {
+      //600px
+      justify-self: center;
+    }
+  }
+  .contact-me {
+    @media (max-width: 68.75em) {
+      //1100px
+
+      justify-self: center;
+    }
+  }
+
+  .services {
+    @media (max-width: 68.75em) {
+      //1100px
+      justify-self: center;
+    }
+  }
+
   h2 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
@@ -71,5 +125,9 @@ export default styled(Footer)`
     line-height: 1.6;
     grid-column: 1 /-1;
     text-align: center;
+
+    @media (max-width: 68.75em) {
+      //1100px
+    }
   }
 `;

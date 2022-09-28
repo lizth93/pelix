@@ -4,11 +4,28 @@ import Film from "components/films/film.component";
 export default styled(Film)`
   transition: all 0.2s;
 
+  figure {
+    @media (max-width: 64em) {
+      //1024px
+      margin: 0 0 0rem;
+    }
+  }
+
   &.with-hover {
     .collection__title {
       display: none;
       padding: 1rem;
       padding-top: 0;
+
+      @media (max-width: 64em) {
+        //1024px
+        display: block;
+        background-color: #212529;
+        max-width: 20rem;
+
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
     }
     &:hover {
       transform: scale(1.1);
@@ -47,6 +64,11 @@ export default styled(Film)`
     border-bottom-right-radius: 1.5rem;
 
     cursor: pointer;
+
+    @media (max-width: 64em) {
+      border-bottom-left-radius: 0rem;
+      border-bottom-right-radius: 0rem;
+    }
   }
   .icons {
     display: flex;
@@ -107,5 +129,6 @@ export default styled(Film)`
 
   .text-description {
     font-size: 1.6rem;
+    text-overflow: ellipsis;
   }
 `;

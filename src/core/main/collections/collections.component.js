@@ -63,7 +63,7 @@ const Collections = (props) => {
       {!isLoadingTop && (
         <TopRated topRated={"movies"} collection={topRatedMovies} />
       )}
-      <section className="container ">
+      <section className="container-fluid">
         {!isLoading && <h2 className="section-popular">Popular movies</h2>}
 
         <div className="section-collections">
@@ -83,7 +83,7 @@ const Collections = (props) => {
       </section>
 
       {!isLoadingTop && <TopRated topRated={"tv"} collection={topRatedTv} />}
-      <section className="container ">
+      <section className="container-fluid ">
         {!isLoadingTv && <h2 className="section-popular">Popular Tv</h2>}
         <div className="section-collections">
           {isLoadingTv && <Spinner />}
