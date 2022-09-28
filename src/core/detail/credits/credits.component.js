@@ -19,6 +19,7 @@ const Credits = (props) => {
           <Film
             key={person.id}
             src={`${BASE_URL_IMG}${SMALL_SIZE}${person.profile_path}`}
+            title={person.name}
           />
         ))}
       </div>
