@@ -44,15 +44,6 @@ function Accordion(props) {
             </>
           </BootstrapAccordion.Body>
         </BootstrapAccordion.Item>
-        <BootstrapAccordion.Item eventKey="1">
-          <BootstrapAccordion.Header>
-            Where you can see
-          </BootstrapAccordion.Header>
-          <BootstrapAccordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          </BootstrapAccordion.Body>
-        </BootstrapAccordion.Item>
       </BootstrapAccordion>
     </div>
   );

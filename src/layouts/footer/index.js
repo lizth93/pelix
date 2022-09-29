@@ -130,9 +130,5 @@ export default styled(Footer)`
     line-height: 1.6;
     grid-column: 1 /-1;
     text-align: center;
-
-    @media (max-width: 68.75em) {
-      //1100px
-    }
   }
 `;
