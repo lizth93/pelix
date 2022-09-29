@@ -12,11 +12,12 @@ export default styled(SectionMovies)`
 
   .container-fluid {
     display: flex;
-    /* margin: 3rem; */
+    margin: 3rem;
     gap: 2rem;
     @media (max-width: 46.875em) {
       //750px
       flex-wrap: wrap;
+      margin: 0rem;
     }
   }
   .accordion {
@@ -36,6 +37,7 @@ export default styled(SectionMovies)`
     @media (max-width: 46.875em) {
       //750px
       display: grid;
+      row-gap: 0.5rem;
       grid-template-columns: repeat(4, minmax(15rem, min-content));
     }
     @media (max-width: 31.25em) {
