@@ -95,6 +95,11 @@ export default styled(Footer)`
   .text {
     font-size: 1.4rem;
     line-height: 1.6rem;
+
+    @media (max-width: 37.5em) {
+      //600px
+      text-align: center;
+    }
   }
 
   .footer-link-list {

@@ -1,4 +1,5 @@
 import { API_YOUTUBE_URL } from "constants";
+import styled from "styled-components";
 
 const VideoPlayer = (props) => {
   return (
@@ -15,4 +16,26 @@ const VideoPlayer = (props) => {
   );
 };
 
-export default VideoPlayer;
+export default styled(VideoPlayer)`
+  @media (max-width: 81.25em) {
+    //1300px
+    width: 854px;
+    height: 480px;
+  }
+
+  @media (max-width: 56.25em) {
+    //1300px
+    width: 720px;
+    height: 405px;
+  }
+  @media (max-width: 43.75em) {
+    //1300px
+    width: 426px;
+    height: 240px;
+  }
+  @media (max-width: 25em) {
+    //400
+    width: 300px;
+    height: auto;
+  }
+`;
