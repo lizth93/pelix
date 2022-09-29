@@ -27,8 +27,7 @@ const SectionMovies = (props) => {
   const handleFilterGenre = (id) => {
     if (id === "all") {
       dispatch(moviesActions.setFilterByGenre("all"));
-    }
-    if (id !== "all") {
+    } else {
       dispatch(moviesActions.setFilterByGenre(id));
     }
   };
