@@ -73,7 +73,7 @@ function ListGroup(props) {
           onClick={() => handleShowResults("all")}
         >
           <div className="ms-2 me-auto">
-            <div className="fw-bold">All Results</div>
+            <div className="fw-bold">All </div>
           </div>
           <Badge bg="primary" pill>
             {totalResultsMultiple}

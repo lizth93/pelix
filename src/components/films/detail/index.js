@@ -14,6 +14,12 @@ export default styled(FilmsDetail)`
   border-top-right-radius: 1.5rem;
   display: flex;
 
+  @media (max-width: 21.875em) {
+    //350px
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   &:hover {
     transform: scale(1.05);
   }
