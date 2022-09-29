@@ -7,4 +7,14 @@ export default styled(DetailFilm)`
   display: flex;
   align-items: center;
   background-size: cover;
+
+  @media (max-width: 62.5em) {
+    //1000px
+    padding: 2rem;
+  }
+
+  @media (max-width: 62.5em) {
+    //1000px
+    min-height: 30vh;
+  }
 `;

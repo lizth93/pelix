@@ -8,6 +8,11 @@ export default styled(HeroDescription)`
   justify-content: center;
   gap: 3rem;
 
+  @media (max-width: 62.5em) {
+    //1000px
+    flex-wrap: wrap;
+  }
+
   .hero-background {
     min-width: 100%;
     max-height: 60vh;
@@ -24,6 +29,12 @@ export default styled(HeroDescription)`
     &-title {
       font-size: 4rem;
       font-weight: 700;
+
+      @media (max-width: 62.5em) {
+        //1000px
+        font-size: 3rem;
+        font-weight: 600;
+      }
     }
     &-data {
       font-size: 2rem;
@@ -34,6 +45,13 @@ export default styled(HeroDescription)`
       margin: 3rem 0 1.5rem 0;
       font-size: 2rem;
       font-weight: 700;
+
+      @media (max-width: 62.5em) {
+        //1000px
+        margin: 1rem 0 1.5rem 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
     }
 
     .hero-genres {
