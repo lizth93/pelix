@@ -13,7 +13,7 @@ const Film = (props) => {
     props.onClickFilm(props.collection.id);
   };
   return (
-    <div className={className}>
+    <div className={className} id={props.id}>
       <figure className="collection__fig">
         <img
           src={props.src}
