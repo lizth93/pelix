@@ -19,7 +19,14 @@
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
+
+Cypress.Commands.add("latestAdvancesCategory", (category) => {
+  cy.get(".btn-group")
+    .contains(category)
+    .click({ force: false })
+    .should("have.class", "active");
+});
+
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })

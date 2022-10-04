@@ -26,40 +26,29 @@ describe("Test Home page, validating modals", () => {
   });
 
   it("validate modal of the latest Advances streaming", () => {
-    cy.get(".btn-group")
-      .contains("In Streaming")
-      .click({ force: true })
-      .should("have.class", "active")
-      .then(() => {
-        cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
-          force: true,
-        });
-
-        cy.url().should("include", "collections/play/streaming");
-        cy.get(".btn-close").click({ force: true });
+    cy.latestAdvancesCategory("In Streaming").then(() => {
+      cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
+        force: true,
       });
+
+      cy.url().should("include", "collections/play/streaming");
+      cy.get(".btn-close").click({ force: true });
+    });
   });
 
   it("validate modal of the latest Advances Tv", () => {
-    cy.get(".btn-group")
-      .contains("In Tv")
-      .click({ force: true })
-      .should("have.class", "active")
-      .then(() => {
-        cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
-          force: true,
-        });
-
-        cy.get(".btn-close").click({ force: true });
+    cy.latestAdvancesCategory("In Tv").then(() => {
+      cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
+        force: true,
       });
+
+      cy.get(".btn-close").click({ force: true });
+    });
     cy.visit("https://pelix-luze.netlify.app");
   });
 
   it("validate modal of the latest Advances theaters", () => {
-    cy.get(".btn-group")
-      .contains("In theaters")
-      .click({ force: false })
-      .should("have.class", "active");
+    cy.latestAdvancesCategory("In theaters");
 
     cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
       force: true,
