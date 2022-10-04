@@ -21,6 +21,7 @@ function ButtonsGroup(props) {
     <div className={props.className}>
       <BootstrapButtonGroup aria-label="Basic example">
         <Button
+          id="streaming"
           variant="secondary"
           active={activeButton === CATEGORY_STREAMING ? true : false}
           onClick={(e) => {
@@ -31,6 +32,7 @@ function ButtonsGroup(props) {
           In Streaming
         </Button>
         <Button
+          id="tv"
           variant="secondary"
           active={activeButton === CATEGORY_TV_AIRING ? true : false}
           onClick={(e) => {
@@ -41,6 +43,7 @@ function ButtonsGroup(props) {
           In Tv
         </Button>
         <Button
+          id="theaters"
           variant="secondary"
           active={activeButton === CATEGORY_TEATHERS ? true : false}
           onClick={(e) => {
