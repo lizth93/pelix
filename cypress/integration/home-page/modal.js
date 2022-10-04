@@ -6,54 +6,44 @@ describe("Test Home page, validating modals", () => {
     cy.visit("https://pelix-luze.netlify.app");
   });
   it("validate modal of the top-rated-section movies", () => {
-    cy.get(
-      "div:nth-of-type(1) > .container-top-rated > .section-top-rated > div:nth-of-type(1) > .static-detail > .collection__title > .icons > .more-icon"
-    ).click();
-    cy.url().should("include", "collections/movies");
-    cy.get(".videos-related").contains("Videos Related:");
-
-    cy.get(".modal-footer > .btn").contains("Close").click();
+    const selector =
+      "div:nth-of-type(1) > .container-top-rated > .section-top-rated > div:nth-of-type(1) > .static-detail > .collection__title > .icons > .more-icon";
+    cy.validateModalTopRated(selector, "collections/movies");
   });
 
   it("validate modal of the top-rated-section tv", () => {
-    cy.get(
-      ":nth-child(3) > .container-top-rated > .section-top-rated > :nth-child(1) > .sc-dkzDqf > .collection__title > .icons > .more-icon"
-    ).click();
-    cy.url().should("include", "collections/tv");
-    cy.get(".videos-related").contains("Videos Related:");
-
-    cy.get(".modal-footer > .btn").contains("Close").click();
+    const selector =
+      ":nth-child(3) > .container-top-rated > .section-top-rated > :nth-child(1) > .sc-dkzDqf > .collection__title > .icons > .more-icon";
+    cy.validateModalTopRated(selector, "collections/tv");
   });
 
   it("validate modal of the latest Advances streaming", () => {
-    cy.latestAdvancesCategory("In Streaming").then(() => {
-      cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
-        force: true,
-      });
-
-      cy.url().should("include", "collections/play/streaming");
-      cy.get(".btn-close").click({ force: true });
-    });
+    const selector = ".section-films .film:nth-of-type(1) .static-detail";
+    cy.latestAdvancesCategory(
+      "In Streaming",
+      selector,
+      "collections/play/streaming"
+    );
   });
 
   it("validate modal of the latest Advances Tv", () => {
-    cy.latestAdvancesCategory("In Tv").then(() => {
-      cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
-        force: true,
-      });
-
-      cy.get(".btn-close").click({ force: true });
-    });
+    const selector = ".section-films .film:nth-of-type(1) .static-detail";
+    cy.latestAdvancesCategory("In Tv", selector, "collections/play/tv");
     cy.visit("https://pelix-luze.netlify.app");
   });
 
   it("validate modal of the latest Advances theaters", () => {
-    cy.latestAdvancesCategory("In theaters");
+    const selector = ".section-films .film:nth-of-type(1) .static-detail";
+    cy.latestAdvancesCategory(
+      "In theaters",
+      selector,
+      "collections/play/movies"
+    );
 
-    cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
-      force: true,
-    });
+    // cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
+    //   force: true,
+    // });
 
-    cy.get(".btn-close").click({ force: true });
+    // cy.get(".btn-close").click({ force: true });
   });
 });
