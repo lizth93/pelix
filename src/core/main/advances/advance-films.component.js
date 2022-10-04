@@ -46,6 +46,7 @@ const AdvancesFilms = (props) => {
                   }}
                 >
                   <Film
+                    id={filmAdvance}
                     src={`${BASE_URL_IMG}${SMALL_SIZE}${film.backdrop_path}`}
                     title={film.name ? film.name : film.title}
                     className="film"
