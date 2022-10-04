@@ -27,13 +27,16 @@ Cypress.Commands.add("latestAdvancesCategory", (category) => {
     .should("have.class", "active");
 });
 
-Cypress.Commands.add("validateModalTopRated", ($selector, category) => {
-  cy.get($selector).click();
-  cy.url().should("include", category);
-  cy.get(".videos-related").contains("Videos Related:");
+Cypress.Commands.add(
+  "validateModalTopRated",
+  ($selector, category, containsText) => {
+    cy.get($selector).click();
+    cy.url().should("include", category);
+    cy.get(".videos-related").contains("Videos Related:");
 
-  cy.get(".modal-footer > .btn").contains("Close").click();
-});
+    cy.get(".modal-footer > .btn").contains("Close").click();
+  }
+);
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
