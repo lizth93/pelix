@@ -39,11 +39,5 @@ describe("Test Home page, validating modals", () => {
       selector,
       "collections/play/movies"
     );
-
-    // cy.get(".section-films .film:nth-of-type(1) .static-detail").click({
-    //   force: true,
-    // });
-
-    // cy.get(".btn-close").click({ force: true });
   });
 });
